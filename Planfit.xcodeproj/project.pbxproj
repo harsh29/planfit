@@ -1,0 +1,384 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0F2BE70C1DD6D0D600D71039 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2BE70B1DD6D0D600D71039 /* AppDelegate.swift */; };
+		0F2BE70E1DD6D0D600D71039 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2BE70D1DD6D0D600D71039 /* ViewController.swift */; };
+		0F2BE7111DD6D0D600D71039 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F2BE70F1DD6D0D600D71039 /* Main.storyboard */; };
+		0F2BE7131DD6D0D600D71039 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F2BE7121DD6D0D600D71039 /* Assets.xcassets */; };
+		0F2BE7161DD6D0D600D71039 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F2BE7141DD6D0D600D71039 /* LaunchScreen.storyboard */; };
+		E617171EEF6A67F187BE2490 /* Pods_Planfit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF14645EC1BEC0784D308F83 /* Pods_Planfit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0F2BE7081DD6D0D500D71039 /* Planfit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Planfit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F2BE70B1DD6D0D600D71039 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0F2BE70D1DD6D0D600D71039 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0F2BE7101DD6D0D600D71039 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0F2BE7121DD6D0D600D71039 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0F2BE7151DD6D0D600D71039 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0F2BE7171DD6D0D600D71039 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4522442C6E0A4B226D3B8EAB /* Pods-Planfit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Planfit.release.xcconfig"; path = "Pods/Target Support Files/Pods-Planfit/Pods-Planfit.release.xcconfig"; sourceTree = "<group>"; };
+		854FEE3B9EE693EB2659E254 /* Pods-Planfit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Planfit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Planfit/Pods-Planfit.debug.xcconfig"; sourceTree = "<group>"; };
+		DF14645EC1BEC0784D308F83 /* Pods_Planfit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Planfit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0F2BE7051DD6D0D500D71039 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E617171EEF6A67F187BE2490 /* Pods_Planfit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0F2BE6FF1DD6D0D500D71039 = {
+			isa = PBXGroup;
+			children = (
+				0F2BE70A1DD6D0D500D71039 /* Planfit */,
+				0F2BE7091DD6D0D500D71039 /* Products */,
+				E0555006E494C6D0F88B1F07 /* Pods */,
+				6B6CFBA5905C9BF2E6C9883C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		0F2BE7091DD6D0D500D71039 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0F2BE7081DD6D0D500D71039 /* Planfit.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0F2BE70A1DD6D0D500D71039 /* Planfit */ = {
+			isa = PBXGroup;
+			children = (
+				0F2BE70B1DD6D0D600D71039 /* AppDelegate.swift */,
+				0F2BE70D1DD6D0D600D71039 /* ViewController.swift */,
+				0F2BE70F1DD6D0D600D71039 /* Main.storyboard */,
+				0F2BE7121DD6D0D600D71039 /* Assets.xcassets */,
+				0F2BE7141DD6D0D600D71039 /* LaunchScreen.storyboard */,
+				0F2BE7171DD6D0D600D71039 /* Info.plist */,
+			);
+			path = Planfit;
+			sourceTree = "<group>";
+		};
+		6B6CFBA5905C9BF2E6C9883C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DF14645EC1BEC0784D308F83 /* Pods_Planfit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E0555006E494C6D0F88B1F07 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				854FEE3B9EE693EB2659E254 /* Pods-Planfit.debug.xcconfig */,
+				4522442C6E0A4B226D3B8EAB /* Pods-Planfit.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0F2BE7071DD6D0D500D71039 /* Planfit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0F2BE71A1DD6D0D600D71039 /* Build configuration list for PBXNativeTarget "Planfit" */;
+			buildPhases = (
+				170F923ACAD8C037B5381A42 /* [CP] Check Pods Manifest.lock */,
+				0F2BE7041DD6D0D500D71039 /* Sources */,
+				0F2BE7051DD6D0D500D71039 /* Frameworks */,
+				0F2BE7061DD6D0D500D71039 /* Resources */,
+				4FFE580ACDDC5B689F9313F5 /* [CP] Embed Pods Frameworks */,
+				27EC3E063CA2F137EE5DB847 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Planfit;
+			productName = Planfit;
+			productReference = 0F2BE7081DD6D0D500D71039 /* Planfit.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0F2BE7001DD6D0D500D71039 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = Planfit;
+				TargetAttributes = {
+					0F2BE7071DD6D0D500D71039 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 0F2BE7031DD6D0D500D71039 /* Build configuration list for PBXProject "Planfit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0F2BE6FF1DD6D0D500D71039;
+			productRefGroup = 0F2BE7091DD6D0D500D71039 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0F2BE7071DD6D0D500D71039 /* Planfit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0F2BE7061DD6D0D500D71039 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F2BE7161DD6D0D600D71039 /* LaunchScreen.storyboard in Resources */,
+				0F2BE7131DD6D0D600D71039 /* Assets.xcassets in Resources */,
+				0F2BE7111DD6D0D600D71039 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		170F923ACAD8C037B5381A42 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		27EC3E063CA2F137EE5DB847 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Planfit/Pods-Planfit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4FFE580ACDDC5B689F9313F5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Planfit/Pods-Planfit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0F2BE7041DD6D0D500D71039 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F2BE70E1DD6D0D600D71039 /* ViewController.swift in Sources */,
+				0F2BE70C1DD6D0D600D71039 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0F2BE70F1DD6D0D600D71039 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0F2BE7101DD6D0D600D71039 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0F2BE7141DD6D0D600D71039 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0F2BE7151DD6D0D600D71039 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0F2BE7181DD6D0D600D71039 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0F2BE7191DD6D0D600D71039 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0F2BE71B1DD6D0D600D71039 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 854FEE3B9EE693EB2659E254 /* Pods-Planfit.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Planfit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Planfit.Planfit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		0F2BE71C1DD6D0D600D71039 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4522442C6E0A4B226D3B8EAB /* Pods-Planfit.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Planfit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Planfit.Planfit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0F2BE7031DD6D0D500D71039 /* Build configuration list for PBXProject "Planfit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0F2BE7181DD6D0D600D71039 /* Debug */,
+				0F2BE7191DD6D0D600D71039 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0F2BE71A1DD6D0D600D71039 /* Build configuration list for PBXNativeTarget "Planfit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0F2BE71B1DD6D0D600D71039 /* Debug */,
+				0F2BE71C1DD6D0D600D71039 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0F2BE7001DD6D0D500D71039 /* Project object */;
+}
