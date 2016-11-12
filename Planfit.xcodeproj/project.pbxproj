@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0F2BE70C1DD6D0D600D71039 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2BE70B1DD6D0D600D71039 /* AppDelegate.swift */; };
-		0F2BE70E1DD6D0D600D71039 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2BE70D1DD6D0D600D71039 /* ViewController.swift */; };
 		0F2BE7111DD6D0D600D71039 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F2BE70F1DD6D0D600D71039 /* Main.storyboard */; };
 		0F2BE7131DD6D0D600D71039 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F2BE7121DD6D0D600D71039 /* Assets.xcassets */; };
 		0F2BE7161DD6D0D600D71039 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F2BE7141DD6D0D600D71039 /* LaunchScreen.storyboard */; };
+		0FF61F5C1DD7C57D002E6C58 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF61F5B1DD7C57D002E6C58 /* Welcome.storyboard */; };
 		0FFAB4FC1DD6D665002C6644 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFAB4FB1DD6D665002C6644 /* WelcomeViewController.swift */; };
 		0FFAB4FE1DD6D67E002C6644 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFAB4FD1DD6D67E002C6644 /* LoginViewController.swift */; };
 		0FFAB5001DD6D68D002C6644 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFAB4FF1DD6D68D002C6644 /* SignupViewController.swift */; };
@@ -30,11 +30,11 @@
 /* Begin PBXFileReference section */
 		0F2BE7081DD6D0D500D71039 /* Planfit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Planfit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F2BE70B1DD6D0D600D71039 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0F2BE70D1DD6D0D600D71039 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0F2BE7101DD6D0D600D71039 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0F2BE7121DD6D0D600D71039 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F2BE7151DD6D0D600D71039 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0F2BE7171DD6D0D600D71039 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FF61F5B1DD7C57D002E6C58 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		0FFAB4FB1DD6D665002C6644 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		0FFAB4FD1DD6D67E002C6644 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0FFAB4FF1DD6D68D002C6644 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
@@ -85,16 +85,24 @@
 		0F2BE70A1DD6D0D500D71039 /* Planfit */ = {
 			isa = PBXGroup;
 			children = (
+				0FF61F5A1DD7C556002E6C58 /* Storyboards */,
 				0FFAB4FA1DD6D627002C6644 /* Models */,
 				0FFAB4F91DD6D5F8002C6644 /* ViewControllers */,
 				0F2BE70B1DD6D0D600D71039 /* AppDelegate.swift */,
-				0F2BE70D1DD6D0D600D71039 /* ViewController.swift */,
 				0F2BE70F1DD6D0D600D71039 /* Main.storyboard */,
 				0F2BE7121DD6D0D600D71039 /* Assets.xcassets */,
 				0F2BE7141DD6D0D600D71039 /* LaunchScreen.storyboard */,
 				0F2BE7171DD6D0D600D71039 /* Info.plist */,
 			);
 			path = Planfit;
+			sourceTree = "<group>";
+		};
+		0FF61F5A1DD7C556002E6C58 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				0FF61F5B1DD7C57D002E6C58 /* Welcome.storyboard */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 		0FFAB4F91DD6D5F8002C6644 /* ViewControllers */ = {
@@ -203,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F2BE7161DD6D0D600D71039 /* LaunchScreen.storyboard in Resources */,
+				0FF61F5C1DD7C57D002E6C58 /* Welcome.storyboard in Resources */,
 				0F2BE7131DD6D0D600D71039 /* Assets.xcassets in Resources */,
 				0F2BE7111DD6D0D600D71039 /* Main.storyboard in Resources */,
 			);
@@ -271,7 +280,6 @@
 				0FFAB5001DD6D68D002C6644 /* SignupViewController.swift in Sources */,
 				0FFAB5061DD6D710002C6644 /* RoutineListViewController.swift in Sources */,
 				0FFAB50A1DD6D855002C6644 /* StepSlideShowViewController.swift in Sources */,
-				0F2BE70E1DD6D0D600D71039 /* ViewController.swift in Sources */,
 				0F2BE70C1DD6D0D600D71039 /* AppDelegate.swift in Sources */,
 				0FFAB5041DD6D6B6002C6644 /* CalendarViewController.swift in Sources */,
 				0FFAB50C1DD6D9D5002C6644 /* StepEditViewController.swift in Sources */,

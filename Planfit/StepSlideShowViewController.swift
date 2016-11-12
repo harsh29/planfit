@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StepDetailViewController: UIViewController {
+class StepSlideShowViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
