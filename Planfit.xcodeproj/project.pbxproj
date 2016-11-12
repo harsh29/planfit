@@ -12,6 +12,18 @@
 		0F2BE7111DD6D0D600D71039 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F2BE70F1DD6D0D600D71039 /* Main.storyboard */; };
 		0F2BE7131DD6D0D600D71039 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F2BE7121DD6D0D600D71039 /* Assets.xcassets */; };
 		0F2BE7161DD6D0D600D71039 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F2BE7141DD6D0D600D71039 /* LaunchScreen.storyboard */; };
+		0FFAB4FC1DD6D665002C6644 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFAB4FB1DD6D665002C6644 /* WelcomeViewController.swift */; };
+		0FFAB4FE1DD6D67E002C6644 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFAB4FD1DD6D67E002C6644 /* LoginViewController.swift */; };
+		0FFAB5001DD6D68D002C6644 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFAB4FF1DD6D68D002C6644 /* SignupViewController.swift */; };
+		0FFAB5021DD6D6A3002C6644 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFAB5011DD6D6A3002C6644 /* HomeViewController.swift */; };
+		0FFAB5041DD6D6B6002C6644 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFAB5031DD6D6B6002C6644 /* CalendarViewController.swift */; };
+		0FFAB5061DD6D710002C6644 /* RoutineListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFAB5051DD6D710002C6644 /* RoutineListViewController.swift */; };
+		0FFAB5081DD6D7D5002C6644 /* RoutineDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFAB5071DD6D7D5002C6644 /* RoutineDetailViewController.swift */; };
+		0FFAB50A1DD6D855002C6644 /* StepSlideShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFAB5091DD6D855002C6644 /* StepSlideShowViewController.swift */; };
+		0FFAB50C1DD6D9D5002C6644 /* StepEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFAB50B1DD6D9D5002C6644 /* StepEditViewController.swift */; };
+		0FFAB50E1DD6DAB4002C6644 /* RoutineFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFAB50D1DD6DAB4002C6644 /* RoutineFinishViewController.swift */; };
+		0FFAB5101DD6DB0A002C6644 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFAB50F1DD6DB0A002C6644 /* AccountViewController.swift */; };
+		0FFAB5121DD6DB8C002C6644 /* MediaGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFAB5111DD6DB8C002C6644 /* MediaGalleryViewController.swift */; };
 		E617171EEF6A67F187BE2490 /* Pods_Planfit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF14645EC1BEC0784D308F83 /* Pods_Planfit.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +35,18 @@
 		0F2BE7121DD6D0D600D71039 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F2BE7151DD6D0D600D71039 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0F2BE7171DD6D0D600D71039 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FFAB4FB1DD6D665002C6644 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		0FFAB4FD1DD6D67E002C6644 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0FFAB4FF1DD6D68D002C6644 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		0FFAB5011DD6D6A3002C6644 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		0FFAB5031DD6D6B6002C6644 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		0FFAB5051DD6D710002C6644 /* RoutineListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineListViewController.swift; sourceTree = "<group>"; };
+		0FFAB5071DD6D7D5002C6644 /* RoutineDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineDetailViewController.swift; sourceTree = "<group>"; };
+		0FFAB5091DD6D855002C6644 /* StepSlideShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepSlideShowViewController.swift; sourceTree = "<group>"; };
+		0FFAB50B1DD6D9D5002C6644 /* StepEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepEditViewController.swift; sourceTree = "<group>"; };
+		0FFAB50D1DD6DAB4002C6644 /* RoutineFinishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineFinishViewController.swift; sourceTree = "<group>"; };
+		0FFAB50F1DD6DB0A002C6644 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		0FFAB5111DD6DB8C002C6644 /* MediaGalleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaGalleryViewController.swift; sourceTree = "<group>"; };
 		4522442C6E0A4B226D3B8EAB /* Pods-Planfit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Planfit.release.xcconfig"; path = "Pods/Target Support Files/Pods-Planfit/Pods-Planfit.release.xcconfig"; sourceTree = "<group>"; };
 		854FEE3B9EE693EB2659E254 /* Pods-Planfit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Planfit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Planfit/Pods-Planfit.debug.xcconfig"; sourceTree = "<group>"; };
 		DF14645EC1BEC0784D308F83 /* Pods_Planfit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Planfit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +85,8 @@
 		0F2BE70A1DD6D0D500D71039 /* Planfit */ = {
 			isa = PBXGroup;
 			children = (
+				0FFAB4FA1DD6D627002C6644 /* Models */,
+				0FFAB4F91DD6D5F8002C6644 /* ViewControllers */,
 				0F2BE70B1DD6D0D600D71039 /* AppDelegate.swift */,
 				0F2BE70D1DD6D0D600D71039 /* ViewController.swift */,
 				0F2BE70F1DD6D0D600D71039 /* Main.storyboard */,
@@ -69,6 +95,32 @@
 				0F2BE7171DD6D0D600D71039 /* Info.plist */,
 			);
 			path = Planfit;
+			sourceTree = "<group>";
+		};
+		0FFAB4F91DD6D5F8002C6644 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0FFAB4FB1DD6D665002C6644 /* WelcomeViewController.swift */,
+				0FFAB4FD1DD6D67E002C6644 /* LoginViewController.swift */,
+				0FFAB4FF1DD6D68D002C6644 /* SignupViewController.swift */,
+				0FFAB5011DD6D6A3002C6644 /* HomeViewController.swift */,
+				0FFAB5031DD6D6B6002C6644 /* CalendarViewController.swift */,
+				0FFAB5051DD6D710002C6644 /* RoutineListViewController.swift */,
+				0FFAB5071DD6D7D5002C6644 /* RoutineDetailViewController.swift */,
+				0FFAB50D1DD6DAB4002C6644 /* RoutineFinishViewController.swift */,
+				0FFAB5091DD6D855002C6644 /* StepSlideShowViewController.swift */,
+				0FFAB50B1DD6D9D5002C6644 /* StepEditViewController.swift */,
+				0FFAB50F1DD6DB0A002C6644 /* AccountViewController.swift */,
+				0FFAB5111DD6DB8C002C6644 /* MediaGalleryViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0FFAB4FA1DD6D627002C6644 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		6B6CFBA5905C9BF2E6C9883C /* Frameworks */ = {
@@ -211,8 +263,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FFAB4FE1DD6D67E002C6644 /* LoginViewController.swift in Sources */,
+				0FFAB4FC1DD6D665002C6644 /* WelcomeViewController.swift in Sources */,
+				0FFAB5101DD6DB0A002C6644 /* AccountViewController.swift in Sources */,
+				0FFAB50E1DD6DAB4002C6644 /* RoutineFinishViewController.swift in Sources */,
+				0FFAB5081DD6D7D5002C6644 /* RoutineDetailViewController.swift in Sources */,
+				0FFAB5001DD6D68D002C6644 /* SignupViewController.swift in Sources */,
+				0FFAB5061DD6D710002C6644 /* RoutineListViewController.swift in Sources */,
+				0FFAB50A1DD6D855002C6644 /* StepSlideShowViewController.swift in Sources */,
 				0F2BE70E1DD6D0D600D71039 /* ViewController.swift in Sources */,
 				0F2BE70C1DD6D0D600D71039 /* AppDelegate.swift in Sources */,
+				0FFAB5041DD6D6B6002C6644 /* CalendarViewController.swift in Sources */,
+				0FFAB50C1DD6D9D5002C6644 /* StepEditViewController.swift in Sources */,
+				0FFAB5121DD6DB8C002C6644 /* MediaGalleryViewController.swift in Sources */,
+				0FFAB5021DD6D6A3002C6644 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
