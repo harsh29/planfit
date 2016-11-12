@@ -43,7 +43,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5c3-PF-72y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="396" y="466"/>
+            <point key="canvasLocation" x="-23" y="445"/>
         </scene>
         <!--Calendar View Controller-->
         <scene sceneID="fnD-Ig-7YI">
@@ -70,7 +70,34 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IFy-oR-cFk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2002" y="1119"/>
+            <point key="canvasLocation" x="1417" y="1119"/>
+        </scene>
+        <!--Media Gallery View Controller-->
+        <scene sceneID="Nak-kW-tvt">
+            <objects>
+                <viewController id="l1i-8Z-tLN" customClass="MediaGalleryViewController" customModule="Planfit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="45Y-sl-DNB"/>
+                        <viewControllerLayoutGuide type="bottom" id="RT2-yz-ZqN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5Di-ni-XPv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MediaGallery ViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3a-V9-2m8">
+                                <frame key="frameInset" width="375" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7OP-dF-bax" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2087" y="1119"/>
         </scene>
         <!--Routine List View Controller-->
         <scene sceneID="Jw5-Oy-Xkk">
@@ -109,7 +136,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xfZ-Jg-a48" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2702" y="1119"/>
+            <point key="canvasLocation" x="2764" y="1119"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="HSb-KM-anY">
@@ -152,9 +179,12 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.32941176470588235" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Social">
+                                <state key="normal" title="Media">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="l1i-8Z-tLN" kind="show" id="FdI-Q3-Qyd"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUa-9h-Mmt">
                                 <frame key="frameInset" minX="270" minY="607" width="105" height="60"/>
@@ -193,7 +223,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nKp-VF-XOc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2652" y="172"/>
+            <point key="canvasLocation" x="2086" y="163"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="MFY-W2-dHm">
@@ -229,7 +259,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZGQ-B0-aSW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1271" y="1119"/>
+            <point key="canvasLocation" x="742" y="1119"/>
         </scene>
         <!--Routine Detail View Controller-->
         <scene sceneID="iiz-mj-o1A">
@@ -358,7 +388,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lgc-2A-uor" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5041" y="-590"/>
+            <point key="canvasLocation" x="5060" y="-591"/>
         </scene>
         <!--Step Edit View Controller-->
         <scene sceneID="TAM-RN-B0n">
@@ -424,11 +454,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y7n-H9-dEG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="396" y="-209"/>
+            <point key="canvasLocation" x="-22" y="-238"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="fum-de-vRO"/>
         <segue reference="JWz-uT-4HZ"/>
+        <segue reference="XmF-sR-Iaa"/>
     </inferredMetricsTieBreakers>
 </document>

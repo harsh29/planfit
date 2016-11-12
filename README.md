@@ -2,4 +2,4 @@
 
 Here's Planfit viewcontroller flow:
 
-<img src='PlanfitFlow.png' />
+<img src='AppFlow.png' />
