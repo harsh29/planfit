@@ -19,13 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         ParseAPIClient.createInstance()
         
-        /* The following code snippet is to demonstrate how this may work
-        let user = User(username: "user", password: "thisisapassword", email: "email")
-        NSLog(user.email)
-        ParseUserAPIClient.signUp(user: user,
-                                  success: { NSLog(user.username)},
-                                  failure: {(error) in NSLog(error.localizedDescription)})
-         */
+        /* The following code snippet is to demonstrate how this may work */
+        //ParseUserAPIClient.signUp(user: User(username: "testuser123", password: "thisisapassword", email: "testtest@gmail.com"), success: { NSLog("created user successfully!)}, failure: {(error) in NSLog(error.localizedDescription)})
+ 
         return true
     }
 

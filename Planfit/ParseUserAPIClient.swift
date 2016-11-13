@@ -41,7 +41,6 @@ class ParseUserAPIClient: NSObject {
             parseUser.signUpInBackground { (succeeded, error) in
                 if let error = error {
                     // Show the errorString somewhere and let the user try again.
-                    NSLog(error.localizedDescription)
                     failure(error)
                 } else {
                     // Hooray! Let them use the app now.

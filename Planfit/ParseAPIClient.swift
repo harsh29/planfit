@@ -25,7 +25,7 @@ class ParseAPIClient : NSObject {
             with: ParseClientConfiguration(block: { (configuration:ParseMutableClientConfiguration) -> Void in
                 configuration.applicationId = "planfit"
                 configuration.clientKey = nil  // set to nil assuming you have not set clientKey
-                configuration.server = "https://planfit-codepath.herokuapp.com/parse"
+                configuration.server = "https://planfit-parse-app.herokuapp.com/parse"
             })
         )
     }
