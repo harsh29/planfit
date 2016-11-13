@@ -12,10 +12,25 @@ import Parse
 
 class ParseUserAPIClient: NSObject {
     
+    /**
+     Returns a current PFUser object, if it exists.
+     
+     - Returns: PFUser?
+     */
     class func getCurrentUser() -> PFUser? {
         return PFUser.current()
     }
     
+    /**
+     Signs up a user to Parse Server.
+     
+     - Parameter user:  The user in the current session.
+     - Parameter success: Success callback function.
+     - Parameter failure: Failure callback function.
+     
+     
+     - Returns: None
+     */
     class func signUp(user: User, success: @escaping () -> (), failure: @escaping (Error) -> ()) {
         if (getCurrentUser() == nil) {
             let parseUser = PFUser()
@@ -36,6 +51,16 @@ class ParseUserAPIClient: NSObject {
         }
     }
     
+    /**
+     Login for a user to Parse Server.
+     
+     - Parameter user:  The user in the current session.
+     - Parameter success: Success callback function.
+     - Parameter failure: Failure callback function.
+     
+     
+     - Returns: None
+     */
     class func login(user: User, success: @escaping (PFUser) -> (), failure: @escaping () -> ()) {
         do {
             let loggedInUser = try PFUser.logIn(withUsername: user.username, password: user.password)

@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         ParseAPIClient.createInstance()
         
-        /* The following code snippet is to demonstrate that this thing works
+        /* The following code snippet is to demonstrate how this may work
         let user = User(username: "user", password: "thisisapassword", email: "email")
         NSLog(user.email)
         ParseUserAPIClient.signUp(user: user,

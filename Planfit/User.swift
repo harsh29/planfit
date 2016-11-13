@@ -1,4 +1,4 @@
-//
+//  Example User Model class for PlanFit
 //  User.swift
 //  Planfit
 //

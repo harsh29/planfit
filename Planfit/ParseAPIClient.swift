@@ -1,5 +1,6 @@
 //
 //  ParseAPIClient.swift
+//  API Client to handle persistence to Parse Server
 //  Planfit
 //
 //  Created by Estella Lai on 11/12/16.
@@ -11,7 +12,14 @@ import Parse
 
 class ParseAPIClient : NSObject {
     
-    // creates our instance
+    /**
+     Creates a Parse Instance to be used throughout session.
+     
+     - Parameter: None
+     
+     
+     - Returns: None
+     */
     class func createInstance() {
         Parse.initialize(
             with: ParseClientConfiguration(block: { (configuration:ParseMutableClientConfiguration) -> Void in
@@ -22,6 +30,16 @@ class ParseAPIClient : NSObject {
         )
     }
     
+    /**
+     Saves a Parse Object onto the Parse Server.
+     
+     - Parameter parseObject: Object to save onto Parse.
+     - Parameter success: Success callback function.
+     - Parameter failure: Failure callback function.
+     
+     
+     - Returns: None
+     */
     class func save(parseObject : PFObject, success: @escaping () -> (), failure: @escaping (Error) -> ()) {
         parseObject.saveInBackground { (succeeded, error) in
             if let error = error {
