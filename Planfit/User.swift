@@ -21,6 +21,12 @@ class User: PlanFitParseObject {
         self.email = email
     }
     
+    required init(parseObject: PFObject) {
+        self.username = parseObject["username"] as! String
+        self.password = parseObject["password"] as! String
+        self.email = parseObject["email"] as! String
+    }
+    
     func writeToParse() {
         let userObject = PFObject(className: User._className)
         userObject["username"] = self.username
@@ -31,10 +37,6 @@ class User: PlanFitParseObject {
         }, failure: {(error) in
             NSLog(error.localizedDescription)
         })
-    }
-    
-    func read() -> User {
-        return User(username: "asfd", password: "asdf", email: "asdf")
     }
 
 }

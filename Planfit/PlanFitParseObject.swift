@@ -21,4 +21,14 @@ protocol PlanFitParseObject {
      - Returns: None
      */
     func writeToParse()
+    
+    /**
+     Custom initializer method to parse from a PFObject.
+     
+     - Parameter: parseObject: Object received from Parse.
+     
+     
+     - Returns: None
+     */
+    init(parseObject: PFObject)
 }

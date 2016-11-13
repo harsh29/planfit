@@ -49,4 +49,28 @@ class ParseAPIClient : NSObject {
             }
         }
     }
+    
+    /**
+     Retrieves a list of Parse Objects from the Parse Server.
+     
+     - Parameter className: Class belonging to object.
+     - Parameter field: Name of field on which to query.
+     - Parameter to: Value that equals to field.
+     - Parameter success: Success callback function.
+     - Parameter failure: Failure callback function.
+     
+     
+     - Returns: None
+     */
+    class func retrieveEquals(for className: String, on field: String, equal to: Any, success: @escaping ([PFObject]?) -> (), failure: @escaping (Error) -> ()) {
+        let query = PFQuery(className: className)
+        query.whereKey(field, equalTo: to)
+        query.findObjectsInBackground { (results, error) in
+            if let error = error {
+                failure(error)
+            } else {
+                success(results)
+            }
+        }
+    }
 }
