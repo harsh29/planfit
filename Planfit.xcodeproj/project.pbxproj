@@ -34,10 +34,6 @@
 		0FFAB50E1DD6DAB4002C6644 /* RoutineFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFAB50D1DD6DAB4002C6644 /* RoutineFinishViewController.swift */; };
 		0FFAB5101DD6DB0A002C6644 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFAB50F1DD6DB0A002C6644 /* AccountViewController.swift */; };
 		0FFAB5121DD6DB8C002C6644 /* MediaGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFAB5111DD6DB8C002C6644 /* MediaGalleryViewController.swift */; };
-		AE68969F1DD7FE9F000B4AF2 /* ParseAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68969E1DD7FE9F000B4AF2 /* ParseAPIClient.swift */; };
-		AE6896A11DD80625000B4AF2 /* ParseUserAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6896A01DD80625000B4AF2 /* ParseUserAPIClient.swift */; };
-		AE6896A31DD807DC000B4AF2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6896A21DD807DC000B4AF2 /* User.swift */; };
-		AE6896A71DD8170E000B4AF2 /* PlanFitParseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6896A61DD8170E000B4AF2 /* PlanFitParseObject.swift */; };
 		E617171EEF6A67F187BE2490 /* Pods_Planfit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF14645EC1BEC0784D308F83 /* Pods_Planfit.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,10 +69,6 @@
 		0FFAB5111DD6DB8C002C6644 /* MediaGalleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaGalleryViewController.swift; sourceTree = "<group>"; };
 		4522442C6E0A4B226D3B8EAB /* Pods-Planfit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Planfit.release.xcconfig"; path = "Pods/Target Support Files/Pods-Planfit/Pods-Planfit.release.xcconfig"; sourceTree = "<group>"; };
 		854FEE3B9EE693EB2659E254 /* Pods-Planfit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Planfit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Planfit/Pods-Planfit.debug.xcconfig"; sourceTree = "<group>"; };
-		AE68969E1DD7FE9F000B4AF2 /* ParseAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseAPIClient.swift; sourceTree = "<group>"; };
-		AE6896A01DD80625000B4AF2 /* ParseUserAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseUserAPIClient.swift; sourceTree = "<group>"; };
-		AE6896A21DD807DC000B4AF2 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		AE6896A61DD8170E000B4AF2 /* PlanFitParseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanFitParseObject.swift; sourceTree = "<group>"; };
 		DF14645EC1BEC0784D308F83 /* Pods_Planfit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Planfit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -113,7 +105,6 @@
 		0F2BE70A1DD6D0D500D71039 /* Planfit */ = {
 			isa = PBXGroup;
 			children = (
-				AE68969D1DD7FE83000B4AF2 /* API */,
 				0FF61F5A1DD7C556002E6C58 /* Storyboards */,
 				0FFAB4FA1DD6D627002C6644 /* Models */,
 				0FFAB4F91DD6D5F8002C6644 /* ViewControllers */,
@@ -166,7 +157,6 @@
 		0FFAB4FA1DD6D627002C6644 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				AE6896A21DD807DC000B4AF2 /* User.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -177,16 +167,6 @@
 				DF14645EC1BEC0784D308F83 /* Pods_Planfit.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		AE68969D1DD7FE83000B4AF2 /* API */ = {
-			isa = PBXGroup;
-			children = (
-				AE68969E1DD7FE9F000B4AF2 /* ParseAPIClient.swift */,
-				AE6896A01DD80625000B4AF2 /* ParseUserAPIClient.swift */,
-				AE6896A61DD8170E000B4AF2 /* PlanFitParseObject.swift */,
-			);
-			name = API;
 			sourceTree = "<group>";
 		};
 		E0555006E494C6D0F88B1F07 /* Pods */ = {
@@ -292,7 +272,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		27EC3E063CA2F137EE5DB847 /* [CP] Copy Pods Resources */ = {
@@ -336,19 +316,15 @@
 				0FFAB4FC1DD6D665002C6644 /* WelcomeViewController.swift in Sources */,
 				0FFAB5101DD6DB0A002C6644 /* AccountViewController.swift in Sources */,
 				0FFAB50E1DD6DAB4002C6644 /* RoutineFinishViewController.swift in Sources */,
-				AE6896A31DD807DC000B4AF2 /* User.swift in Sources */,
 				0FFAB5081DD6D7D5002C6644 /* RoutineDetailViewController.swift in Sources */,
 				0FFAB5001DD6D68D002C6644 /* SignupViewController.swift in Sources */,
 				0FFAB5061DD6D710002C6644 /* RoutineListViewController.swift in Sources */,
 				0FFAB50A1DD6D855002C6644 /* StepSlideShowViewController.swift in Sources */,
-				AE6896A11DD80625000B4AF2 /* ParseUserAPIClient.swift in Sources */,
 				0F2BE70C1DD6D0D600D71039 /* AppDelegate.swift in Sources */,
 				0FFAB5041DD6D6B6002C6644 /* CalendarViewController.swift in Sources */,
 				0FFAB50C1DD6D9D5002C6644 /* StepEditViewController.swift in Sources */,
-				AE68969F1DD7FE9F000B4AF2 /* ParseAPIClient.swift in Sources */,
 				0FFAB5121DD6DB8C002C6644 /* MediaGalleryViewController.swift in Sources */,
 				0FFAB5021DD6D6A3002C6644 /* HomeViewController.swift in Sources */,
-				AE6896A71DD8170E000B4AF2 /* PlanFitParseObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
