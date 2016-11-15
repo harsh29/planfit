@@ -10,14 +10,21 @@
 import UIKit
 import Parse
 
-class ParseUserAPIClient: NSObject {
+class ParseUserAPIClient {
+    
+    /**
+     Singleton instance and private initializer
+     
+    */
+    static let sharedInstance = ParseUserAPIClient()
+    private init() {}
     
     /**
      Returns a current PFUser object, if it exists.
      
      - Returns: PFUser?
      */
-    class func getCurrentUser() -> PFUser? {
+    func getCurrentUser() -> PFUser? {
         return PFUser.current()
     }
     
@@ -31,7 +38,7 @@ class ParseUserAPIClient: NSObject {
      
      - Returns: None
      */
-    class func signUp(user: User, success: @escaping () -> (), failure: @escaping (Error) -> ()) {
+    func signUp(user: User, success: @escaping () -> (), failure: @escaping (Error) -> ()) {
         if (getCurrentUser() == nil) {
             let parseUser = PFUser()
             parseUser.username = user.username
@@ -60,12 +67,11 @@ class ParseUserAPIClient: NSObject {
      
      - Returns: None
      */
-    class func login(user: User, success: @escaping (PFUser) -> (), failure: @escaping () -> ()) {
+    func login(user: User, success: @escaping (PFUser) -> (), failure: @escaping () -> ()) {
         do {
             let loggedInUser = try PFUser.logIn(withUsername: user.username, password: user.password)
             success(loggedInUser)
         } catch {
-            NSLog("Can't sign user \(user.username) in")
             failure()
         }
     }
