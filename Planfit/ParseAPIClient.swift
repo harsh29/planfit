@@ -10,7 +10,14 @@
 import UIKit
 import Parse
 
-class ParseAPIClient : NSObject {
+class ParseAPIClient {
+    
+    /**
+     Singleton instance and private initializer
+     
+     */
+    static let sharedInstance = ParseAPIClient()
+    private init() {}
     
     /**
      Creates a Parse Instance to be used throughout session.
@@ -20,12 +27,12 @@ class ParseAPIClient : NSObject {
      
      - Returns: None
      */
-    class func createInstance() {
+    func createInstance() {
         Parse.initialize(
             with: ParseClientConfiguration(block: { (configuration:ParseMutableClientConfiguration) -> Void in
-                configuration.applicationId = "planfit"
-                configuration.clientKey = nil  // set to nil assuming you have not set clientKey
-                configuration.server = "https://planfit-parse-app.herokuapp.com/parse"
+                configuration.applicationId = APIClientConfig.PARSE_APP_ID
+                configuration.clientKey = nil // set to nil assuming you have not set clientKey
+                configuration.server = APIClientConfig.PARSE_SERVER
             })
         )
     }
@@ -40,7 +47,7 @@ class ParseAPIClient : NSObject {
      
      - Returns: None
      */
-    class func save(parseObject : PFObject, success: @escaping () -> (), failure: @escaping (Error) -> ()) {
+    func save(parseObject : PFObject, success: @escaping () -> (), failure: @escaping (Error) -> ()) {
         parseObject.saveInBackground { (succeeded, error) in
             if let error = error {
                 failure(error)
@@ -62,7 +69,7 @@ class ParseAPIClient : NSObject {
      
      - Returns: None
      */
-    class func retrieveEquals(for className: String, on field: String, equal to: Any, success: @escaping ([PFObject]?) -> (), failure: @escaping (Error) -> ()) {
+    func retrieveEquals(for className: String, on field: String, equal to: Any, success: @escaping ([PFObject]?) -> (), failure: @escaping (Error) -> ()) {
         let query = PFQuery(className: className)
         query.whereKey(field, equalTo: to)
         query.findObjectsInBackground { (results, error) in

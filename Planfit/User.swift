@@ -10,7 +10,6 @@ import UIKit
 import Parse
 
 class User: PlanFitParseObject {
-    static let _className = "User"
     var username: String
     var password : String
     var email: String
@@ -28,11 +27,11 @@ class User: PlanFitParseObject {
     }
     
     func writeToParse() {
-        let userObject = PFObject(className: User._className)
+        let userObject = PFObject(className: APIClientConfig.PARSE_USER)
         userObject["username"] = self.username
         userObject["password"] = self.password
         userObject["email"] = self.email
-        ParseAPIClient.save(parseObject: userObject, success: {
+        ParseAPIClient.sharedInstance.save(parseObject: userObject, success: {
             NSLog("User object with userame \(self.username) saved successfully.")
         }, failure: {(error) in
             NSLog(error.localizedDescription)

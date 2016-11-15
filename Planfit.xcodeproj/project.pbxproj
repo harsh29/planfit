@@ -34,6 +34,7 @@
 		0FFAB50E1DD6DAB4002C6644 /* RoutineFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFAB50D1DD6DAB4002C6644 /* RoutineFinishViewController.swift */; };
 		0FFAB5101DD6DB0A002C6644 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFAB50F1DD6DB0A002C6644 /* AccountViewController.swift */; };
 		0FFAB5121DD6DB8C002C6644 /* MediaGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFAB5111DD6DB8C002C6644 /* MediaGalleryViewController.swift */; };
+		61D1FD111DDAE79100ECF9AB /* APIClientConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D1FD101DDAE79100ECF9AB /* APIClientConfig.swift */; };
 		AE68969F1DD7FE9F000B4AF2 /* ParseAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68969E1DD7FE9F000B4AF2 /* ParseAPIClient.swift */; };
 		AE6896A11DD80625000B4AF2 /* ParseUserAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6896A01DD80625000B4AF2 /* ParseUserAPIClient.swift */; };
 		AE6896A31DD807DC000B4AF2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6896A21DD807DC000B4AF2 /* User.swift */; };
@@ -72,6 +73,7 @@
 		0FFAB50F1DD6DB0A002C6644 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		0FFAB5111DD6DB8C002C6644 /* MediaGalleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaGalleryViewController.swift; sourceTree = "<group>"; };
 		4522442C6E0A4B226D3B8EAB /* Pods-Planfit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Planfit.release.xcconfig"; path = "Pods/Target Support Files/Pods-Planfit/Pods-Planfit.release.xcconfig"; sourceTree = "<group>"; };
+		61D1FD101DDAE79100ECF9AB /* APIClientConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClientConfig.swift; sourceTree = "<group>"; };
 		854FEE3B9EE693EB2659E254 /* Pods-Planfit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Planfit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Planfit/Pods-Planfit.debug.xcconfig"; sourceTree = "<group>"; };
 		AE68969E1DD7FE9F000B4AF2 /* ParseAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseAPIClient.swift; sourceTree = "<group>"; };
 		AE6896A01DD80625000B4AF2 /* ParseUserAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseUserAPIClient.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 		0F2BE70A1DD6D0D500D71039 /* Planfit */ = {
 			isa = PBXGroup;
 			children = (
+				61D1FD0F1DDAE76600ECF9AB /* DataModels */,
 				AE68969D1DD7FE83000B4AF2 /* API */,
 				0FF61F5A1DD7C556002E6C58 /* Storyboards */,
 				0FFAB4FA1DD6D627002C6644 /* Models */,
@@ -166,9 +169,16 @@
 		0FFAB4FA1DD6D627002C6644 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				AE6896A21DD807DC000B4AF2 /* User.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		61D1FD0F1DDAE76600ECF9AB /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				AE6896A21DD807DC000B4AF2 /* User.swift */,
+			);
+			name = DataModels;
 			sourceTree = "<group>";
 		};
 		6B6CFBA5905C9BF2E6C9883C /* Frameworks */ = {
@@ -185,6 +195,7 @@
 				AE68969E1DD7FE9F000B4AF2 /* ParseAPIClient.swift */,
 				AE6896A01DD80625000B4AF2 /* ParseUserAPIClient.swift */,
 				AE6896A61DD8170E000B4AF2 /* PlanFitParseObject.swift */,
+				61D1FD101DDAE79100ECF9AB /* APIClientConfig.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -341,6 +352,7 @@
 				0FFAB5001DD6D68D002C6644 /* SignupViewController.swift in Sources */,
 				0FFAB5061DD6D710002C6644 /* RoutineListViewController.swift in Sources */,
 				0FFAB50A1DD6D855002C6644 /* StepSlideShowViewController.swift in Sources */,
+				61D1FD111DDAE79100ECF9AB /* APIClientConfig.swift in Sources */,
 				AE6896A11DD80625000B4AF2 /* ParseUserAPIClient.swift in Sources */,
 				0F2BE70C1DD6D0D600D71039 /* AppDelegate.swift in Sources */,
 				0FFAB5041DD6D6B6002C6644 /* CalendarViewController.swift in Sources */,
