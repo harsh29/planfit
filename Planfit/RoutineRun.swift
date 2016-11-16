@@ -21,9 +21,9 @@ enum Status {
 }
 
 class RoutineRun: NSObject, NSCoding {
-    var routineRunuuid: String?
+    var routineRunUUID: NSUUID?
     var routinePerformed: String?
-    var routinePerformeduuid: String?
+    var routinePerformeduuid: NSUUID?
     //var status: Status
     var startedAt:Date?
     var completedAt:Date?
@@ -44,11 +44,11 @@ class RoutineRun: NSObject, NSCoding {
 
     
     required init?(json: [String: Any]) {
-            guard let idValue = json["id"] as? String else {
+            guard let idValue = json["routineRunUUID"] as? NSUUID else {
                 return nil
         }
         
-        self.routineRunuuid = idValue
+        self.routineRunUUID = idValue
         
         
         //should we just save the routineUUID in here, and then make a second call to get the routine name and then fetch it if user wants to go into detail. if we want to show how many exercises were completed and how many were kept pending.
@@ -58,7 +58,7 @@ class RoutineRun: NSObject, NSCoding {
         
         self.routinePerformed = routineName
         
-        guard let routineuuid = json["routine_performed_uuid"] as? String else {
+        guard let routineuuid = json["routine_performed_uuid"] as? NSUUID else {
             return nil
         }
         self.routinePerformeduuid = routineuuid
@@ -85,7 +85,7 @@ class RoutineRun: NSObject, NSCoding {
     
     // MARK: NSCoding
     @objc func encode(with aCoder: NSCoder) {
-        aCoder.encode(self.routineRunuuid, forKey: "id")
+        aCoder.encode(self.routineRunUUID, forKey: "routineRunUUID")
         aCoder.encode(self.routinePerformed, forKey: "routinePerformed")
         aCoder.encode(self.routinePerformeduuid, forKey: "routinePerformeduuid")
        // aCoder.encode(self.status, forKey: "status")
@@ -96,9 +96,9 @@ class RoutineRun: NSObject, NSCoding {
     
     @objc required convenience init?(coder aDecoder: NSCoder) {
         self.init()
-        self.routineRunuuid = aDecoder.decodeObject(forKey: "id") as? String
+        self.routineRunUUID = aDecoder.decodeObject(forKey: "routineRunUUID") as? NSUUID
         self.routinePerformed = aDecoder.decodeObject(forKey: "routinePerformed") as? String
-        self.routinePerformeduuid = aDecoder.decodeObject(forKey: "routinePerformeduuid") as? String
+        self.routinePerformeduuid = aDecoder.decodeObject(forKey: "routinePerformeduuid") as? NSUUID
        // self.status = (aDecoder.decodeObject(forKey: "status") as? Status)!
         self.startedAt = aDecoder.decodeObject(forKey: "startedAt") as? Date
         self.completedAt = aDecoder.decodeObject(forKey: "completedAt") as? Date

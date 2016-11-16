@@ -9,16 +9,16 @@
 import Foundation
 
 class Routine: NSObject, NSCoding {
-    var uuid: String?
-    var workoutName: String?
-    var workoutDescription: String?
-    var exercises : [String]?
-    var totalDuration: Date?
+    var routineUUID: NSUUID?
+    var routineName: String?
+    var routineDescription: String?
+    var exercises : [NSUUID]?
+    var totalDuration: Int?
     //again what are we using the count for?
     var count: Int?
     var id: String?
     var ownerName: String?
-    var ownerAvatarURL: String?
+    var ownerAvatarURL: URL?
     var createdAt:Date?
     var updatedAt:Date?
     
@@ -37,16 +37,16 @@ class Routine: NSObject, NSCoding {
     
     required init?(json: [String: Any]) {
         guard let workoutDescription = json["description"] as? String,
-            let idValue = json["id"] as? String else {
+            let idValue = json["id"] as? NSUUID else {
                 return nil
         }
         
-        self.workoutDescription = workoutDescription
-        self.uuid = idValue
+        self.routineDescription = workoutDescription
+        self.routineUUID = idValue
         
         if let ownerJson = json["owner"] as? [String: Any] {
             self.ownerName = ownerJson["owner"] as? String
-            self.ownerAvatarURL = ownerJson["avatar_url"] as? String
+            self.ownerAvatarURL = ownerJson["avatar_url"] as? URL
         }
         
         
@@ -63,8 +63,8 @@ class Routine: NSObject, NSCoding {
     
     // MARK: NSCoding
     @objc func encode(with aCoder: NSCoder) {
-        aCoder.encode(self.uuid, forKey: "id")
-        aCoder.encode(self.workoutDescription, forKey: "workoutDescription")
+        aCoder.encode(self.routineUUID, forKey: "routineUUID")
+        aCoder.encode(self.routineDescription, forKey: "routineDescription")
         aCoder.encode(self.ownerName, forKey: "ownerName")
         aCoder.encode(self.ownerAvatarURL, forKey: "ownerAvatarURL")
         aCoder.encode(self.createdAt, forKey: "createdAt")
@@ -74,10 +74,10 @@ class Routine: NSObject, NSCoding {
     
     @objc required convenience init?(coder aDecoder: NSCoder) {
         self.init()
-        self.uuid = aDecoder.decodeObject(forKey: "id") as? String
-        self.workoutDescription = aDecoder.decodeObject(forKey: "workoutDescription") as? String
+        self.routineUUID = aDecoder.decodeObject(forKey: "routineUUID") as? NSUUID
+        self.routineDescription = aDecoder.decodeObject(forKey: "routineDescription") as? String
         self.ownerName = aDecoder.decodeObject(forKey: "ownerName") as? String
-        self.ownerAvatarURL = aDecoder.decodeObject(forKey: "ownerAvatarURL") as? String
+        self.ownerAvatarURL = aDecoder.decodeObject(forKey: "ownerAvatarURL") as? URL
         self.createdAt = aDecoder.decodeObject(forKey: "createdAt") as? Date
         self.updatedAt = aDecoder.decodeObject(forKey: "updatedAt") as? Date
     }
