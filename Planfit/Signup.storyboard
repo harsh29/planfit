@@ -45,10 +45,10 @@
             </objects>
             <point key="canvasLocation" x="-23" y="445"/>
         </scene>
-        <!--HomeViewController-->
+        <!--TabBarController-->
         <scene sceneID="j2v-Mn-VcI">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="HomeViewController" storyboardName="Home" referencedIdentifier="HomeViewController" id="Xd5-rJ-eOa" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="TabBarController" storyboardName="Home" referencedIdentifier="TabBarController" id="Xd5-rJ-eOa" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bym-WQ-Jyu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="826" y="444"/>
