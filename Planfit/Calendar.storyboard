@@ -9,7 +9,7 @@
         <!--Calendar View Controller-->
         <scene sceneID="fnD-Ig-7YI">
             <objects>
-                <viewController storyboardIdentifier="CalendarViewController" id="ptg-cP-7W0" customClass="CalendarViewController" customModule="Planfit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CalendarViewController" id="ptg-cP-7W0" userLabel="Calendar View Controller" customClass="CalendarViewController" customModule="Planfit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="r5m-zQ-wba"/>
                         <viewControllerLayoutGuide type="bottom" id="eCC-ZA-SIn"/>
@@ -28,10 +28,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Calendar" image="calendar" id="gaU-rC-mBq"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IFy-oR-cFk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="65" y="-102"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="calendar" width="20" height="20"/>
+    </resources>
 </document>

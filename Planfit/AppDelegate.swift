@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        /* The following code snippet is to demonstrate how this may work
+        ParseAPIClient.sharedInstance.createInstance()
+        let newUser = User(username: "testuser123", password: "thisisapassword", email: "testtest@gmail.com")
+        ParseUserAPIClient.sharedInstance.signUp(user: newUser,
+                                                 success: { NSLog("created user successfully!")},
+                                                 failure: {(error) in NSLog(error.localizedDescription)})
+        */
         return true
     }
 
