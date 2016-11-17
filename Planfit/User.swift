@@ -1,41 +1,60 @@
-//  Example User Model class for PlanFit
+//
 //  User.swift
 //  Planfit
 //
-//  Created by Estella Lai on 11/12/16.
+//  Created by Harsh Trivedi on 11/14/16.
 //  Copyright © 2016 Planfit. All rights reserved.
 //
 
-import UIKit
-import Parse
+import Foundation
 
-class User: PlanFitParseObject {
-    var username: String
-    var password : String
-    var email: String
-    
-    init(username: String, password: String, email: String) {
-        self.username = username
-        self.password = password
-        self.email = email
-    }
-    
-    required init(parseObject: PFObject) {
-        self.username = parseObject["username"] as! String
-        self.password = parseObject["password"] as! String
-        self.email = parseObject["email"] as! String
-    }
-    
-    func writeToParse() {
-        let userObject = PFObject(className: APIClientConfig.PARSE_USER)
-        userObject["username"] = self.username
-        userObject["password"] = self.password
-        userObject["email"] = self.email
-        ParseAPIClient.sharedInstance.save(parseObject: userObject, success: {
-            NSLog("User object with userame \(self.username) saved successfully.")
-        }, failure: {(error) in
-            NSLog(error.localizedDescription)
-        })
-    }
+import Foundation
 
+// Represents a user.
+class User: NSObject, NSCoding
+{
+    var userUUID: NSUUID?
+    var name: String?
+    var screenName: String?
+    var profileImageUrl: URL?
+    
+    //i am using dictionary  here, if everyone prefers a dictionary we can change everyone to dictionary, i prefer the approch in Routine class using alamofire, i will let all of us make a call together.
+    init(dictionary: NSDictionary)
+    {
+        name = dictionary["name"] as? String
+        screenName = dictionary["screen_name"] as? String
+        if let profileImageUrlString =
+            dictionary["profile_image_url"] as? String
+        {
+            // Get a larger image than what is provided by default.
+            let profileImageUrlString =
+                profileImageUrlString.replacingOccurrences(of: "_normal", with: "")
+            
+            profileImageUrl = URL(string: profileImageUrlString)
+        }
+        else
+        {
+            profileImageUrl = nil
+        }
+                
+    }
+    
+    // Decodes User object using NSCoder.
+    required init(coder aDecoder: NSCoder)
+    {
+        name = aDecoder.decodeObject(
+            forKey: "name") as? String
+        screenName = aDecoder.decodeObject(
+            forKey: "screen_name") as? String
+        profileImageUrl = aDecoder.decodeObject(
+            forKey: "profile_image_url") as? URL
+            }
+    
+    // Encodes User object using NSCoder.
+    func encode(with aCoder: NSCoder)
+    {
+        aCoder.encode(name, forKey: "name")
+        aCoder.encode(screenName, forKey: "screen_name")
+        aCoder.encode(profileImageUrl, forKey: "profile_image_url")
+    }
 }
