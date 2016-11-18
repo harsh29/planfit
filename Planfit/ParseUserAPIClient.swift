@@ -10,6 +10,10 @@
 import UIKit
 import Parse
 
+enum ParseUserClientError: Error {
+    case noCurrentUser
+}
+
 class ParseUserAPIClient {
     
     /**
@@ -38,7 +42,7 @@ class ParseUserAPIClient {
      
      - Returns: None
      */
-    func signUp(user: User, success: @escaping () -> (), failure: @escaping (Error) -> ()) {
+    func signUp(user: UserDataModel, success: @escaping () -> (), failure: @escaping (Error) -> ()) {
         if (getCurrentUser() == nil) {
             let parseUser = PFUser()
             parseUser.username = user.username
@@ -67,12 +71,40 @@ class ParseUserAPIClient {
      
      - Returns: None
      */
-    func login(user: User, success: @escaping (PFUser) -> (), failure: @escaping () -> ()) {
+    func login(user: UserDataModel, success: @escaping (PFUser) -> (), failure: @escaping () -> ()) {
         do {
             let loggedInUser = try PFUser.logIn(withUsername: user.username, password: user.password)
             success(loggedInUser)
         } catch {
             failure()
+        }
+    }
+    
+    /**
+    Updates a Parse User.
+     
+     - Parameter user:  The user in the current session.
+     - Parameter success: Success callback function.
+     - Parameter failure: Failure callback function.
+     
+     
+     - Returns: None
+     */
+    func update(user: UserDataModel, success: @escaping(PFUser) -> (), failure: @escaping (Error) ->()) {
+        if let currentUser = getCurrentUser() {
+            currentUser.email = user.email
+            currentUser.username = user.username
+            currentUser.password = user.password
+            currentUser.saveInBackground(block: { (didSucceed, error) in
+                if let error = error {
+                    failure(error)
+                } else {
+                    success(currentUser)
+                }
+            })
+        } else {
+            let error = ParseUserClientError.noCurrentUser
+            failure(error)
         }
     }
 }
