@@ -39,11 +39,6 @@
 		85A1828C1DDA8DB0002B1D1F /* RoutineRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A1828B1DDA8DB0002B1D1F /* RoutineRun.swift */; };
 		85A1828E1DDA8F43002B1D1F /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A1828D1DDA8F43002B1D1F /* Routine.swift */; };
 		85A182901DDA9697002B1D1F /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A1828F1DDA9697002B1D1F /* Exercise.swift */; };
-		85A182921DDA9815002B1D1F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A182911DDA9815002B1D1F /* User.swift */; };
-		AE68969F1DD7FE9F000B4AF2 /* ParseAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68969E1DD7FE9F000B4AF2 /* ParseAPIClient.swift */; };
-		AE6896A11DD80625000B4AF2 /* ParseUserAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6896A01DD80625000B4AF2 /* ParseUserAPIClient.swift */; };
-		AE68969F1DD7FE9F000B4AF2 /* ParseAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68969E1DD7FE9F000B4AF2 /* ParseAPIClient.swift */; };
-		AE6896A11DD80625000B4AF2 /* ParseUserAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6896A01DD80625000B4AF2 /* ParseUserAPIClient.swift */; };
 		AE68969F1DD7FE9F000B4AF2 /* ParseAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68969E1DD7FE9F000B4AF2 /* ParseAPIClient.swift */; };
 		AE6896A11DD80625000B4AF2 /* ParseUserAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6896A01DD80625000B4AF2 /* ParseUserAPIClient.swift */; };
 		AE6896A31DD807DC000B4AF2 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6896A21DD807DC000B4AF2 /* UserDataModel.swift */; };
