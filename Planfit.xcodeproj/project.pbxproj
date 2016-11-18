@@ -34,6 +34,7 @@
 		0FFAB50E1DD6DAB4002C6644 /* RoutineFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFAB50D1DD6DAB4002C6644 /* RoutineFinishViewController.swift */; };
 		0FFAB5101DD6DB0A002C6644 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFAB50F1DD6DB0A002C6644 /* AccountViewController.swift */; };
 		0FFAB5121DD6DB8C002C6644 /* MediaGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFAB5111DD6DB8C002C6644 /* MediaGalleryViewController.swift */; };
+		61A5CDB71DDF81E50058D3EF /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A5CDB61DDF81E50058D3EF /* UserDataModel.swift */; };
 		61D1FD111DDAE79100ECF9AB /* APIClientConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D1FD101DDAE79100ECF9AB /* APIClientConfig.swift */; };
 		85A1828C1DDA8DB0002B1D1F /* RoutineRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A1828B1DDA8DB0002B1D1F /* RoutineRun.swift */; };
 		85A1828E1DDA8F43002B1D1F /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A1828D1DDA8F43002B1D1F /* Routine.swift */; };
@@ -76,6 +77,7 @@
 		0FFAB50F1DD6DB0A002C6644 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		0FFAB5111DD6DB8C002C6644 /* MediaGalleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaGalleryViewController.swift; sourceTree = "<group>"; };
 		4522442C6E0A4B226D3B8EAB /* Pods-Planfit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Planfit.release.xcconfig"; path = "Pods/Target Support Files/Pods-Planfit/Pods-Planfit.release.xcconfig"; sourceTree = "<group>"; };
+		61A5CDB61DDF81E50058D3EF /* UserDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		61D1FD101DDAE79100ECF9AB /* APIClientConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClientConfig.swift; sourceTree = "<group>"; };
 		854FEE3B9EE693EB2659E254 /* Pods-Planfit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Planfit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Planfit/Pods-Planfit.debug.xcconfig"; sourceTree = "<group>"; };
 		85A1828B1DDA8DB0002B1D1F /* RoutineRun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineRun.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 		61D1FD0F1DDAE76600ECF9AB /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
+				61A5CDB61DDF81E50058D3EF /* UserDataModel.swift */,
 			);
 			name = DataModels;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				0FFAB5121DD6DB8C002C6644 /* MediaGalleryViewController.swift in Sources */,
 				85A1828E1DDA8F43002B1D1F /* Routine.swift in Sources */,
 				0FFAB5021DD6D6A3002C6644 /* HomeViewController.swift in Sources */,
+				61A5CDB71DDF81E50058D3EF /* UserDataModel.swift in Sources */,
 				AE6896A71DD8170E000B4AF2 /* PlanFitParseObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

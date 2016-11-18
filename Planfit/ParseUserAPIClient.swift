@@ -38,7 +38,7 @@ class ParseUserAPIClient {
      
      - Returns: None
      */
-    func signUp(user: User, success: @escaping () -> (), failure: @escaping (Error) -> ()) {
+    func signUp(user: UserDataModel, success: @escaping () -> (), failure: @escaping (Error) -> ()) {
         if (getCurrentUser() == nil) {
             let parseUser = PFUser()
             parseUser.username = user.username
@@ -67,7 +67,7 @@ class ParseUserAPIClient {
      
      - Returns: None
      */
-    func login(user: User, success: @escaping (PFUser) -> (), failure: @escaping () -> ()) {
+    func login(user: UserDataModel, success: @escaping (PFUser) -> (), failure: @escaping () -> ()) {
         do {
             let loggedInUser = try PFUser.logIn(withUsername: user.username, password: user.password)
             success(loggedInUser)
