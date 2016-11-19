@@ -8,8 +8,6 @@
 
 import Foundation
 
-import Foundation
-
 // Represents a user.
 class User: NSObject, NSCoding
 {
@@ -17,6 +15,10 @@ class User: NSObject, NSCoding
     var name: String?
     var screenName: String?
     var profileImageUrl: URL?
+    
+    var username: String!
+    var password: String!
+    var email: String!
     
     //i am using dictionary  here, if everyone prefers a dictionary we can change everyone to dictionary, i prefer the approch in Routine class using alamofire, i will let all of us make a call together.
     init(dictionary: NSDictionary)

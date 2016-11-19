@@ -18,33 +18,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKt-4q-ldC">
-                                <frame key="frameInset" minX="56" minY="221" width="274" height="91"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.32941176470588235" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Start">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="7Fh-XN-hpX" kind="show" id="XmF-sR-Iaa"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Home ViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOS-PM-3fS">
-                                <frame key="frameInset" width="375" height="62"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rtw-ZW-7A2">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKt-4q-ldC">
+                                        <color key="backgroundColor" red="1" green="0.32941176470588235" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="44"/>
+                                        <state key="normal" title="Start!">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onStartButtonTap:" destination="a9c-bi-a4I" eventType="touchUpInside" id="AKD-B6-J5i"/>
+                                            <segue destination="7Fh-XN-hpX" kind="show" id="XmF-sR-Iaa"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nov 5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QYb-9s-pBL">
+                                        <fontDescription key="fontDescription" type="system" pointSize="92"/>
+                                        <color key="textColor" red="1" green="0.3294117647" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ARM DAY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJa-rp-mO2">
+                                        <fontDescription key="fontDescription" type="system" pointSize="44"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="QYb-9s-pBL" firstAttribute="leading" secondItem="rtw-ZW-7A2" secondAttribute="leading" constant="8" id="AWU-XK-4E8"/>
+                                    <constraint firstItem="cJa-rp-mO2" firstAttribute="leading" secondItem="rtw-ZW-7A2" secondAttribute="leading" constant="8" id="Bf2-zI-w5P"/>
+                                    <constraint firstItem="mKt-4q-ldC" firstAttribute="top" secondItem="cJa-rp-mO2" secondAttribute="bottom" constant="44" id="JRf-a8-4ZW"/>
+                                    <constraint firstItem="cJa-rp-mO2" firstAttribute="top" secondItem="QYb-9s-pBL" secondAttribute="bottom" constant="44" id="LDX-jb-KBf"/>
+                                    <constraint firstAttribute="bottom" secondItem="mKt-4q-ldC" secondAttribute="bottom" constant="8" id="Rck-mZ-GNb"/>
+                                    <constraint firstAttribute="trailing" secondItem="mKt-4q-ldC" secondAttribute="trailing" constant="8" id="e4B-vN-6cV"/>
+                                    <constraint firstItem="QYb-9s-pBL" firstAttribute="top" secondItem="rtw-ZW-7A2" secondAttribute="top" constant="24" id="fe2-bu-Vvy"/>
+                                    <constraint firstAttribute="trailing" secondItem="QYb-9s-pBL" secondAttribute="trailing" constant="8" id="iAr-cu-8hm"/>
+                                    <constraint firstAttribute="trailing" secondItem="cJa-rp-mO2" secondAttribute="trailing" constant="8" id="uTH-3G-18A"/>
+                                    <constraint firstItem="mKt-4q-ldC" firstAttribute="leading" secondItem="rtw-ZW-7A2" secondAttribute="leading" constant="8" id="zlg-Oq-nuq"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rtw-ZW-7A2" firstAttribute="leading" secondItem="LIU-Ua-ifT" secondAttribute="leading" constant="16" id="6wA-ow-CH1"/>
+                            <constraint firstAttribute="trailing" secondItem="rtw-ZW-7A2" secondAttribute="trailing" constant="16" id="7y7-dl-xha"/>
+                            <constraint firstItem="5eM-4V-lqJ" firstAttribute="top" secondItem="rtw-ZW-7A2" secondAttribute="bottom" constant="170" id="EMz-Jm-jOr"/>
+                            <constraint firstItem="rtw-ZW-7A2" firstAttribute="top" secondItem="o2v-k2-dMt" secondAttribute="bottom" constant="32" id="nJl-5f-g85"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="home" id="exb-jZ-FBa"/>
+                    <connections>
+                        <outlet property="dateLabel" destination="QYb-9s-pBL" id="DCz-1d-S0H"/>
+                        <outlet property="routineNameLabel" destination="cJa-rp-mO2" id="hYH-Zf-d9w"/>
+                        <outlet property="routineStartView" destination="rtw-ZW-7A2" id="wxY-pd-8tk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nKp-VF-XOc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1684" y="175"/>
+            <point key="canvasLocation" x="1684" y="174.96251874062969"/>
         </scene>
         <!--CalendarViewController-->
         <scene sceneID="7O8-9U-d8j">
@@ -100,8 +130,10 @@
                 <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="bUk-Z5-Wbd" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="3vY-tK-sZb">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="selectedImageTintColor" red="1" green="0.3294117647" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="a9c-bi-a4I" kind="relationship" relationship="viewControllers" id="Gzd-QV-4AQ"/>
@@ -117,7 +149,7 @@
     </scenes>
     <resources>
         <image name="calendar" width="20" height="20"/>
-        <image name="dumbbell" width="20" height="20"/>
+        <image name="dumbbell" width="30" height="30"/>
         <image name="home" width="20" height="20"/>
         <image name="settings" width="20" height="20"/>
     </resources>
