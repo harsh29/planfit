@@ -18,10 +18,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zDR-2P-Xfy">
-                                <frame key="frameInset" minX="64" minY="216" width="247" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcome" translatesAutoresizingMaskIntoConstraints="NO" id="DoM-Ei-qsc"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zDR-2P-Xfy">
                                 <color key="backgroundColor" red="1" green="0.32941176470588235" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="247" id="7nq-k1-YjG"/>
+                                    <constraint firstAttribute="height" constant="75" id="Kcu-iP-5h6"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -30,10 +33,17 @@
                                     <segue destination="z6S-aH-YHa" kind="show" id="CeQ-rS-UQm"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wka-lN-1N5">
-                                <frame key="frameInset" minX="64" minY="328" width="247" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Planfit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Snx-ER-WMH">
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="50"/>
+                                <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wka-lN-1N5">
                                 <color key="backgroundColor" red="1" green="0.32941176470588235" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="9DH-uo-moB"/>
+                                    <constraint firstAttribute="width" constant="247" id="LDp-DI-Ccf"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -42,15 +52,20 @@
                                     <segue destination="yxM-yH-Tn1" kind="show" identifier="SignupSegue" id="sWA-2I-GX4"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome ViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LnP-Cr-JF5">
-                                <frame key="frameInset" width="375" height="62"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Snx-ER-WMH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-147.5" id="7fC-1I-yiQ"/>
+                            <constraint firstItem="DoM-Ei-qsc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="MJk-R4-vxJ"/>
+                            <constraint firstItem="Snx-ER-WMH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MOV-99-MTe"/>
+                            <constraint firstItem="wka-lN-1N5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="O9Y-li-UKb"/>
+                            <constraint firstAttribute="trailing" secondItem="DoM-Ei-qsc" secondAttribute="trailing" id="Rg8-Qu-8UH"/>
+                            <constraint firstItem="zDR-2P-Xfy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="317" id="UAS-sH-t3b"/>
+                            <constraint firstItem="zDR-2P-Xfy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="g0q-pV-XuH"/>
+                            <constraint firstItem="wka-lN-1N5" firstAttribute="top" secondItem="zDR-2P-Xfy" secondAttribute="bottom" constant="8" id="jZh-ct-Ro4"/>
+                            <constraint firstItem="DoM-Ei-qsc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="wmL-Hg-nlI"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="DoM-Ei-qsc" secondAttribute="bottom" id="ybx-mi-Bx9"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -74,4 +89,7 @@
             <point key="canvasLocation" x="310" y="345"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="welcome" width="1904" height="1080"/>
+    </resources>
 </document>
