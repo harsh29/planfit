@@ -44,6 +44,8 @@
 		AE6896A11DD80625000B4AF2 /* ParseUserAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6896A01DD80625000B4AF2 /* ParseUserAPIClient.swift */; };
 		AE68969F1DD7FE9F000B4AF2 /* ParseAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68969E1DD7FE9F000B4AF2 /* ParseAPIClient.swift */; };
 		AE6896A11DD80625000B4AF2 /* ParseUserAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6896A01DD80625000B4AF2 /* ParseUserAPIClient.swift */; };
+		AE68969F1DD7FE9F000B4AF2 /* ParseAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68969E1DD7FE9F000B4AF2 /* ParseAPIClient.swift */; };
+		AE6896A11DD80625000B4AF2 /* ParseUserAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6896A01DD80625000B4AF2 /* ParseUserAPIClient.swift */; };
 		AE6896A31DD807DC000B4AF2 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6896A21DD807DC000B4AF2 /* UserDataModel.swift */; };
 		AE6896A71DD8170E000B4AF2 /* PlanFitParseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6896A61DD8170E000B4AF2 /* PlanFitParseObject.swift */; };
 		E617171EEF6A67F187BE2490 /* Pods_Planfit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF14645EC1BEC0784D308F83 /* Pods_Planfit.framework */; };
