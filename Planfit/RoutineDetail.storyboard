@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kyE-5Y-RIq">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -52,26 +52,45 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="gIc-sf-5YG"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Iv-t7-c0W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2783" y="150"/>
+            <point key="canvasLocation" x="3720.8000000000002" y="149.77511244377811"/>
         </scene>
-        <!--StepSlideShowViewController-->
+        <!--StepSlideShow-->
         <scene sceneID="i6d-GM-I5E">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="StepSlideShowViewController" storyboardName="StepSlideShow" referencedIdentifier="StepSlideShowViewController" id="uca-TN-hDc" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="StepSlideShowViewController" storyboardName="StepSlideShow" id="uca-TN-hDc" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8CU-9Q-hcP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2781" y="583"/>
+            <point key="canvasLocation" x="3720" y="553"/>
         </scene>
-        <!--StepEditViewController-->
+        <!--StepEdit-->
         <scene sceneID="OVY-vi-VC0">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="StepEditViewController" storyboardName="StepEdit" referencedIdentifier="StepEditViewController" id="r6h-Is-gwL" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="StepEditViewController" storyboardName="StepEdit" id="r6h-Is-gwL" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HM7-lJ-dLp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3458" y="149"/>
+            <point key="canvasLocation" x="4298" y="149"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="QVf-xO-1wU">
+            <objects>
+                <navigationController storyboardIdentifier="RoutineDetail" automaticallyAdjustsScrollViewInsets="NO" id="kyE-5Y-RIq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="01p-ah-LA1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="SgK-FR-owA" kind="relationship" relationship="rootViewController" id="q3h-Cr-NV7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jtS-Yj-nYW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3026" y="150"/>
         </scene>
     </scenes>
 </document>

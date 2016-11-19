@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="aoQ-NW-YQM">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -45,13 +45,13 @@
             </objects>
             <point key="canvasLocation" x="-22" y="-238"/>
         </scene>
-        <!--TabBarController-->
+        <!--Home-->
         <scene sceneID="L3g-fU-1jh">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="TabBarController" storyboardName="Home" referencedIdentifier="TabBarController" id="qxb-bj-Mdx" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="TabBarController" storyboardName="Home" id="qxb-bj-Mdx" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wS7-pR-bJH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="697" y="-239"/>
+            <point key="canvasLocation" x="498" y="-239"/>
         </scene>
     </scenes>
 </document>

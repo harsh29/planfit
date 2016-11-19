@@ -57,21 +57,21 @@
             </objects>
             <point key="canvasLocation" x="-378.39999999999998" y="116.49175412293854"/>
         </scene>
-        <!--LoginViewController-->
+        <!--Login-->
         <scene sceneID="ZSz-VK-Y8G">
             <objects>
-                <viewControllerPlaceholder storyboardName="Login" referencedIdentifier="LoginViewController" id="z6S-aH-YHa" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Login" id="z6S-aH-YHa" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a11-hl-czF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="502" y="-204"/>
+            <point key="canvasLocation" x="318" y="-147"/>
         </scene>
-        <!--SignupViewController-->
+        <!--Signup-->
         <scene sceneID="RuR-Ik-Kkz">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="SignupViewController" storyboardName="Signup" referencedIdentifier="SignupViewController" id="yxM-yH-Tn1" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="SignupViewController" storyboardName="Signup" id="yxM-yH-Tn1" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k1B-GT-p16" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="502" y="362"/>
+            <point key="canvasLocation" x="310" y="345"/>
         </scene>
     </scenes>
 </document>

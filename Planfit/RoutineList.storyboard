@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dmR-o8-zxp">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -47,10 +47,10 @@
             </objects>
             <point key="canvasLocation" x="2102" y="231"/>
         </scene>
-        <!--RoutineDetailViewController-->
+        <!--RoutineDetail-->
         <scene sceneID="5Vi-k4-ctY">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="RoutineDetailViewController" storyboardName="RoutineDetail" referencedIdentifier="RoutineDetailViewController" id="3qD-fv-pmX" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="RoutineDetailViewController" storyboardName="RoutineDetail" id="3qD-fv-pmX" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n32-9s-bCS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2101" y="669"/>
