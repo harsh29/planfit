@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if ParseUserAPIClient.sharedInstance.getCurrentUser() != nil {
             self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "TabBarController");
         }
+        
 
         return true
     }

@@ -27,7 +27,7 @@ class AccountViewController: UIViewController, UITextFieldDelegate {
             userNameTextField.text = currentUser.username
         }
         
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AccountViewController.dismissKeyboard))
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         self.view.addGestureRecognizer(tap)
     }
 
