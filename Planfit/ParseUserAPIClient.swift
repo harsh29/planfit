@@ -61,25 +61,7 @@ class ParseUserAPIClient {
         }
     }
     
-    /**
-     Login for a user to Parse Server.
-     
-     - Parameter user:  The user in the current session.
-     - Parameter success: Success callback function.
-     - Parameter failure: Failure callback function.
-     
-     
-     - Returns: None
-     */
-    func login(user: UserDataModel, success: @escaping (PFUser) -> (), failure: @escaping () -> ()) {
-        do {
-            let loggedInUser = try PFUser.logIn(withUsername: user.username, password: user.password)
-            success(loggedInUser)
-        } catch {
-            failure()
-        }
-    }
-    
+ 
     /**
     Updates a Parse User.
      
@@ -105,6 +87,30 @@ class ParseUserAPIClient {
         } else {
             let error = ParseUserClientError.noCurrentUser
             failure(error)
+        }
+    }
+    
+    /**
+     Login for a user to Parse Server.
+     
+     - Parameter user:  The user in the current session.
+     - Parameter success: Success callback function.
+     - Parameter failure: Failure callback function.
+     
+     
+     - Returns: None
+     */
+    func login(user: UserDataModel, success: @escaping() -> (), failure: @escaping (Error) -> ()) {
+        if getCurrentUser() == nil {
+            PFUser.logInWithUsername(inBackground: user.username, password: user.password, block: { (didSucceed, error) in
+                if let error = error {
+                    failure(error)
+                } else {
+                    success()
+                }
+            })
+        } else {
+          NSLog("A user is already logged in.")
         }
     }
 }

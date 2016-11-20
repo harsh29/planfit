@@ -1,5 +1,5 @@
 //  Example User Model class for PlanFit
-//  User.swift
+//  UserDataModel.swift
 //  Planfit
 //
 //  Created by Estella Lai on 11/12/16.
