@@ -38,7 +38,7 @@ class User: NSObject, NSCoding
         {
             profileImageUrl = nil
         }
-                
+        
     }
     
     // Decodes User object using NSCoder.
@@ -50,7 +50,7 @@ class User: NSObject, NSCoding
             forKey: "screen_name") as? String
         profileImageUrl = aDecoder.decodeObject(
             forKey: "profile_image_url") as? URL
-            }
+    }
     
     // Encodes User object using NSCoder.
     func encode(with aCoder: NSCoder)
