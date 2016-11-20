@@ -9,14 +9,14 @@
 import Foundation
 
 class Routine: NSObject, NSCoding {
-    var routineUUID: NSUUID?
+    var routineUUID: UUID? // [Olya says:] in swift 3 NSUUID is just UUID.
     var routineName: String?
     var routineDescription: String?
-    var exercises : [NSUUID]?
+    var exerciseIds : [UUID]? // [Olya says:] I stil think these should be actual exercise objects but since it's exercise ids I'm going to rename this var for what it is -- exerciseIds
     var totalDuration: Int?
     //again what are we using the count for?
     var count: Int?
-    var id: String?
+    var id: String? // [Olya says:] what is this id for?
     var ownerName: String?
     var ownerAvatarURL: URL?
     var createdAt:Date?
@@ -37,7 +37,7 @@ class Routine: NSObject, NSCoding {
     
     required init?(json: [String: Any]) {
         guard let workoutDescription = json["description"] as? String,
-            let idValue = json["id"] as? NSUUID else {
+            let idValue = json["id"] as? UUID else {
                 return nil
         }
         
@@ -74,7 +74,7 @@ class Routine: NSObject, NSCoding {
     
     @objc required convenience init?(coder aDecoder: NSCoder) {
         self.init()
-        self.routineUUID = aDecoder.decodeObject(forKey: "routineUUID") as? NSUUID
+        self.routineUUID = aDecoder.decodeObject(forKey: "routineUUID") as? UUID
         self.routineDescription = aDecoder.decodeObject(forKey: "routineDescription") as? String
         self.ownerName = aDecoder.decodeObject(forKey: "ownerName") as? String
         self.ownerAvatarURL = aDecoder.decodeObject(forKey: "ownerAvatarURL") as? URL

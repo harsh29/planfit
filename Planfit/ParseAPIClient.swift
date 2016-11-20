@@ -37,6 +37,18 @@ class ParseAPIClient {
         )
     }
     
+    func loadCalendarForLoggedInUser(success: @escaping ([PFObject]?) -> (), failure: @escaping (Error) -> ()) {
+        let query = PFQuery(className: "PlannnedDay")
+        query.whereKey("userUUID", equalTo: UUID()) // current User actual uuid instead of UUID()
+        query.findObjectsInBackground { (results, error) in
+            if let error = error {
+                failure(error)
+            } else {
+                success(results)
+            }
+        }
+    }
+    
     /**
      Saves a Parse Object onto the Parse Server.
      
@@ -80,4 +92,5 @@ class ParseAPIClient {
             }
         }
     }
+    
 }

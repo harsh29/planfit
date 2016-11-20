@@ -10,6 +10,8 @@
 		0F2BE70C1DD6D0D600D71039 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2BE70B1DD6D0D600D71039 /* AppDelegate.swift */; };
 		0F2BE7131DD6D0D600D71039 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F2BE7121DD6D0D600D71039 /* Assets.xcassets */; };
 		0F2BE7161DD6D0D600D71039 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F2BE7141DD6D0D600D71039 /* LaunchScreen.storyboard */; };
+		0F313C391DE1272B00587DEC /* PlannedDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F313C381DE1272B00587DEC /* PlannedDay.swift */; };
+		0F6A75DA1DE1036D0053E567 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6A75D91DE1036D0053E567 /* Calendar.swift */; };
 		0FF61F5C1DD7C57D002E6C58 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF61F5B1DD7C57D002E6C58 /* Welcome.storyboard */; };
 		0FF61F5E1DD7D588002E6C58 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF61F5D1DD7D588002E6C58 /* Login.storyboard */; };
 		0FF61F601DD7D5E6002E6C58 /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF61F5F1DD7D5E6002E6C58 /* Signup.storyboard */; };
@@ -52,6 +54,8 @@
 		0F2BE7121DD6D0D600D71039 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F2BE7151DD6D0D600D71039 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0F2BE7171DD6D0D600D71039 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0F313C381DE1272B00587DEC /* PlannedDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlannedDay.swift; sourceTree = "<group>"; };
+		0F6A75D91DE1036D0053E567 /* Calendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
 		0FF61F5B1DD7C57D002E6C58 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		0FF61F5D1DD7D588002E6C58 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		0FF61F5F1DD7D5E6002E6C58 /* Signup.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Signup.storyboard; sourceTree = "<group>"; };
@@ -181,6 +185,9 @@
 				85A1828D1DDA8F43002B1D1F /* Routine.swift */,
 				85A1828F1DDA9697002B1D1F /* Exercise.swift */,
 				61A5CDB41DDECAAC0058D3EF /* User.swift */,
+				85A182911DDA9815002B1D1F /* User.swift */,
+				0F6A75D91DE1036D0053E567 /* Calendar.swift */,
+				0F313C381DE1272B00587DEC /* PlannedDay.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -357,6 +364,7 @@
 			files = (
 				85A1828C1DDA8DB0002B1D1F /* RoutineRun.swift in Sources */,
 				85A182901DDA9697002B1D1F /* Exercise.swift in Sources */,
+				0F6A75DA1DE1036D0053E567 /* Calendar.swift in Sources */,
 				0FFAB4FE1DD6D67E002C6644 /* LoginViewController.swift in Sources */,
 				0FFAB4FC1DD6D665002C6644 /* WelcomeViewController.swift in Sources */,
 				0FFAB5101DD6DB0A002C6644 /* AccountViewController.swift in Sources */,
@@ -372,6 +380,7 @@
 				0F2BE70C1DD6D0D600D71039 /* AppDelegate.swift in Sources */,
 				0FFAB5041DD6D6B6002C6644 /* CalendarViewController.swift in Sources */,
 				0FFAB50C1DD6D9D5002C6644 /* StepEditViewController.swift in Sources */,
+				0F313C391DE1272B00587DEC /* PlannedDay.swift in Sources */,
 				AE68969F1DD7FE9F000B4AF2 /* ParseAPIClient.swift in Sources */,
 				0FFAB5121DD6DB8C002C6644 /* MediaGalleryViewController.swift in Sources */,
 				85A1828E1DDA8F43002B1D1F /* Routine.swift in Sources */,
