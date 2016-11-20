@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Parse
 
 class Routine: NSObject, NSCoding {
     var routineUUID: UUID? // [Olya says:] in swift 3 NSUUID is just UUID.
@@ -21,6 +22,9 @@ class Routine: NSObject, NSCoding {
     var ownerAvatarURL: URL?
     var createdAt:Date?
     var updatedAt:Date?
+    var userUUID: UUID!
+    
+    static var allRoutines: [Routine] = []
     
     static let sharedDateFormatter = dateFormatter()
     
@@ -80,5 +84,34 @@ class Routine: NSObject, NSCoding {
         self.ownerAvatarURL = aDecoder.decodeObject(forKey: "ownerAvatarURL") as? URL
         self.createdAt = aDecoder.decodeObject(forKey: "createdAt") as? Date
         self.updatedAt = aDecoder.decodeObject(forKey: "updatedAt") as? Date
+    }
+    
+    init(routine: PFObject) {
+        /// Not Implemented
+        self.routineUUID = routine.value(forKey: "routineUUID") as? UUID
+        
+    }
+    
+    class func routinesWithArray(pfObjects: [PFObject]) -> [Routine] {
+        var routines = [Routine]()
+        
+        for pfObject in pfObjects {
+            let routine = Routine(routine: pfObject)
+            routines.append(routine)
+        }
+        
+        return routines
+    }
+    
+    /// call this method to load user's routines when user logs in
+    public class func loadRoutines() {
+        
+        ParseAPIClient.sharedInstance.loadForLoggedInUser(entity: "Routine", success: { (results: [PFObject]?) in
+            let routines = Routine.routinesWithArray(pfObjects: results!)
+            self.allRoutines = routines
+        }) { (error: Error) in
+            print(error.localizedDescription)
+        }
+        
     }
 }

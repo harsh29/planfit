@@ -41,7 +41,7 @@ class Calendar: NSObject{
     /// call this method to load user's calendar when user logs in
     public class func loadCalendar() {
 
-        ParseAPIClient.sharedInstance.loadCalendarForLoggedInUser(success: { (results: [PFObject]?) in
+        ParseAPIClient.sharedInstance.loadForLoggedInUser(entity: "PlannedDay", success: { (results: [PFObject]?) in
             let days = PlannedDay.plannedDaysWithArray(pfObjects: results!)
             self.plannedDays = days
         }) { (error: Error) in

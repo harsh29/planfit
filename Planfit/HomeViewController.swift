@@ -13,6 +13,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var routineStartView: UIView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var routineNameLabel: UILabel!
+    @IBOutlet weak var startButton: UIButton!
     
     private static let formatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -23,6 +24,13 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //self.loadUserState()
+        self.setCalendarCardAppearance()
+        self.setCalendarCardContent()
+    }
+    
+    private func setCalendarCardAppearance() {
+        
         routineStartView.layer.shadowOffset = CGSize(width: -2.0, height: 2.0)
         routineStartView.layer.shadowRadius = 2.0
         routineStartView.layer.shadowOpacity = 0.5
@@ -30,13 +38,30 @@ class HomeViewController: UIViewController {
         
         routineStartView.layer.borderColor = UIColor.black.cgColor
         routineStartView.layer.borderWidth = 1
+    }
+    
+    private func setCalendarCardContent() {
         
         let date = HomeViewController.formatter.string(from: Date())
         self.dateLabel.text = date
         
-        let routine = Calendar.getTodaysRoutine()
-        self.routineNameLabel.text = routine?.routineName
+        if let routine = Calendar.getTodaysRoutine() {
+            self.startButton.isHidden = false
+            self.routineNameLabel.text = routine.routineName
+        } else {
+            self.startButton.isHidden = true
+            if Routine.allRoutines.isEmpty {
+                self.routineNameLabel.text = "Nothing to do today? Head over to the workout routines tab and make one up then head over to the calendar and select a workout routine for today!"
+            } else {
+                self.routineNameLabel.text = "Nothing to do today? Head over to the calendar and select a workout routine for today!"
+            }
+        }
+    }
+    
+    private func loadUserState() {
         
+        Calendar.loadCalendar()
+        Routine.loadRoutines()
     }
 
     override func didReceiveMemoryWarning() {
