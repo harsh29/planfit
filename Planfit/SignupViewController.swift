@@ -8,12 +8,19 @@
 
 import UIKit
 
-class SignupViewController: UIViewController {
+class SignupViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var userNameTextField: UITextField!
+    
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    @IBOutlet weak var emailTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AccountViewController.dismissKeyboard))
+        self.view.addGestureRecognizer(tap)
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +28,42 @@ class SignupViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    /**
+     Signs a user up onto the Parse Server
+     
+     - Parameter sender: Any.
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+     - Returns: None
+     */
+    @IBAction func onSignUpClick(_ sender: Any) {
+        guard let username = userNameTextField.text, userNameTextField.text != "",
+            let password = passwordTextField.text, passwordTextField.text != "",
+            let email = emailTextField.text, emailTextField.text != ""
+            else {
+                NSLog("Cannot sign user up, missing required fields.")
+                return
+            }
+        
+        let newUser = UserDataModel(username: username, password: password, email: email)
+        ParseUserAPIClient.sharedInstance.signUp(user: newUser, success: {
+            self.performSegue(withIdentifier: "HomeSegue", sender: sender)
+            
+        }, failure: {(error) in
+            NSLog("Something bad happened.")
+            NSLog(error.localizedDescription)
+        })
     }
-    */
+
+    /**
+     Dismisses keyboard on keyboard Return key
+     
+     - Parameter None
+     
+     - Returns: None
+     */
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 
 }

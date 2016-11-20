@@ -34,9 +34,8 @@ class UserDataModel: PlanFitParseObject {
         userObject["email"] = self.email
         ParseAPIClient.sharedInstance.save(parseObject: userObject, success: {
             NSLog("User object with userame \(self.username) saved successfully.")
-            }, failure: {(error) in
-                NSLog(error.localizedDescription)
+        }, failure: {(error) in
+            NSLog(error.localizedDescription)
         })
     }
-    
 }

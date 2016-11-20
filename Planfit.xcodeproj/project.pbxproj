@@ -34,11 +34,11 @@
 		0FFAB50E1DD6DAB4002C6644 /* RoutineFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFAB50D1DD6DAB4002C6644 /* RoutineFinishViewController.swift */; };
 		0FFAB5101DD6DB0A002C6644 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFAB50F1DD6DB0A002C6644 /* AccountViewController.swift */; };
 		0FFAB5121DD6DB8C002C6644 /* MediaGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFAB5111DD6DB8C002C6644 /* MediaGalleryViewController.swift */; };
-		61A5CDB51DDECAAC0058D3EF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A5CDB41DDECAAC0058D3EF /* User.swift */; };
 		61D1FD111DDAE79100ECF9AB /* APIClientConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D1FD101DDAE79100ECF9AB /* APIClientConfig.swift */; };
 		85A1828C1DDA8DB0002B1D1F /* RoutineRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A1828B1DDA8DB0002B1D1F /* RoutineRun.swift */; };
 		85A1828E1DDA8F43002B1D1F /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A1828D1DDA8F43002B1D1F /* Routine.swift */; };
 		85A182901DDA9697002B1D1F /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A1828F1DDA9697002B1D1F /* Exercise.swift */; };
+		AE0D42FD1DE2323500CE70ED /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0D42FC1DE2323500CE70ED /* User.swift */; };
 		AE68969F1DD7FE9F000B4AF2 /* ParseAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68969E1DD7FE9F000B4AF2 /* ParseAPIClient.swift */; };
 		AE6896A11DD80625000B4AF2 /* ParseUserAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6896A01DD80625000B4AF2 /* ParseUserAPIClient.swift */; };
 		AE6896A31DD807DC000B4AF2 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6896A21DD807DC000B4AF2 /* UserDataModel.swift */; };
@@ -77,12 +77,12 @@
 		0FFAB50F1DD6DB0A002C6644 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		0FFAB5111DD6DB8C002C6644 /* MediaGalleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaGalleryViewController.swift; sourceTree = "<group>"; };
 		4522442C6E0A4B226D3B8EAB /* Pods-Planfit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Planfit.release.xcconfig"; path = "Pods/Target Support Files/Pods-Planfit/Pods-Planfit.release.xcconfig"; sourceTree = "<group>"; };
-		61A5CDB41DDECAAC0058D3EF /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		61D1FD101DDAE79100ECF9AB /* APIClientConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClientConfig.swift; sourceTree = "<group>"; };
 		854FEE3B9EE693EB2659E254 /* Pods-Planfit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Planfit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Planfit/Pods-Planfit.debug.xcconfig"; sourceTree = "<group>"; };
 		85A1828B1DDA8DB0002B1D1F /* RoutineRun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineRun.swift; sourceTree = "<group>"; };
 		85A1828D1DDA8F43002B1D1F /* Routine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
 		85A1828F1DDA9697002B1D1F /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		AE0D42FC1DE2323500CE70ED /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AE68969E1DD7FE9F000B4AF2 /* ParseAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseAPIClient.swift; sourceTree = "<group>"; };
 		AE6896A01DD80625000B4AF2 /* ParseUserAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseUserAPIClient.swift; sourceTree = "<group>"; };
 		AE6896A21DD807DC000B4AF2 /* UserDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
@@ -180,7 +180,7 @@
 				85A1828B1DDA8DB0002B1D1F /* RoutineRun.swift */,
 				85A1828D1DDA8F43002B1D1F /* Routine.swift */,
 				85A1828F1DDA9697002B1D1F /* Exercise.swift */,
-				61A5CDB41DDECAAC0058D3EF /* User.swift */,
+				AE0D42FC1DE2323500CE70ED /* User.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -364,8 +364,8 @@
 				AE6896A31DD807DC000B4AF2 /* UserDataModel.swift in Sources */,
 				0FFAB5081DD6D7D5002C6644 /* RoutineDetailViewController.swift in Sources */,
 				0FFAB5001DD6D68D002C6644 /* SignupViewController.swift in Sources */,
+				AE0D42FD1DE2323500CE70ED /* User.swift in Sources */,
 				0FFAB5061DD6D710002C6644 /* RoutineListViewController.swift in Sources */,
-				61A5CDB51DDECAAC0058D3EF /* User.swift in Sources */,
 				0FFAB50A1DD6D855002C6644 /* StepSlideShowViewController.swift in Sources */,
 				61D1FD111DDAE79100ECF9AB /* APIClientConfig.swift in Sources */,
 				AE6896A11DD80625000B4AF2 /* ParseUserAPIClient.swift in Sources */,

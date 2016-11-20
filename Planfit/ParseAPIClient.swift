@@ -11,7 +11,6 @@ import UIKit
 import Parse
 
 class ParseAPIClient {
-    
     /**
      Singleton instance and private initializer
      

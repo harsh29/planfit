@@ -12,6 +12,7 @@ import Parse
 
 enum ParseUserClientError: Error {
     case noCurrentUser
+    case signUpFailure
 }
 
 class ParseUserAPIClient {
@@ -48,7 +49,7 @@ class ParseUserAPIClient {
             parseUser.username = user.username
             parseUser.password = user.password
             parseUser.email = user.email
-            
+                
             parseUser.signUpInBackground { (succeeded, error) in
                 if let error = error {
                     // Show the errorString somewhere and let the user try again.
@@ -58,6 +59,9 @@ class ParseUserAPIClient {
                     success()
                 }
             }
+        } else {
+            let currentUser = getCurrentUser()
+            NSLog("There is already a user with username \(currentUser?.username) signed in.")
         }
     }
     
