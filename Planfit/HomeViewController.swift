@@ -13,6 +13,13 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var routineStartView: UIView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var routineNameLabel: UILabel!
+    
+    private static let formatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM d"
+        return formatter
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,6 +30,12 @@ class HomeViewController: UIViewController {
         
         routineStartView.layer.borderColor = UIColor.black.cgColor
         routineStartView.layer.borderWidth = 1
+        
+        let date = HomeViewController.formatter.string(from: Date())
+        self.dateLabel.text = date
+        
+        let routine = Calendar.getTodaysRoutine()
+        self.routineNameLabel.text = routine?.routineName
         
     }
 

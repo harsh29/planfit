@@ -21,6 +21,7 @@ enum Status {
 }
 
 class RoutineRun: NSObject, NSCoding {
+    var routine: Routine!
     var routineRunUUID: NSUUID?
     var routinePerformed: String?
     var routinePerformeduuid: NSUUID?
