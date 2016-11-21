@@ -11,8 +11,6 @@ class Exercise: NSObject {
     var exerciseUUID: NSUUID?
     var exerciseName: String?
     var exerciseDescription: String?
-    var previousExerciseName : [String]?
-    var nextExerciseName : [String]?
     var exerciseDuration: Int?
     var reps: Int?
     var totalSets: Int?
@@ -22,5 +20,31 @@ class Exercise: NSObject {
     var exerciseVideoURL: URL?
     var createdAt:Date?
     var updatedAt:Date?
+    
+    init(name: String?, description: String?, duration: Int?, reps: Int?, imageURL: String?, videoURL: String?) {
+        if let eName = name {
+            self.exerciseName = eName
+        }
+        if let eDescription = description {
+            self.exerciseDescription = eDescription
+        }
+        if let eDuration = duration {
+            self.exerciseDuration = eDuration
+        }
+        if let eReps = reps {
+            self.reps = eReps
+        }
+        if let eImageURL = imageURL {
+            self.exerciseImageURL = URL(string: eImageURL)
+        }
+        if let eVideoURL = videoURL {
+            self.exerciseVideoURL = URL(string: eVideoURL)
+        }
+        self.createdAt = Date()
+        
+        //TO DO
+        //write to Parse, update id.
+        
+    }
     
 }

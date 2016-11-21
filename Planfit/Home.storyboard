@@ -20,39 +20,44 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rtw-ZW-7A2">
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKt-4q-ldC">
+                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKt-4q-ldC">
                                         <color key="backgroundColor" red="1" green="0.32941176470588235" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="ixl-3d-yis"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="44"/>
                                         <state key="normal" title="Start!">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="onStartButtonTap:" destination="a9c-bi-a4I" eventType="touchUpInside" id="AKD-B6-J5i"/>
-                                            <segue destination="7Fh-XN-hpX" kind="show" id="XmF-sR-Iaa"/>
+                                            <segue destination="7Fh-XN-hpX" kind="show" identifier="HomeToRoutineDetail" id="XmF-sR-Iaa"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nov 5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QYb-9s-pBL">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Nov 5" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="QYb-9s-pBL">
                                         <fontDescription key="fontDescription" type="system" pointSize="92"/>
                                         <color key="textColor" red="1" green="0.3294117647" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ARM DAY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJa-rp-mO2">
-                                        <fontDescription key="fontDescription" type="system" pointSize="44"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="cJa-rp-mO2">
+                                        <string key="text">Nothing to do today? Head over to the workout routines tab and make one up then head over to the calendar and select a workout routine for today!</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="cJa-rp-mO2" firstAttribute="top" relation="greaterThanOrEqual" secondItem="QYb-9s-pBL" secondAttribute="bottom" constant="24" id="4Ea-Kg-zmt"/>
                                     <constraint firstItem="QYb-9s-pBL" firstAttribute="leading" secondItem="rtw-ZW-7A2" secondAttribute="leading" constant="8" id="AWU-XK-4E8"/>
-                                    <constraint firstItem="cJa-rp-mO2" firstAttribute="leading" secondItem="rtw-ZW-7A2" secondAttribute="leading" constant="8" id="Bf2-zI-w5P"/>
-                                    <constraint firstItem="mKt-4q-ldC" firstAttribute="top" secondItem="cJa-rp-mO2" secondAttribute="bottom" constant="44" id="JRf-a8-4ZW"/>
-                                    <constraint firstItem="cJa-rp-mO2" firstAttribute="top" secondItem="QYb-9s-pBL" secondAttribute="bottom" constant="44" id="LDX-jb-KBf"/>
+                                    <constraint firstItem="cJa-rp-mO2" firstAttribute="leading" secondItem="rtw-ZW-7A2" secondAttribute="leading" constant="12" id="Bf2-zI-w5P"/>
+                                    <constraint firstItem="mKt-4q-ldC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="cJa-rp-mO2" secondAttribute="bottom" constant="8" id="JRf-a8-4ZW"/>
+                                    <constraint firstItem="cJa-rp-mO2" firstAttribute="top" secondItem="QYb-9s-pBL" secondAttribute="bottom" priority="250" constant="44" id="LDX-jb-KBf"/>
                                     <constraint firstAttribute="bottom" secondItem="mKt-4q-ldC" secondAttribute="bottom" constant="8" id="Rck-mZ-GNb"/>
                                     <constraint firstAttribute="trailing" secondItem="mKt-4q-ldC" secondAttribute="trailing" constant="8" id="e4B-vN-6cV"/>
                                     <constraint firstItem="QYb-9s-pBL" firstAttribute="top" secondItem="rtw-ZW-7A2" secondAttribute="top" constant="24" id="fe2-bu-Vvy"/>
                                     <constraint firstAttribute="trailing" secondItem="QYb-9s-pBL" secondAttribute="trailing" constant="8" id="iAr-cu-8hm"/>
-                                    <constraint firstAttribute="trailing" secondItem="cJa-rp-mO2" secondAttribute="trailing" constant="8" id="uTH-3G-18A"/>
+                                    <constraint firstAttribute="trailing" secondItem="cJa-rp-mO2" secondAttribute="trailing" constant="12" id="uTH-3G-18A"/>
                                     <constraint firstItem="mKt-4q-ldC" firstAttribute="leading" secondItem="rtw-ZW-7A2" secondAttribute="leading" constant="8" id="zlg-Oq-nuq"/>
                                 </constraints>
                             </view>
@@ -70,6 +75,7 @@
                         <outlet property="dateLabel" destination="QYb-9s-pBL" id="DCz-1d-S0H"/>
                         <outlet property="routineNameLabel" destination="cJa-rp-mO2" id="hYH-Zf-d9w"/>
                         <outlet property="routineStartView" destination="rtw-ZW-7A2" id="wxY-pd-8tk"/>
+                        <outlet property="startButton" destination="mKt-4q-ldC" id="fDf-QC-9DY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nKp-VF-XOc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -122,7 +128,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H80-yi-5rr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2427" y="175"/>
+            <point key="canvasLocation" x="2238" y="175"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ixq-ri-NFm">
