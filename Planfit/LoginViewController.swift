@@ -17,7 +17,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AccountViewController.dismissKeyboard))
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         self.view.addGestureRecognizer(tap)
     }
 
@@ -26,6 +26,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
 
+    /**
+     handles login button action
+     
+     - Parameter Any
+     
+     - Returns: None
+     */
     @IBAction func loginOnClick(_ sender: Any) {
         guard let username = usernameTextField.text, usernameTextField.text != "",
             let password = passwordTextField.text, passwordTextField.text != "" else {
@@ -40,8 +47,27 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         })
     }
     
+    /**
+     Dismiess keyboard on keyboard return key
+     
+     - Parameter UITextField: textfield of interest
+     
+     - Returns: None
+     */
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    /**
+     Dismisses keyboard on tap gesture recognizer
+     
+     - Parameter None
+     
+     - Returns: None
+     */
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
 }
