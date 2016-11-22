@@ -42,6 +42,7 @@
 		85A1828E1DDA8F43002B1D1F /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A1828D1DDA8F43002B1D1F /* Routine.swift */; };
 		85A182901DDA9697002B1D1F /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A1828F1DDA9697002B1D1F /* Exercise.swift */; };
 		AE0D42FD1DE2323500CE70ED /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0D42FC1DE2323500CE70ED /* User.swift */; };
+		AE0D43001DE4144000CE70ED /* RoutineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0D42FF1DE4144000CE70ED /* RoutineTableViewCell.swift */; };
 		AE68969F1DD7FE9F000B4AF2 /* ParseAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68969E1DD7FE9F000B4AF2 /* ParseAPIClient.swift */; };
 		AE6896A11DD80625000B4AF2 /* ParseUserAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6896A01DD80625000B4AF2 /* ParseUserAPIClient.swift */; };
 		AE6896A31DD807DC000B4AF2 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6896A21DD807DC000B4AF2 /* UserDataModel.swift */; };
@@ -89,6 +90,7 @@
 		85A1828D1DDA8F43002B1D1F /* Routine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
 		85A1828F1DDA9697002B1D1F /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		AE0D42FC1DE2323500CE70ED /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		AE0D42FF1DE4144000CE70ED /* RoutineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineTableViewCell.swift; sourceTree = "<group>"; };
 		AE68969E1DD7FE9F000B4AF2 /* ParseAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseAPIClient.swift; sourceTree = "<group>"; };
 		AE6896A01DD80625000B4AF2 /* ParseUserAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseUserAPIClient.swift; sourceTree = "<group>"; };
 		AE6896A21DD807DC000B4AF2 /* UserDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 		0F2BE70A1DD6D0D500D71039 /* Planfit */ = {
 			isa = PBXGroup;
 			children = (
+				AE0D42FE1DE4141F00CE70ED /* Views */,
 				61D1FD0F1DDAE76600ECF9AB /* DataModels */,
 				AE68969D1DD7FE83000B4AF2 /* API */,
 				0FF61F5A1DD7C556002E6C58 /* Storyboards */,
@@ -209,6 +212,14 @@
 				DF14645EC1BEC0784D308F83 /* Pods_Planfit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AE0D42FE1DE4141F00CE70ED /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AE0D42FF1DE4144000CE70ED /* RoutineTableViewCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		AE68969D1DD7FE83000B4AF2 /* API */ = {
@@ -368,6 +379,7 @@
 				85A1828C1DDA8DB0002B1D1F /* RoutineRun.swift in Sources */,
 				85A182901DDA9697002B1D1F /* Exercise.swift in Sources */,
 				0F6A75DA1DE1036D0053E567 /* Calendar.swift in Sources */,
+				AE0D43001DE4144000CE70ED /* RoutineTableViewCell.swift in Sources */,
 				0FFAB4FE1DD6D67E002C6644 /* LoginViewController.swift in Sources */,
 				0FFAB4FC1DD6D665002C6644 /* WelcomeViewController.swift in Sources */,
 				0FFAB5101DD6DB0A002C6644 /* AccountViewController.swift in Sources */,

@@ -25,7 +25,7 @@ class Routine: NSObject, NSCoding {
     var userUUID: UUID!
     
     static var allRoutines: [Routine] = []
-    
+        
     static let sharedDateFormatter = dateFormatter()
     
     class func dateFormatter() -> DateFormatter {
