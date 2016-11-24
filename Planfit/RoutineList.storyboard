@@ -1,8 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dmR-o8-zxp">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="YBV-dg-0MC">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,34 +21,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RoutineList ViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICk-o0-4a8">
-                                <frame key="frameInset" width="375" height="62"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rL1-0A-lbY">
-                                <frame key="frameInset" minY="542" width="375" height="76"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.32941176470588235" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Add Routine">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="3qD-fv-pmX" kind="show" identifier="RoutineDetailSegue" id="fum-de-vRO"/>
-                                </connections>
-                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="53" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="X97-xV-Rfg">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="routineCell" rowHeight="53" id="hhm-1v-y28" customClass="RoutineTableViewCell" customModule="Planfit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="53"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hhm-1v-y28" id="atr-J1-Iwf">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cardio Blaster" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SY7-ni-4ji">
+                                                    <rect key="frame" x="5" y="5" width="108" height="42.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="SY7-ni-4ji" firstAttribute="top" secondItem="atr-J1-Iwf" secondAttribute="top" constant="5" id="HEn-dy-i7u"/>
+                                                <constraint firstItem="SY7-ni-4ji" firstAttribute="leading" secondItem="atr-J1-Iwf" secondAttribute="leading" constant="5" id="VvU-7Y-K2s"/>
+                                                <constraint firstAttribute="bottom" secondItem="SY7-ni-4ji" secondAttribute="bottom" constant="5" id="f1a-BG-meZ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="routineNameLabel" destination="SY7-ni-4ji" id="Ut2-Ac-sWa"/>
+                                            <segue destination="3qD-fv-pmX" kind="show" id="EoS-0I-TRI"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="X97-xV-Rfg" firstAttribute="top" secondItem="bP3-jc-pAe" secondAttribute="bottom" constant="-64" id="L1b-80-rzX"/>
+                            <constraint firstItem="X97-xV-Rfg" firstAttribute="leading" secondItem="p2R-sN-vc4" secondAttribute="leading" id="MOL-Bm-evt"/>
+                            <constraint firstAttribute="trailing" secondItem="X97-xV-Rfg" secondAttribute="trailing" id="YgA-gS-Ci0"/>
+                            <constraint firstItem="baZ-ei-AF1" firstAttribute="top" secondItem="X97-xV-Rfg" secondAttribute="bottom" id="d2i-tc-OcM"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Routines" image="kettlebell" id="aEp-YQ-k38"/>
+                    <tabBarItem key="tabBarItem" title="Routines" image="kettlebell" id="Nwj-WW-HoA"/>
+                    <navigationItem key="navigationItem" title="Routines" id="bbp-j2-os6">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="oh4-L7-Swu">
+                            <connections>
+                                <segue destination="3qD-fv-pmX" kind="show" id="6EG-cl-Gqh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="routineTableView" destination="X97-xV-Rfg" id="BY1-3L-Bky"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xfZ-Jg-a48" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2102" y="231"/>
+            <point key="canvasLocation" x="3980" y="230.73463268365819"/>
         </scene>
         <!--RoutineDetail-->
         <scene sceneID="5Vi-k4-ctY">
@@ -53,10 +84,33 @@
                 <viewControllerPlaceholder storyboardIdentifier="RoutineDetailViewController" storyboardName="RoutineDetail" id="3qD-fv-pmX" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n32-9s-bCS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2101" y="669"/>
+            <point key="canvasLocation" x="3979" y="732"/>
+        </scene>
+        <!--Routines-->
+        <scene sceneID="gGn-dI-ZZJ">
+            <objects>
+                <navigationController storyboardIdentifier="RoutineListNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YBV-dg-0MC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Routines" image="kettlebell" id="aEp-YQ-k38"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OGA-ST-dDf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dmR-o8-zxp" kind="relationship" relationship="rootViewController" id="oud-1I-arn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K2K-NM-sX5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3040.8000000000002" y="230.73463268365819"/>
         </scene>
     </scenes>
     <resources>
         <image name="kettlebell" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="6EG-cl-Gqh"/>
+    </inferredMetricsTieBreakers>
 </document>
