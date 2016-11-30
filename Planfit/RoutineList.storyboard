@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="YBV-dg-0MC">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="YBV-dg-0MC">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -29,25 +29,25 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hhm-1v-y28" id="atr-J1-Iwf">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="52.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cardio Blaster" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SY7-ni-4ji">
-                                                    <rect key="frame" x="5" y="5" width="108" height="42.5"/>
+                                                    <rect key="frame" x="10" y="10" width="108" height="32.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="SY7-ni-4ji" firstAttribute="top" secondItem="atr-J1-Iwf" secondAttribute="top" constant="5" id="HEn-dy-i7u"/>
-                                                <constraint firstItem="SY7-ni-4ji" firstAttribute="leading" secondItem="atr-J1-Iwf" secondAttribute="leading" constant="5" id="VvU-7Y-K2s"/>
-                                                <constraint firstAttribute="bottom" secondItem="SY7-ni-4ji" secondAttribute="bottom" constant="5" id="f1a-BG-meZ"/>
+                                                <constraint firstItem="SY7-ni-4ji" firstAttribute="top" secondItem="atr-J1-Iwf" secondAttribute="top" constant="10" id="HEn-dy-i7u"/>
+                                                <constraint firstItem="SY7-ni-4ji" firstAttribute="leading" secondItem="atr-J1-Iwf" secondAttribute="leading" constant="10" id="VvU-7Y-K2s"/>
+                                                <constraint firstAttribute="bottom" secondItem="SY7-ni-4ji" secondAttribute="bottom" constant="10" id="f1a-BG-meZ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="routineNameLabel" destination="SY7-ni-4ji" id="Ut2-Ac-sWa"/>
-                                            <segue destination="3qD-fv-pmX" kind="show" id="EoS-0I-TRI"/>
+                                            <segue destination="3qD-fv-pmX" kind="show" identifier="showRoutineExerciseSegue" id="EoS-0I-TRI"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -78,10 +78,10 @@
             </objects>
             <point key="canvasLocation" x="3980" y="230.73463268365819"/>
         </scene>
-        <!--RoutineDetail-->
+        <!--RoutineDetailViewController-->
         <scene sceneID="5Vi-k4-ctY">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="RoutineDetailViewController" storyboardName="RoutineDetail" id="3qD-fv-pmX" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="RoutineDetailViewController" storyboardName="RoutineDetail" referencedIdentifier="RoutineDetailViewController" id="3qD-fv-pmX" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n32-9s-bCS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3979" y="732"/>
@@ -111,6 +111,6 @@
         <image name="kettlebell" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6EG-cl-Gqh"/>
+        <segue reference="EoS-0I-TRI"/>
     </inferredMetricsTieBreakers>
 </document>

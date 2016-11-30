@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kyE-5Y-RIq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kyE-5Y-RIq">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Routine Detail View Controller-->
+        <!--Routines-->
         <scene sceneID="iiz-mj-o1A">
             <objects>
                 <viewController storyboardIdentifier="RoutineDetailViewController" id="SgK-FR-owA" customClass="RoutineDetailViewController" customModule="Planfit" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,41 +21,81 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v1y-hT-VjB">
-                                <frame key="frameInset" minY="591" width="375" height="76"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.3294117647" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Begin">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="uca-TN-hDc" kind="show" identifier="RoutineDetailToSlideShow" id="IHa-kf-5x7"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSQ-5r-V3P">
-                                <frame key="frameInset" minY="135" width="375" height="76"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.3294117647" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Edit Step">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="r6h-Is-gwL" kind="show" identifier="StepEditSegue" id="hgh-qm-glk"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RoutineDetail ViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7TH-si-ePz">
-                                <frame key="frameInset" width="375" height="62"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="woy-Er-48h">
+                                <rect key="frame" x="0.0" y="64" width="375" height="443"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="exerciseCell" rowHeight="55" id="K7K-Uw-wJ4" customClass="ExerciseTableViewCell" customModule="Planfit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="55"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="K7K-Uw-wJ4" id="b13-bn-Wzv">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="54.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Exercise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r3W-xO-lCw">
+                                                    <rect key="frame" x="17" y="17" width="64" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="r3W-xO-lCw" secondAttribute="bottom" constant="10" id="lqO-1Z-scL"/>
+                                                <constraint firstItem="r3W-xO-lCw" firstAttribute="leading" secondItem="b13-bn-Wzv" secondAttribute="leading" constant="10" id="n5H-Ii-87h"/>
+                                                <constraint firstItem="r3W-xO-lCw" firstAttribute="top" secondItem="b13-bn-Wzv" secondAttribute="top" constant="10" id="p6d-ar-0do"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="exerciseNameLabel" destination="r3W-xO-lCw" id="IXB-9A-jmf"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTV-Oa-jaT">
+                                <rect key="frame" x="55" y="515" width="265" height="94"/>
+                                <color key="backgroundColor" red="1" green="0.3294117647" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="265" id="Dwk-co-MtC"/>
+                                    <constraint firstAttribute="height" constant="94" id="yzH-kB-k1W"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Begin">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="uca-TN-hDc" kind="show" identifier="RoutineDetailToSlideShowSegue" id="RGY-Rm-09s"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="woy-Er-48h" firstAttribute="leading" secondItem="x49-OX-9FM" secondAttribute="leading" id="K0w-J5-ve8"/>
+                            <constraint firstItem="sh4-F2-2Di" firstAttribute="top" secondItem="woy-Er-48h" secondAttribute="bottom" constant="111" id="KhH-9r-0Pk"/>
+                            <constraint firstItem="BTV-Oa-jaT" firstAttribute="centerX" secondItem="x49-OX-9FM" secondAttribute="centerX" id="LbH-Fk-LWv"/>
+                            <constraint firstItem="BTV-Oa-jaT" firstAttribute="top" secondItem="woy-Er-48h" secondAttribute="bottom" constant="5" id="jgX-GN-egZ"/>
+                            <constraint firstAttribute="trailing" secondItem="woy-Er-48h" secondAttribute="trailing" id="qMb-1x-uv5"/>
+                            <constraint firstItem="woy-Er-48h" firstAttribute="top" secondItem="Uil-Lo-1FU" secondAttribute="bottom" id="rzQ-4M-6WJ"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="gIc-sf-5YG"/>
+                    <tabBarItem key="tabBarItem" title="Routines" image="kettlebell" id="43I-8Y-RXe"/>
+                    <navigationItem key="navigationItem" id="gIc-sf-5YG">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="p5a-im-8p9">
+                            <connections>
+                                <segue destination="r6h-Is-gwL" kind="show" identifier="EditRoutineSegue" id="gmN-B5-9IR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="exerciseListTable" destination="woy-Er-48h" id="1ZK-ES-RSl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Iv-t7-c0W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -93,4 +136,7 @@
             <point key="canvasLocation" x="3026" y="150"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="kettlebell" width="30" height="30"/>
+    </resources>
 </document>

@@ -37,6 +37,7 @@
 		0FFAB50E1DD6DAB4002C6644 /* RoutineFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFAB50D1DD6DAB4002C6644 /* RoutineFinishViewController.swift */; };
 		0FFAB5101DD6DB0A002C6644 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFAB50F1DD6DB0A002C6644 /* AccountViewController.swift */; };
 		0FFAB5121DD6DB8C002C6644 /* MediaGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFAB5111DD6DB8C002C6644 /* MediaGalleryViewController.swift */; };
+		61B7A3651DEE756C008607E5 /* ExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B7A3641DEE756C008607E5 /* ExerciseTableViewCell.swift */; };
 		61D1FD111DDAE79100ECF9AB /* APIClientConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D1FD101DDAE79100ECF9AB /* APIClientConfig.swift */; };
 		85A1828C1DDA8DB0002B1D1F /* RoutineRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A1828B1DDA8DB0002B1D1F /* RoutineRun.swift */; };
 		85A1828E1DDA8F43002B1D1F /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A1828D1DDA8F43002B1D1F /* Routine.swift */; };
@@ -84,6 +85,7 @@
 		0FFAB50F1DD6DB0A002C6644 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		0FFAB5111DD6DB8C002C6644 /* MediaGalleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaGalleryViewController.swift; sourceTree = "<group>"; };
 		4522442C6E0A4B226D3B8EAB /* Pods-Planfit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Planfit.release.xcconfig"; path = "Pods/Target Support Files/Pods-Planfit/Pods-Planfit.release.xcconfig"; sourceTree = "<group>"; };
+		61B7A3641DEE756C008607E5 /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewCell.swift; sourceTree = "<group>"; };
 		61D1FD101DDAE79100ECF9AB /* APIClientConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClientConfig.swift; sourceTree = "<group>"; };
 		854FEE3B9EE693EB2659E254 /* Pods-Planfit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Planfit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Planfit/Pods-Planfit.debug.xcconfig"; sourceTree = "<group>"; };
 		85A1828B1DDA8DB0002B1D1F /* RoutineRun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineRun.swift; sourceTree = "<group>"; };
@@ -191,7 +193,6 @@
 				85A1828D1DDA8F43002B1D1F /* Routine.swift */,
 				85A1828F1DDA9697002B1D1F /* Exercise.swift */,
 				AE0D42FC1DE2323500CE70ED /* User.swift */,
-				61A5CDB41DDECAAC0058D3EF /* User.swift */,
 				0F6A75D91DE1036D0053E567 /* Calendar.swift */,
 				0F313C381DE1272B00587DEC /* PlannedDay.swift */,
 			);
@@ -218,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				AE0D42FF1DE4144000CE70ED /* RoutineTableViewCell.swift */,
+				61B7A3641DEE756C008607E5 /* ExerciseTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -391,6 +393,7 @@
 				0FFAB5061DD6D710002C6644 /* RoutineListViewController.swift in Sources */,
 				0FFAB50A1DD6D855002C6644 /* StepSlideShowViewController.swift in Sources */,
 				61D1FD111DDAE79100ECF9AB /* APIClientConfig.swift in Sources */,
+				61B7A3651DEE756C008607E5 /* ExerciseTableViewCell.swift in Sources */,
 				AE6896A11DD80625000B4AF2 /* ParseUserAPIClient.swift in Sources */,
 				0F2BE70C1DD6D0D600D71039 /* AppDelegate.swift in Sources */,
 				0FFAB5041DD6D6B6002C6644 /* CalendarViewController.swift in Sources */,
