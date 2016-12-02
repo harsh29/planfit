@@ -41,10 +41,11 @@ class Routine: NSObject, NSCoding {
     
     required init?(json: [String: Any]) {
         guard let workoutDescription = json["description"] as? String,
-            let idValue = json["id"] as? UUID else {
+            let idValue = json["id"] as? UUID,
+            let workoutName = json["name"] as? String else {
                 return nil
         }
-        
+        self.routineName = workoutName
         self.routineDescription = workoutDescription
         self.routineUUID = idValue
         
