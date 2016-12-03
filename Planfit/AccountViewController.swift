@@ -9,9 +9,12 @@
 import UIKit
 
 class AccountViewController: UIViewController, UITextFieldDelegate {
-
+    
     var user : UserDataModel?
-    var passwordChanged = false
+
+    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var failureMessageView: UIView!
+    @IBOutlet weak var successfulMessageView: UIView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var userNameTextField: UITextField!
@@ -23,12 +26,15 @@ class AccountViewController: UIViewController, UITextFieldDelegate {
         user = UserDataModel(parseObject: ParseUserAPIClient.sharedInstance.getCurrentUser()!)
         if let currentUser = user {
             emailTextField.text = currentUser.email
-            passwordTextField.text = "Type in a new password here"
             userNameTextField.text = currentUser.username
         }
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         self.view.addGestureRecognizer(tap)
+        
+        successfulMessageView.alpha = 0.0
+        failureMessageView.alpha = 0.0
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,7 +57,7 @@ class AccountViewController: UIViewController, UITextFieldDelegate {
         let newUserName = userNameTextField.text
         let newEmail = emailTextField.text
         
-        if user.username != newUserName || passwordChanged || user.email != newEmail {
+        if user.username != newUserName || passwordTextField.text != "" || user.email != newEmail {
             return true;
         } else {
             return false;
@@ -70,27 +76,27 @@ class AccountViewController: UIViewController, UITextFieldDelegate {
                                     password: passwordTextField.text!,
                                     email: emailTextField.text!)
         if needsUpdate() {
-            var alert : UIAlertController!
             ParseUserAPIClient.sharedInstance.update(user: newUser, success: { (user) in
-                    alert = UIAlertController(title: "OK", message: "Your settings have been saved.", preferredStyle: UIAlertControllerStyle.alert)
-                }, failure: { (error) in
-                    alert = UIAlertController(title: "Something went wrong", message: error.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+                UIView.animate(withDuration: 3, animations: {
+                    self.successfulMessageView.alpha = 1.0}, completion: { (bool) in
+                        self.successfulMessageView.alpha = 0.0
+                })
+                self.successfulMessageView.isHidden = false
+            }, failure: { (error) in
+                self.errorLabel.text = "Update unsuccessful!"
+                UIView.animate(withDuration: 3, animations: {
+                    self.failureMessageView.alpha = 1.0}, completion: { (bool) in
+                        self.failureMessageView.alpha = 0.0
+                })
             })
-            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        }
-        
-    }
+        } else {
+            errorLabel.text = "You have made no change."
+            UIView.animate(withDuration: 3, animations: {
+                self.failureMessageView.alpha = 1.0}, completion: { (bool) in
+                    self.failureMessageView.alpha = 0.0
+            })
 
-    /**
-     Updates passwordChange boolean when the password text field finishes editing
-     
-     - Parameter None
-     
-     - Returns: None
-     */
-    @IBAction func onPasswordChanged(_ sender: AnyObject) {
-        self.passwordChanged = true
+        }
     }
     
     /**
