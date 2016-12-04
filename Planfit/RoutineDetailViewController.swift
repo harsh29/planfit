@@ -10,8 +10,10 @@ import UIKit
 
 class RoutineDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate {
     
+    @IBOutlet weak var routineTitlePlaceholderLabel: UILabel!
+    @IBOutlet weak var routineDescriptionPlaceholderLabel: UILabel!
     @IBOutlet weak var exerciseListTable: UITableView!
-    var routine: Routine!
+    var routine: Routine?
     @IBOutlet weak var routineTitle: UITextView!
     @IBOutlet weak var routineDescription: UITextView!
     var exercises: [Exercise] = []
@@ -28,8 +30,16 @@ class RoutineDetailViewController: UIViewController, UITableViewDataSource, UITa
         routineTitle.delegate = self
         routineDescription.delegate = self
         
-        routineTitle.text = routine.routineName
-        routineDescription.text = routine.routineDescription
+        if let existingRoutine = routine {
+            routineTitle.text = existingRoutine.routineName
+            routineDescription.text = existingRoutine.routineDescription
+            textViewDidChange(routineTitle)
+            textViewDidChange(routineDescription)
+        } else {
+            routineTitle.text = ""
+            routineDescription.text = ""
+        }
+
         
         exercises = Routine.getExerciseSet(count: 3)
     }
@@ -45,9 +55,9 @@ class RoutineDetailViewController: UIViewController, UITableViewDataSource, UITa
             if (selectedRow! < exercises.count) {
                 stepEditViewController.exercise = exercises[selectedRow!]
             } else {
-                let newExercise = Exercise(name: nil, description: nil, duration: nil, reps: nil, imageURL: nil, videoURL: nil)
-                exercises.append(newExercise)
-                stepEditViewController.exercise = newExercise
+                //let newExercise = Exercise(name: nil, description: nil, duration: nil, reps: nil, imageURL: nil, videoURL: nil)
+                //exercises.append(newExercise)
+                //stepEditViewController.exercise = newExercise
             }
         }
     }
@@ -58,7 +68,7 @@ class RoutineDetailViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let exerciseIds = self.routine.exerciseIds else {
+        guard let exerciseIds = self.routine?.exerciseIds else {
             return 1
         }
         return exerciseIds.count + 1
@@ -78,9 +88,9 @@ class RoutineDetailViewController: UIViewController, UITableViewDataSource, UITa
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if (textView == routineTitle) {
-            routine.routineName = textView.text
+            routine?.routineName = textView.text
         } else if (textView == routineDescription) {
-            routine.routineDescription = textView.text
+            routine?.routineDescription = textView.text
         }
     }
     
@@ -88,7 +98,23 @@ class RoutineDetailViewController: UIViewController, UITableViewDataSource, UITa
         
         performSegue(withIdentifier: "RoutineDetailToStepEdit", sender: self)
     }
-    
 
+    func textViewDidChange(_ textView: UITextView) {
+        if (textView == routineTitle) {
+            if (textView.text.isEmpty) {
+                routineTitlePlaceholderLabel.isHidden = false
+            } else {
+                routineTitlePlaceholderLabel.isHidden = true
+            }
+        } else if (textView == routineDescription) {
+            if (textView.text.isEmpty) {
+                routineDescriptionPlaceholderLabel.isHidden = false
+            } else {
+                routineDescriptionPlaceholderLabel.isHidden = true
+            }
+        }
+        
+        
+    }
 
 }

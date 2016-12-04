@@ -63,9 +63,9 @@
                                             <frame key="frameInset" width="342" height="55"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7v-39-wMN">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="add an exercise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7v-39-wMN">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -97,14 +97,22 @@
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6wl-Sg-3qI">
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="enter routine title here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Td-3E-S6q">
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" scrollEnabled="NO" text="ARM DAY" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="s3k-ni-iX8">
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="textColor" red="1" green="0.3294117647" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                     </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="enter routine notes here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cX1-pM-wny">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vUh-YN-w8d">
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -112,11 +120,19 @@
                                     </textView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="6Td-3E-S6q" firstAttribute="leading" secondItem="s3k-ni-iX8" secondAttribute="leading" id="2S2-BS-hes"/>
                                     <constraint firstAttribute="trailing" secondItem="vUh-YN-w8d" secondAttribute="trailing" constant="8" id="6e2-E1-JQo"/>
                                     <constraint firstAttribute="trailing" secondItem="s3k-ni-iX8" secondAttribute="trailing" constant="8" id="DUm-eS-SE4"/>
+                                    <constraint firstItem="cX1-pM-wny" firstAttribute="leading" secondItem="vUh-YN-w8d" secondAttribute="leading" id="Drw-h6-beh"/>
                                     <constraint firstItem="s3k-ni-iX8" firstAttribute="top" secondItem="6wl-Sg-3qI" secondAttribute="top" constant="8" id="FI9-fg-XdI"/>
-                                    <constraint firstAttribute="bottom" secondItem="vUh-YN-w8d" secondAttribute="bottom" id="N6o-58-bnP"/>
+                                    <constraint firstItem="6Td-3E-S6q" firstAttribute="bottom" secondItem="s3k-ni-iX8" secondAttribute="bottom" id="HYG-bJ-Si7"/>
+                                    <constraint firstItem="6Td-3E-S6q" firstAttribute="top" secondItem="s3k-ni-iX8" secondAttribute="top" id="Hbe-WV-Gyg"/>
+                                    <constraint firstItem="cX1-pM-wny" firstAttribute="bottom" secondItem="vUh-YN-w8d" secondAttribute="bottom" id="KKY-um-MWm"/>
+                                    <constraint firstAttribute="bottom" secondItem="vUh-YN-w8d" secondAttribute="bottom" constant="8" id="N6o-58-bnP"/>
+                                    <constraint firstItem="6Td-3E-S6q" firstAttribute="trailing" secondItem="s3k-ni-iX8" secondAttribute="trailing" id="UFi-Qp-0Cu"/>
                                     <constraint firstItem="vUh-YN-w8d" firstAttribute="leading" secondItem="6wl-Sg-3qI" secondAttribute="leading" constant="8" id="ZOY-VQ-jqp"/>
+                                    <constraint firstItem="cX1-pM-wny" firstAttribute="trailing" secondItem="vUh-YN-w8d" secondAttribute="trailing" id="Zr2-7j-eRj"/>
+                                    <constraint firstItem="cX1-pM-wny" firstAttribute="top" secondItem="vUh-YN-w8d" secondAttribute="top" id="kax-LB-Ur4"/>
                                     <constraint firstItem="s3k-ni-iX8" firstAttribute="leading" secondItem="6wl-Sg-3qI" secondAttribute="leading" constant="8" id="vXJ-a4-gLp"/>
                                     <constraint firstItem="vUh-YN-w8d" firstAttribute="top" secondItem="s3k-ni-iX8" secondAttribute="bottom" constant="8" id="zSk-GO-SgO"/>
                                 </constraints>
@@ -141,7 +157,9 @@
                     <connections>
                         <outlet property="exerciseListTable" destination="woy-Er-48h" id="1ZK-ES-RSl"/>
                         <outlet property="routineDescription" destination="vUh-YN-w8d" id="znG-UK-OeN"/>
+                        <outlet property="routineDescriptionPlaceholderLabel" destination="cX1-pM-wny" id="Wav-ko-0e9"/>
                         <outlet property="routineTitle" destination="s3k-ni-iX8" id="Mba-gM-os7"/>
+                        <outlet property="routineTitlePlaceholderLabel" destination="6Td-3E-S6q" id="ezx-wS-pRY"/>
                         <segue destination="r6h-Is-gwL" kind="show" identifier="RoutineDetailToStepEdit" id="fda-t1-9tB"/>
                     </connections>
                 </viewController>
