@@ -115,4 +115,18 @@ class Routine: NSObject, NSCoding {
         }
         
     }
+    
+    public class func getExerciseSet(count: Int) -> [Exercise] {
+        
+        // TO DO: get exercises for this routine from Parse using exercise ids
+        
+        var exercises = [Exercise]()
+        
+        // temp exercise set
+        for i in 0..<count {
+            let exercise  = Exercise(name: "Exercise \(i)", description: "Exercise \(i) description.", duration: 5, reps: 10, imageURL: nil, videoURL: nil)
+            exercises.append(exercise)
+        }
+        return exercises
+    }
 }
