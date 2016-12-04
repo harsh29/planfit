@@ -59,7 +59,7 @@ class StepEditViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
 
         let row = pickerView.selectedRow(inComponent: 0)
-        print("this is the pickerView\(row)")
+        // print("this is the pickerView\(row)")
         
         if component == 0 {
             return minutes.count
