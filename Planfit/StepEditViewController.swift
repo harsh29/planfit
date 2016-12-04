@@ -14,14 +14,20 @@ class StepEditViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     @IBOutlet weak var autocompleteTextfield: AutoCompleteTextField!
     @IBOutlet weak var timePickerView: UIPickerView!
     @IBOutlet weak var repsTextField: UITextField!
+    @IBOutlet weak var notesTextField: UITextView!
     
     let minutes = Array(0...9)
     let seconds = Array(0...59)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         timePickerView.delegate = self
         timePickerView.dataSource = self
+        
+        if (exercise != nil) {
+            loadExercise()
+        }
         handleExerciseAutocompleteField()
 
     }
@@ -76,6 +82,22 @@ class StepEditViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     @IBAction func onSaveButtonTap(_ sender: UIButton) {
         
         //TO DO: save step info and pass it back to routine detail
+    }
+    
+    func loadExercise() {
+        autocompleteTextfield.text = exercise?.exerciseName
+        let time = exercise?.exerciseDuration
+        let minutes = Int(time! / 60)
+        let seconds = Int(time! % 60)
+        timePickerView.selectRow(minutes, inComponent: 0, animated: true)
+        timePickerView.selectRow(seconds, inComponent: 1, animated: true)
+        if (exercise?.reps != nil) {
+            repsTextField.text = "\((exercise?.reps!)!)"
+        } else {
+            repsTextField.text = ""
+        }
+
+        notesTextField.text = exercise?.exerciseDescription
     }
 
 }

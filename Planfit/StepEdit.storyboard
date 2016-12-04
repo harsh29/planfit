@@ -40,7 +40,6 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter exercise name here" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ldf-xE-5D8" customClass="AutoCompleteTextField" customModule="Planfit" customModuleProvider="target">
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -55,7 +54,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter number of reps here" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9TW-Ew-VSs">
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -69,6 +68,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                     </textView>
                                     <pickerView contentMode="scaleToFill" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="FDx-Fv-fqL">
+                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="27F-WA-B7D"/>
                                         </constraints>
@@ -119,6 +119,7 @@
                     </view>
                     <connections>
                         <outlet property="autocompleteTextfield" destination="ldf-xE-5D8" id="Pmz-MN-JUX"/>
+                        <outlet property="notesTextField" destination="W0n-IX-vmz" id="f04-jQ-1Hy"/>
                         <outlet property="repsTextField" destination="9TW-Ew-VSs" id="96G-vD-gLA"/>
                         <outlet property="timePickerView" destination="FDx-Fv-fqL" id="iXf-ZL-9sg"/>
                     </connections>
