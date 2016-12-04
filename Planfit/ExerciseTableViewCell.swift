@@ -10,6 +10,9 @@ import UIKit
 
 class ExerciseTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var durationLabel: UILabel!
+    @IBOutlet weak var repsLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var exerciseNameLabel: UILabel!
     var exercise : Exercise?
 
@@ -26,7 +29,25 @@ class ExerciseTableViewCell: UITableViewCell {
     
     func updateLabel() {
         if let exercise = exercise {
-            exerciseNameLabel.text = exercise.exerciseName
+            if exercise.exerciseName != nil {
+                exerciseNameLabel.text = exercise.exerciseName!
+            }
+            if exercise.exerciseDescription != nil {
+                descriptionLabel.text = exercise.exerciseDescription!
+            }
+            if exercise.exerciseDuration != nil {
+                let minutes = (exercise.exerciseDuration!/60)
+                let seconds = exercise.exerciseDuration! % 60
+                durationLabel.text = "\(minutes) min \(seconds) sec"
+            }
+            var repsLabelString = ""
+            if exercise.reps != nil {
+                repsLabelString = "\(exercise.reps!) reps"
+            }
+            if exercise.totalSets != nil {
+                repsLabelString = repsLabelString + "for \(exercise.totalSets!) total sets"
+            }
+            repsLabel.text = repsLabelString
         }
     }
 
