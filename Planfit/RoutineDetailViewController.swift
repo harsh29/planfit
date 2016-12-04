@@ -19,6 +19,7 @@ class RoutineDetailViewController: UIViewController, UITableViewDataSource, UITa
         // Do any additional setup after loading the view.
         exerciseListTable.dataSource = self
         exerciseListTable.delegate = self
+        
         exerciseListTable.rowHeight = UITableViewAutomaticDimension
         exerciseListTable.estimatedRowHeight = 100
     }
