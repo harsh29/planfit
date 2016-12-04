@@ -8,10 +8,15 @@
 
 import UIKit
 
-class RoutineDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class RoutineDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate {
     
+    @IBOutlet weak var routineTitlePlaceholderLabel: UILabel!
+    @IBOutlet weak var routineDescriptionPlaceholderLabel: UILabel!
     @IBOutlet weak var exerciseListTable: UITableView!
-    var routine: Routine!
+    var routine: Routine?
+    @IBOutlet weak var routineTitle: UITextView!
+    @IBOutlet weak var routineDescription: UITextView!
+    var exercises: [Exercise] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,13 +26,39 @@ class RoutineDetailViewController: UIViewController, UITableViewDataSource, UITa
         exerciseListTable.delegate = self
         exerciseListTable.rowHeight = UITableViewAutomaticDimension
         exerciseListTable.estimatedRowHeight = 100
+        
+        routineTitle.delegate = self
+        routineDescription.delegate = self
+        
+        if let existingRoutine = routine {
+            routineTitle.text = existingRoutine.routineName
+            routineDescription.text = existingRoutine.routineDescription
+            textViewDidChange(routineTitle)
+            textViewDidChange(routineDescription)
+        } else {
+            routineTitle.text = ""
+            routineDescription.text = ""
+        }
+
+        
+        exercises = Routine.getExerciseSet(count: 3)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
         if (segue.identifier == "RoutineDetailToSlideShowSegue") {
             let slideShowViewController = segue.destination as! StepSlideShowViewController
-            //slideShowViewController.routine = self.todaysRoutine
+            slideShowViewController.routine = self.routine
+        } else if (segue.identifier == "RoutineDetailToStepEdit") {
+            let selectedRow = exerciseListTable.indexPathForSelectedRow?.row
+            let stepEditViewController = segue.destination as! StepEditViewController
+            if (selectedRow! < exercises.count) {
+                stepEditViewController.exercise = exercises[selectedRow!]
+            } else {
+                //let newExercise = Exercise(name: nil, description: nil, duration: nil, reps: nil, imageURL: nil, videoURL: nil)
+                //exercises.append(newExercise)
+                //stepEditViewController.exercise = newExercise
+            }
         }
     }
     
@@ -37,22 +68,53 @@ class RoutineDetailViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let exerciseIds = self.routine.exerciseIds else {
-            return 0
+        guard let exerciseIds = self.routine?.exerciseIds else {
+            return 1
         }
-        return exerciseIds.count
+        return exerciseIds.count + 1
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = exerciseListTable.dequeueReusableCell(withIdentifier: "exerciseCell", for: indexPath) as! ExerciseTableViewCell
-        cell.exercise = getExercise(for: indexPath.row)
-        cell.updateLabel()
-        return cell
+        if (indexPath.row < exerciseListTable.numberOfRows(inSection: indexPath.section) - 1) {
+            let cell = exerciseListTable.dequeueReusableCell(withIdentifier: "exerciseCell", for: indexPath) as! ExerciseTableViewCell
+            cell.exercise = exercises[indexPath.row]
+            cell.updateLabel()
+            return cell
+        } else {
+            let cell = exerciseListTable.dequeueReusableCell(withIdentifier: "addExerciseCell", for: indexPath)
+            return cell
+        }
     }
     
-    func getExercise(for indexPath: Int) -> Exercise {
-        // Replace this method with actual server call
-        return Exercise(name: "Exercise \(indexPath)", description: "This is a description for this exercise.", duration: 5, reps: 10, imageURL: nil, videoURL: nil)
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if (textView == routineTitle) {
+            routine?.routineName = textView.text
+        } else if (textView == routineDescription) {
+            routine?.routineDescription = textView.text
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: "RoutineDetailToStepEdit", sender: self)
+    }
+
+    func textViewDidChange(_ textView: UITextView) {
+        if (textView == routineTitle) {
+            if (textView.text.isEmpty) {
+                routineTitlePlaceholderLabel.isHidden = false
+            } else {
+                routineTitlePlaceholderLabel.isHidden = true
+            }
+        } else if (textView == routineDescription) {
+            if (textView.text.isEmpty) {
+                routineDescriptionPlaceholderLabel.isHidden = false
+            } else {
+                routineDescriptionPlaceholderLabel.isHidden = true
+            }
+        }
+        
+        
     }
 
 }

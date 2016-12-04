@@ -12,6 +12,8 @@
 		0F2BE7161DD6D0D600D71039 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F2BE7141DD6D0D600D71039 /* LaunchScreen.storyboard */; };
 		0F313C391DE1272B00587DEC /* PlannedDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F313C381DE1272B00587DEC /* PlannedDay.swift */; };
 		0F313C3B1DE2916400587DEC /* CountDownLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F313C3A1DE2916400587DEC /* CountDownLabel.swift */; };
+		0F35BA771DF3B7290052DDDA /* AutoCompleteTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F35BA761DF3B7290052DDDA /* AutoCompleteTextField.swift */; };
+		0F35BA791DF3C0E70052DDDA /* ExerciseNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F35BA781DF3C0E70052DDDA /* ExerciseNames.swift */; };
 		0F6A75DA1DE1036D0053E567 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6A75D91DE1036D0053E567 /* Calendar.swift */; };
 		0FF61F5C1DD7C57D002E6C58 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF61F5B1DD7C57D002E6C58 /* Welcome.storyboard */; };
 		0FF61F5E1DD7D588002E6C58 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF61F5D1DD7D588002E6C58 /* Login.storyboard */; };
@@ -59,6 +61,8 @@
 		0F2BE7171DD6D0D600D71039 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F313C381DE1272B00587DEC /* PlannedDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlannedDay.swift; sourceTree = "<group>"; };
 		0F313C3A1DE2916400587DEC /* CountDownLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountDownLabel.swift; sourceTree = "<group>"; };
+		0F35BA761DF3B7290052DDDA /* AutoCompleteTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCompleteTextField.swift; sourceTree = "<group>"; };
+		0F35BA781DF3C0E70052DDDA /* ExerciseNames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseNames.swift; sourceTree = "<group>"; };
 		0F6A75D91DE1036D0053E567 /* Calendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
 		0FF61F5B1DD7C57D002E6C58 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		0FF61F5D1DD7D588002E6C58 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -143,7 +147,9 @@
 				0F2BE7121DD6D0D600D71039 /* Assets.xcassets */,
 				0F2BE7141DD6D0D600D71039 /* LaunchScreen.storyboard */,
 				0F2BE7171DD6D0D600D71039 /* Info.plist */,
+				0F35BA761DF3B7290052DDDA /* AutoCompleteTextField.swift */,
 				0F313C3A1DE2916400587DEC /* CountDownLabel.swift */,
+				0F35BA781DF3C0E70052DDDA /* ExerciseNames.swift */,
 			);
 			path = Planfit;
 			sourceTree = "<group>";
@@ -380,6 +386,7 @@
 			files = (
 				85A1828C1DDA8DB0002B1D1F /* RoutineRun.swift in Sources */,
 				85A182901DDA9697002B1D1F /* Exercise.swift in Sources */,
+				0F35BA791DF3C0E70052DDDA /* ExerciseNames.swift in Sources */,
 				0F6A75DA1DE1036D0053E567 /* Calendar.swift in Sources */,
 				AE0D43001DE4144000CE70ED /* RoutineTableViewCell.swift in Sources */,
 				0FFAB4FE1DD6D67E002C6644 /* LoginViewController.swift in Sources */,
@@ -387,6 +394,7 @@
 				0FFAB5101DD6DB0A002C6644 /* AccountViewController.swift in Sources */,
 				0FFAB50E1DD6DAB4002C6644 /* RoutineFinishViewController.swift in Sources */,
 				AE6896A31DD807DC000B4AF2 /* UserDataModel.swift in Sources */,
+				0F35BA771DF3B7290052DDDA /* AutoCompleteTextField.swift in Sources */,
 				0FFAB5081DD6D7D5002C6644 /* RoutineDetailViewController.swift in Sources */,
 				0FFAB5001DD6D68D002C6644 /* SignupViewController.swift in Sources */,
 				AE0D42FD1DE2323500CE70ED /* User.swift in Sources */,
