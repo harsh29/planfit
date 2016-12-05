@@ -34,7 +34,42 @@ class AccountViewController: UIViewController, UITextFieldDelegate {
         
         successfulMessageView.alpha = 0.0
         failureMessageView.alpha = 0.0
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
 
+    }
+    
+    /**
+     Updates view dimensions when keybaord is shown.
+     
+     - Parameter notification: NSNotification
+     
+     - Returns: None
+     */
+    func keyboardWillShow(notification: NSNotification) {
+        
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0{
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+        
+    }
+    
+    /**
+     Updates view dimensions when keybaord is hidden.
+     
+     - Parameter notification: NSNotification
+     
+     - Returns: None
+     */
+    func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0{
+                self.view.frame.origin.y += keyboardSize.height
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
