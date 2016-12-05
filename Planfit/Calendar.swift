@@ -69,12 +69,24 @@ class Calendar: NSObject{
         let routine = Routine()
         routine.routineName = "MARATHON DAY"
         routine.routineDescription = "I run 24 miles today in San Diego"
+        routine.exercises = getTempSteps()
         
         let plannedDay = PlannedDay()
         plannedDay.date = Date()
         plannedDay.routine = routine
         
         return plannedDay
+    }
+    
+    // return some dummy steps for testing while routine detail screen is under construction
+    private class func getTempSteps() -> [Exercise] {
+        
+        let step0 = Exercise(name: "Run", description: "My regular treadmill run", duration: 5, reps: nil, imageURL: "https://goo.gl/0Qhlhp", videoURL: nil)
+        let step1 = Exercise(name: "Pushup", description: "Chest, shoulders, arms", duration: 5, reps: nil, imageURL: "https://goo.gl/73nGJB", videoURL: nil)
+        let step2 = Exercise(name: "Maru Swings", description: "Just swinging", duration: 5, reps: nil, imageURL: nil, videoURL: "https://youtu.be/rnj6cnlIjM4?t=170")
+        let steps = [step0, step1, step2]
+        
+        return steps
     }
     
 }

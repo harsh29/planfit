@@ -23,9 +23,16 @@ class Routine: NSObject, NSCoding {
     var createdAt:Date?
     var updatedAt:Date?
     var userUUID: UUID!
+    var exercises: [Exercise] = []
     
-    static var allRoutines: [Routine] = []
+    static var _allRoutines: [Routine] = []
+    static var allRoutines: [Routine] = {
         
+        if (_allRoutines.isEmpty) {
+            _allRoutines = getRoutineSet()
+        }
+        return _allRoutines
+    }()
     static let sharedDateFormatter = dateFormatter()
     
     class func dateFormatter() -> DateFormatter {
@@ -116,7 +123,7 @@ class Routine: NSObject, NSCoding {
         
     }
     
-    public class func getExerciseSet(count: Int) -> [Exercise] {
+    class func getExerciseSet(count: Int) -> [Exercise] {
         
         // TO DO: get exercises for this routine from Parse using exercise ids
         
@@ -128,5 +135,45 @@ class Routine: NSObject, NSCoding {
             exercises.append(exercise)
         }
         return exercises
+    }
+    
+    class func getRoutineSet() -> [Routine] {
+        
+        // TO DO: get all routines for this user from Parse
+        
+        var routines = [Routine]()
+        
+        // temp routine set
+        let routine0 = Routine(json: ["name" : "Cardio Blast",
+                                    "description" : "Lots of exercises to get your heart rate up.",
+                                    "id" : UUID.init(uuidString: "e06a08e0-0687-4f33-8870-e64113b6f68a") as Any,
+                                    "owner" : ["owner" : "minnie", "avatar_url" : "https://scontent.xx.fbcdn.net/v/t1.0-1/c0.2.50.50/p50x50/13709755_10201927466626271_4964123079867840378_n.jpg?oh=613ff325f2fd88bedf5e24f0de10b028&oe=58B5EA5B"]])
+        routine0?.exerciseIds = [UUID.init(uuidString: "f48aa5c5-b67b-4f2e-b05b-f7d46de3986b")!,
+                                    UUID.init(uuidString: "894391ab-80ca-4ae9-b102-c457291d5b84")!,
+                                    UUID.init(uuidString: "a4ff15ab-8d93-4683-9b57-ce79751c94d9")!]
+        routine0?.exercises = getExerciseSet(count: 3)
+        
+        let routine1 = Routine(json: ["name" : "Nowhere To Run",
+                                      "description" : "Lots of leg exercises.",
+                                      "id" : UUID.init(uuidString: "e06a08e0-0687-4f33-8870-e64113b6f68b") as Any,
+                                      "owner" : ["owner" : "minnie", "avatar_url" : "https://scontent.xx.fbcdn.net/v/t1.0-1/c0.2.50.50/p50x50/13709755_10201927466626271_4964123079867840378_n.jpg?oh=613ff325f2fd88bedf5e24f0de10b028&oe=58B5EA5B"]])
+        routine1?.exerciseIds = [UUID.init(uuidString: "f48aa5c5-b67b-4f2e-b05b-f7d46de3986c")!,
+                                       UUID.init(uuidString: "894391ab-80ca-4ae9-b102-c457291d5b85")!,
+                                       UUID.init(uuidString: "a4ff15ab-8d93-4683-9b57-ce79751c94d8")!]
+        routine1?.exercises = getExerciseSet(count: 3)
+        
+        let routine2 = Routine(json: ["name" : "Sudden Death",
+                                      "description" : "Crossfit exercise set.",
+                                      "id" : UUID.init(uuidString: "e06a08e0-0687-4f33-8870-e64113b6f68c") as Any,
+                                      "owner" : ["owner" : "minnie", "avatar_url" : "https://scontent.xx.fbcdn.net/v/t1.0-1/c0.2.50.50/p50x50/13709755_10201927466626271_4964123079867840378_n.jpg?oh=613ff325f2fd88bedf5e24f0de10b028&oe=58B5EA5B"]])
+        routine2?.exerciseIds = [UUID.init(uuidString: "f48aa5c5-b67b-4f2e-b05b-f7d46de3986d")!,
+                                       UUID.init(uuidString: "894391ab-80ca-4ae9-b102-c457291d5b86")!,
+                                       UUID.init(uuidString: "a4ff15ab-8d93-4683-9b57-ce79751c94d7")!]
+        routine2?.exercises = getExerciseSet(count: 3)
+        
+        routines.append(routine0!)
+        routines.append(routine1!)
+        routines.append(routine2!)
+        return routines
     }
 }

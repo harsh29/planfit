@@ -20,6 +20,7 @@ class CountDownLabel: UILabel {
     
     var completionText: String = ""
     var delegate: CountDownDelegate?
+    var cancelled = false
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -34,9 +35,13 @@ class CountDownLabel: UILabel {
     }
 
     func start() {
+        cancelled = false
         endDateTime = NSDate.init(timeIntervalSinceNow: totalSeconds)
         
         Timer.scheduledTimer(withTimeInterval: updateInterval, repeats: true) { (timer) in
+            if (self.cancelled) {
+                timer.invalidate()
+            }
             if (self.didFinish()) {
                 self.text = self.completionText;
                 self.delegate?.didFinishCountDown(source: self)
@@ -45,6 +50,10 @@ class CountDownLabel: UILabel {
                 self.updateText()
             }
         }
+    }
+    
+    public func cancel() {
+        cancelled = true
     }
     
     private func didFinish() -> Bool {
