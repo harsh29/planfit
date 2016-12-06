@@ -76,6 +76,7 @@
                         <outlet property="routineNameLabel" destination="cJa-rp-mO2" id="hYH-Zf-d9w"/>
                         <outlet property="routineStartView" destination="rtw-ZW-7A2" id="wxY-pd-8tk"/>
                         <outlet property="startButton" destination="mKt-4q-ldC" id="fDf-QC-9DY"/>
+                        <outlet property="tabButton" destination="exb-jZ-FBa" id="XM7-tW-laB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nKp-VF-XOc" userLabel="First Responder" sceneMemberID="firstResponder"/>

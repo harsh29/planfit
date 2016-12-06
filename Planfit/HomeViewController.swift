@@ -10,6 +10,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var tabButton: UITabBarItem!
     @IBOutlet weak var routineStartView: UIView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var routineNameLabel: UILabel!

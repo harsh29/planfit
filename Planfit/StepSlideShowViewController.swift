@@ -33,12 +33,16 @@ class StepSlideShowViewController: UIViewController, CountDownDelegate {
         
         loadStep(at: self.stepIndex)
         countdownLabel.delegate = self
+        countdownLabel.start()
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         stepIndex = 0
-
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        countdownLabel.cancel()
     }
     
     @IBAction func onNextButtonTap(_ sender: AnyObject) {
@@ -48,21 +52,22 @@ class StepSlideShowViewController: UIViewController, CountDownDelegate {
     
     private func loadStep(at index: Int) {
         
-        let step = steps[index]
-    
-        self.nameLabel.text = step.exerciseName
-        if let description = step.exerciseDescription {
-            self.descriptionLabel.text = description
-        }
-        if let duration = step.exerciseDuration {
-            countdownLabel.setTime(seconds: Double(duration))
-            countdownLabel.start()
-        }
-        if let image = step.exerciseImageURL {
-            mediaView.setImageWith(image)
-        }
-        if let video = step.exerciseVideoURL {
-            mediaView.setImageWith(video)
+        if (index < steps.count) {
+            let step = steps[index]
+        
+            self.nameLabel.text = step.exerciseName
+            if let description = step.exerciseDescription {
+                self.descriptionLabel.text = description
+            }
+            if let duration = step.exerciseDuration {
+                countdownLabel.setTime(seconds: Double(duration))
+            }
+            if let image = step.exerciseImageURL {
+                mediaView.setImageWith(image)
+            }
+            if let video = step.exerciseVideoURL {
+                mediaView.setImageWith(video)
+            }
         }
         
     }
@@ -97,31 +102,9 @@ class StepSlideShowViewController: UIViewController, CountDownDelegate {
                     self.contentViewLeadingConstraint.constant = 0
                     self.view.layoutIfNeeded()
                 }, completion: { (finished) in
-                            //
+                    self.countdownLabel.start()
                 })
             })
-            
-            
-            
-//            UIView.animateKeyframes(withDuration: 1, delay: 0, options: UIViewKeyframeAnimationOptions.calculationModeLinear, animations: {
-//                UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.5, animations: {
-//                    self.contentViewLeadingConstraint.constant = -self.contentView.frame.size.width
-//                    self.view.layoutIfNeeded()
-//                })
-//                UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0, animations: { 
-//                    self.contentViewLeadingConstraint.constant = self.contentView.frame.size.width
-//                    self.view.layoutIfNeeded()
-//                    
-//                })
-//                
-//                UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.5, animations: {
-//                    self.contentViewLeadingConstraint.constant = 0
-//                    self.view.layoutIfNeeded()
-//                    self.loadStep(at: self.stepIndex)
-//                })
-//            }) { (finished) in
-//                
-//            }
         }
     }
 
