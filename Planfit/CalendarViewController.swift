@@ -7,9 +7,15 @@
 //
 
 import UIKit
+import CVCalendar
+
 
 class CalendarViewController: UIViewController {
-
+    
+    @IBOutlet weak var monthLabel: UILabel!
+    @IBOutlet weak var calendarView: CVCalendarView!
+    
+    @IBOutlet weak var calendarMenuView: CVCalendarMenuView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
