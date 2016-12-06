@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -84,7 +85,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTV-Oa-jaT">
                                 <color key="backgroundColor" red="1" green="0.3294117647" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="265" id="Dwk-co-MtC"/>
                                     <constraint firstAttribute="height" constant="94" id="yzH-kB-k1W"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -140,19 +140,27 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="BTV-Oa-jaT" secondAttribute="trailing" constant="20" id="6T3-Sv-3QJ"/>
                             <constraint firstItem="6wl-Sg-3qI" firstAttribute="leading" secondItem="x49-OX-9FM" secondAttribute="leading" id="BT8-Jt-vMW"/>
                             <constraint firstItem="woy-Er-48h" firstAttribute="leading" secondItem="x49-OX-9FM" secondAttribute="leading" id="K0w-J5-ve8"/>
                             <constraint firstItem="BTV-Oa-jaT" firstAttribute="centerX" secondItem="x49-OX-9FM" secondAttribute="centerX" id="LbH-Fk-LWv"/>
                             <constraint firstAttribute="trailing" secondItem="6wl-Sg-3qI" secondAttribute="trailing" id="U7K-eP-xrs"/>
                             <constraint firstItem="6wl-Sg-3qI" firstAttribute="top" secondItem="Uil-Lo-1FU" secondAttribute="bottom" id="dnb-ds-AXG"/>
-                            <constraint firstItem="sh4-F2-2Di" firstAttribute="top" secondItem="BTV-Oa-jaT" secondAttribute="bottom" constant="12" id="ffy-HE-QIs"/>
-                            <constraint firstItem="BTV-Oa-jaT" firstAttribute="top" secondItem="woy-Er-48h" secondAttribute="bottom" constant="5" id="jgX-GN-egZ"/>
+                            <constraint firstItem="sh4-F2-2Di" firstAttribute="top" secondItem="BTV-Oa-jaT" secondAttribute="bottom" constant="20" id="ffy-HE-QIs"/>
+                            <constraint firstItem="BTV-Oa-jaT" firstAttribute="top" secondItem="woy-Er-48h" secondAttribute="bottom" constant="8" id="jgX-GN-egZ"/>
                             <constraint firstItem="woy-Er-48h" firstAttribute="top" secondItem="6wl-Sg-3qI" secondAttribute="bottom" id="oro-QP-dIv"/>
                             <constraint firstAttribute="trailing" secondItem="woy-Er-48h" secondAttribute="trailing" id="qMb-1x-uv5"/>
+                            <constraint firstItem="BTV-Oa-jaT" firstAttribute="leading" secondItem="x49-OX-9FM" secondAttribute="leadingMargin" constant="20" id="rr8-hS-gtw"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Routines" image="kettlebell" id="43I-8Y-RXe"/>
-                    <navigationItem key="navigationItem" id="gIc-sf-5YG"/>
+                    <navigationItem key="navigationItem" id="gIc-sf-5YG">
+                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="crZ-sZ-G0t">
+                            <connections>
+                                <action selector="onCancelButtonTap:" destination="SgK-FR-owA" id="CSt-66-Gfh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="exerciseListTable" destination="woy-Er-48h" id="1ZK-ES-RSl"/>

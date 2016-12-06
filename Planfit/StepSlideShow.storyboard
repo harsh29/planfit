@@ -1,11 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="RHW-04-47J">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="RHW-04-47J">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,10 +20,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pG0-9P-BVK">
-                                <rect key="frame" x="55" y="417" width="265" height="94"/>
                                 <color key="backgroundColor" red="1" green="0.3294117647" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="265" id="7C8-hN-tGA"/>
                                     <constraint firstAttribute="height" constant="94" id="Mu1-OR-xfS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -36,49 +32,58 @@
                                     <action selector="onNextButtonTap:" destination="RHW-04-47J" eventType="touchUpInside" id="u44-fn-erv"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pushups" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASG-am-wQS">
-                                <rect key="frame" x="129.5" y="84" width="116" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pushups description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMG-rB-uob">
-                                <rect key="frame" x="109.5" y="130" width="156.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3:45" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDt-hv-Y2M" customClass="CountDownLabel" customModule="Planfit" customModuleProvider="target">
-                                <rect key="frame" x="149" y="160.5" width="77" height="36.5"/>
-                                <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="32"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RRK-bc-GrQ">
-                                <rect key="frame" x="12.5" y="207" width="350" height="200"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZGb-sv-s9W">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pushups description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMG-rB-uob">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3:45" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDt-hv-Y2M" customClass="CountDownLabel" customModule="Planfit" customModuleProvider="target">
+                                        <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="32"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RRK-bc-GrQ"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pushups" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASG-am-wQS">
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <color key="textColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="9Ke-In-TYe"/>
-                                    <constraint firstAttribute="width" constant="350" id="f7R-YA-PUD"/>
+                                    <constraint firstItem="FDt-hv-Y2M" firstAttribute="top" secondItem="qMG-rB-uob" secondAttribute="bottom" constant="32" id="ABv-NP-qh3"/>
+                                    <constraint firstItem="RRK-bc-GrQ" firstAttribute="top" secondItem="FDt-hv-Y2M" secondAttribute="bottom" constant="32" id="E4g-RL-dpC"/>
+                                    <constraint firstAttribute="trailing" secondItem="RRK-bc-GrQ" secondAttribute="trailing" constant="8" id="GEv-DT-oSG"/>
+                                    <constraint firstItem="RRK-bc-GrQ" firstAttribute="centerX" secondItem="ZGb-sv-s9W" secondAttribute="centerX" id="MVG-wQ-vXG"/>
+                                    <constraint firstItem="FDt-hv-Y2M" firstAttribute="centerX" secondItem="ZGb-sv-s9W" secondAttribute="centerX" id="RaN-xJ-M5j"/>
+                                    <constraint firstItem="qMG-rB-uob" firstAttribute="centerX" secondItem="ZGb-sv-s9W" secondAttribute="centerX" id="SeP-sa-zyd"/>
+                                    <constraint firstItem="ASG-am-wQS" firstAttribute="top" secondItem="ZGb-sv-s9W" secondAttribute="top" constant="20" id="YbS-RZ-ybs"/>
+                                    <constraint firstItem="ASG-am-wQS" firstAttribute="centerX" secondItem="ZGb-sv-s9W" secondAttribute="centerX" id="c7x-Rn-jJL"/>
+                                    <constraint firstAttribute="bottom" secondItem="RRK-bc-GrQ" secondAttribute="bottom" constant="8" id="i0w-dY-ZPE"/>
+                                    <constraint firstItem="qMG-rB-uob" firstAttribute="top" secondItem="ASG-am-wQS" secondAttribute="bottom" constant="8" id="mKY-ve-Vxh"/>
+                                    <constraint firstItem="RRK-bc-GrQ" firstAttribute="leading" secondItem="ZGb-sv-s9W" secondAttribute="leading" constant="8" id="n1o-vC-euZ"/>
                                 </constraints>
-                            </imageView>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="pG0-9P-BVK" firstAttribute="centerX" secondItem="khI-si-E8B" secondAttribute="centerX" id="E1l-mR-LIK"/>
-                            <constraint firstItem="FDt-hv-Y2M" firstAttribute="top" secondItem="qMG-rB-uob" secondAttribute="bottom" constant="10" id="Gsx-yd-cAP"/>
-                            <constraint firstItem="FDt-hv-Y2M" firstAttribute="centerX" secondItem="khI-si-E8B" secondAttribute="centerX" id="IKr-rq-EkU"/>
-                            <constraint firstItem="qMG-rB-uob" firstAttribute="top" secondItem="ASG-am-wQS" secondAttribute="bottom" constant="10" id="LdT-ZW-4C3"/>
-                            <constraint firstItem="ASG-am-wQS" firstAttribute="centerX" secondItem="khI-si-E8B" secondAttribute="centerX" id="NRb-mO-ZXl"/>
-                            <constraint firstItem="pG0-9P-BVK" firstAttribute="top" secondItem="RRK-bc-GrQ" secondAttribute="bottom" constant="10" id="Pco-KC-7ba"/>
-                            <constraint firstItem="RRK-bc-GrQ" firstAttribute="centerX" secondItem="khI-si-E8B" secondAttribute="centerX" id="Qg6-YS-CQd"/>
-                            <constraint firstItem="ASG-am-wQS" firstAttribute="top" secondItem="EKi-ma-ysf" secondAttribute="bottom" constant="20" id="SPU-WT-Jlh"/>
-                            <constraint firstItem="RRK-bc-GrQ" firstAttribute="top" secondItem="FDt-hv-Y2M" secondAttribute="bottom" constant="10" id="upJ-CU-SDf"/>
-                            <constraint firstItem="qMG-rB-uob" firstAttribute="centerX" secondItem="khI-si-E8B" secondAttribute="centerX" id="xrS-b3-Tmc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pG0-9P-BVK" secondAttribute="trailing" constant="20" id="HiD-b8-Q75"/>
+                            <constraint firstItem="ZGb-sv-s9W" firstAttribute="leading" secondItem="khI-si-E8B" secondAttribute="leading" id="PSk-J5-4P6"/>
+                            <constraint firstItem="ZGb-sv-s9W" firstAttribute="width" secondItem="khI-si-E8B" secondAttribute="width" id="SR9-70-Km1"/>
+                            <constraint firstItem="pG0-9P-BVK" firstAttribute="leading" secondItem="khI-si-E8B" secondAttribute="leadingMargin" constant="20" id="gJG-yf-qH5"/>
+                            <constraint firstItem="0w5-mj-KLJ" firstAttribute="top" secondItem="pG0-9P-BVK" secondAttribute="bottom" constant="20" id="hZF-4R-FGG"/>
+                            <constraint firstItem="pG0-9P-BVK" firstAttribute="top" secondItem="ZGb-sv-s9W" secondAttribute="bottom" constant="20" id="onh-cK-5eH"/>
+                            <constraint firstItem="ZGb-sv-s9W" firstAttribute="top" secondItem="khI-si-E8B" secondAttribute="top" constant="64" id="w6F-vT-WzZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Step" id="Hrs-fN-cZs"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="contentView" destination="ZGb-sv-s9W" id="N1O-qx-JDE"/>
+                        <outlet property="contentViewLeadingConstraint" destination="PSk-J5-4P6" id="baj-qA-EId"/>
                         <outlet property="countdownLabel" destination="FDt-hv-Y2M" id="ewD-Bl-iJi"/>
                         <outlet property="descriptionLabel" destination="qMG-rB-uob" id="kbj-xP-Fg7"/>
                         <outlet property="mediaView" destination="RRK-bc-GrQ" id="mit-N5-MAe"/>
@@ -96,7 +101,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="RoutineFinishViewController" storyboardName="RoutineFinish" id="4Mm-Lb-bE3" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cHW-nP-bek" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4264" y="-812"/>
+            <point key="canvasLocation" x="4097" y="-812"/>
         </scene>
     </scenes>
 </document>

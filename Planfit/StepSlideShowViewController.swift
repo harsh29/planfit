@@ -16,7 +16,9 @@ class StepSlideShowViewController: UIViewController, CountDownDelegate {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var countdownLabel: CountDownLabel!
     @IBOutlet weak var mediaView: UIImageView!
+    @IBOutlet weak var contentView: UIView!
     
+    @IBOutlet weak var contentViewLeadingConstraint: NSLayoutConstraint!
     
     var routine: Routine!
     var steps: [Exercise] {
@@ -34,6 +36,11 @@ class StepSlideShowViewController: UIViewController, CountDownDelegate {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        stepIndex = 0
+
+    }
+    
     @IBAction func onNextButtonTap(_ sender: AnyObject) {
         
         self.goToNextStep()        
@@ -41,7 +48,6 @@ class StepSlideShowViewController: UIViewController, CountDownDelegate {
     
     private func loadStep(at index: Int) {
         
-        self.stepIndex += 1
         let step = steps[index]
     
         self.nameLabel.text = step.exerciseName
@@ -50,7 +56,6 @@ class StepSlideShowViewController: UIViewController, CountDownDelegate {
         }
         if let duration = step.exerciseDuration {
             countdownLabel.setTime(seconds: Double(duration))
-            countdownLabel.setCompletionText(text: "You did it!")
             countdownLabel.start()
         }
         if let image = step.exerciseImageURL {
@@ -74,12 +79,49 @@ class StepSlideShowViewController: UIViewController, CountDownDelegate {
     }
     
     private func goToNextStep() {
-        
+        self.stepIndex += 1
         if (self.stepIndex == steps.count) {
             countdownLabel.cancel()
             self.performSegue(withIdentifier: "SlideShowToFinish", sender: nil)
         } else {
-            loadStep(at: self.stepIndex)
+            
+            UIView.animate(withDuration: 0.5, animations: {
+                self.contentViewLeadingConstraint.constant = -self.contentView.frame.size.width
+                self.view.layoutIfNeeded()
+            }, completion: { (finished) in
+                self.contentViewLeadingConstraint.constant = self.contentView.frame.size.width
+                self.view.layoutIfNeeded()
+                self.loadStep(at: self.stepIndex)
+
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.contentViewLeadingConstraint.constant = 0
+                    self.view.layoutIfNeeded()
+                }, completion: { (finished) in
+                            //
+                })
+            })
+            
+            
+            
+//            UIView.animateKeyframes(withDuration: 1, delay: 0, options: UIViewKeyframeAnimationOptions.calculationModeLinear, animations: {
+//                UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.5, animations: {
+//                    self.contentViewLeadingConstraint.constant = -self.contentView.frame.size.width
+//                    self.view.layoutIfNeeded()
+//                })
+//                UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0, animations: { 
+//                    self.contentViewLeadingConstraint.constant = self.contentView.frame.size.width
+//                    self.view.layoutIfNeeded()
+//                    
+//                })
+//                
+//                UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.5, animations: {
+//                    self.contentViewLeadingConstraint.constant = 0
+//                    self.view.layoutIfNeeded()
+//                    self.loadStep(at: self.stepIndex)
+//                })
+//            }) { (finished) in
+//                
+//            }
         }
     }
 
