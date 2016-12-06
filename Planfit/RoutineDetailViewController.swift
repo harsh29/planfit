@@ -16,7 +16,6 @@ class RoutineDetailViewController: UIViewController, UITableViewDataSource, UITa
     var routine: Routine?
     @IBOutlet weak var routineTitle: UITextView!
     @IBOutlet weak var routineDescription: UITextView!
-    var exercises: [Exercise] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,9 +38,14 @@ class RoutineDetailViewController: UIViewController, UITableViewDataSource, UITa
             routineTitle.text = ""
             routineDescription.text = ""
         }
-
         
-        exercises = Routine.getExerciseSet(count: 3)
+        exerciseListTable.reloadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        exerciseListTable.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -52,12 +56,13 @@ class RoutineDetailViewController: UIViewController, UITableViewDataSource, UITa
         } else if (segue.identifier == "RoutineDetailToStepEdit") {
             let selectedRow = exerciseListTable.indexPathForSelectedRow?.row
             let stepEditViewController = segue.destination as! StepEditViewController
-            if (selectedRow! < exercises.count) {
-                stepEditViewController.exercise = exercises[selectedRow!]
+            if (selectedRow! < (routine?.exercises.count)!) {
+                stepEditViewController.exercise = routine?.exercises[selectedRow!]
             } else {
-                //let newExercise = Exercise(name: nil, description: nil, duration: nil, reps: nil, imageURL: nil, videoURL: nil)
-                //exercises.append(newExercise)
-                //stepEditViewController.exercise = newExercise
+                let newExercise = Exercise()
+                newExercise.isNew = true
+                routine?.exercises.append(newExercise)
+                stepEditViewController.exercise = newExercise
             }
         }
     }
@@ -68,16 +73,14 @@ class RoutineDetailViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let exerciseIds = self.routine?.exerciseIds else {
-            return 1
-        }
-        return exerciseIds.count + 1
+
+        return (routine?.exercises.isEmpty)! ? 1 : (routine?.exercises.count)! + 1
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if (indexPath.row < exerciseListTable.numberOfRows(inSection: indexPath.section) - 1) {
             let cell = exerciseListTable.dequeueReusableCell(withIdentifier: "exerciseCell", for: indexPath) as! ExerciseTableViewCell
-            cell.exercise = exercises[indexPath.row]
+            cell.exercise = routine?.exercises[indexPath.row]
             cell.updateLabel()
             return cell
         } else {

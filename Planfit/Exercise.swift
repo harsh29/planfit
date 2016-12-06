@@ -20,6 +20,9 @@ class Exercise: NSObject {
     var exerciseVideoURL: URL?
     var createdAt:Date?
     var updatedAt:Date?
+    var isNew: Bool! = false
+    
+    override init () {}
     
     init(name: String?, description: String?, duration: Int?, reps: Int?, imageURL: String?, videoURL: String?) {
         if let eName = name {

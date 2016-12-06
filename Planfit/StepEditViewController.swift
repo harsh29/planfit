@@ -25,7 +25,7 @@ class StepEditViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         timePickerView.delegate = self
         timePickerView.dataSource = self
         
-        if (exercise != nil) {
+        if (!((exercise?.isNew)!)) {
             loadExercise()
         }
         handleExerciseAutocompleteField()
@@ -46,9 +46,9 @@ class StepEditViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
                 exercise.hasPrefix(text)
             })
         }
-        autocompleteTextfield.onSelect = {[weak self] text, indexpath in
+        //autocompleteTextfield.onSelect = {[weak self] text, indexpath in
             // your code goes here
-        }
+        //}
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -57,11 +57,8 @@ class StepEditViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-
-        let row = pickerView.selectedRow(inComponent: 0)
-        // print("this is the pickerView\(row)")
         
-        if component == 0 {
+        if (component == 0) {
             return minutes.count
         }
         else {
@@ -72,7 +69,7 @@ class StepEditViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-        if component == 0 {
+        if (component == 0) {
             return String(minutes[row]) + " min"
         } else {
             return String(seconds[row]) + " sec"
@@ -80,8 +77,20 @@ class StepEditViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     @IBAction func onSaveButtonTap(_ sender: UIButton) {
+        // TO DO: Save exercise to Parse?
         
-        //TO DO: save step info and pass it back to routine detail
+        exercise?.exerciseName = autocompleteTextfield.text
+        let minutesRow = timePickerView.selectedRow(inComponent: 0)
+        let min = minutes[minutesRow]
+        let secondsRow = timePickerView.selectedRow(inComponent: 1)
+        let sec = seconds[secondsRow]
+        let time = (min * 60 + sec) as Int
+        exercise?.exerciseDuration = time
+        exercise?.reps = Int(repsTextField.text!)
+        exercise?.exerciseDescription = notesTextField.text
+        exercise?.isNew = false
+        
+        self.navigationController?.popViewController(animated: true)
     }
     
     func loadExercise() {
