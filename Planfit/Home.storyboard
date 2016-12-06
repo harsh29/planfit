@@ -131,10 +131,10 @@
             </objects>
             <point key="canvasLocation" x="2238" y="175"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Animated Tab Bar Controller-->
         <scene sceneID="ixq-ri-NFm">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="bUk-Z5-Wbd" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="bUk-Z5-Wbd" customClass="AnimatedTabBarController" customModule="Planfit" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="3vY-tK-sZb">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
