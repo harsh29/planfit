@@ -51,12 +51,13 @@ class HomeViewController: UIViewController {
             todaysRoutine = routine
             self.startButton.isHidden = false
             self.routineNameLabel.text = routine.routineName
+            self.routineNameLabel.adjustsFontSizeToFitWidth = true
         } else {
             self.startButton.isHidden = true
             if Routine.allRoutines.isEmpty {
-                self.routineNameLabel.text = "Nothing to do today? Head over to the workout routines tab and make one up then head over to the calendar and select a workout routine for today!"
+                self.routineNameLabel.text = "Nothing to do today? \n Head over to the workout routines tab and make one up then head over to the calendar and select a workout routine for today!"
             } else {
-                self.routineNameLabel.text = "Nothing to do today? Head over to the calendar and select a workout routine for today!"
+                self.routineNameLabel.text = "Nothing to do today? \n Head over to the calendar and select a workout routine for today!"
             }
         }
     }

@@ -1,8 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bUk-Z5-Wbd">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bUk-Z5-Wbd">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,11 +22,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rtw-ZW-7A2">
+                                <rect key="frame" x="16" y="52" width="343" height="396"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKt-4q-ldC">
+                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="700" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKt-4q-ldC">
+                                        <rect key="frame" x="20" y="282" width="303" height="94"/>
                                         <color key="backgroundColor" red="1" green="0.32941176470588235" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="94" id="ixl-3d-yis"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="94" id="ixl-3d-yis"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="44"/>
                                         <state key="normal" title="Start!">
@@ -35,24 +40,28 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Nov 5" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="QYb-9s-pBL">
+                                        <rect key="frame" x="8" y="24" width="327" height="120"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="92"/>
                                         <color key="textColor" red="1" green="0.3294117647" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="cJa-rp-mO2">
+                                        <rect key="frame" x="12" y="154" width="319" height="118"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="118" id="tIZ-C9-WGl"/>
+                                        </constraints>
                                         <string key="text">Nothing to do today? Head over to the workout routines tab and make one up then head over to the calendar and select a workout routine for today!</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="cJa-rp-mO2" firstAttribute="top" relation="greaterThanOrEqual" secondItem="QYb-9s-pBL" secondAttribute="bottom" constant="24" id="4Ea-Kg-zmt"/>
+                                    <constraint firstItem="cJa-rp-mO2" firstAttribute="top" secondItem="QYb-9s-pBL" secondAttribute="bottom" constant="10" id="4Ea-Kg-zmt"/>
                                     <constraint firstItem="QYb-9s-pBL" firstAttribute="leading" secondItem="rtw-ZW-7A2" secondAttribute="leading" constant="8" id="AWU-XK-4E8"/>
                                     <constraint firstItem="cJa-rp-mO2" firstAttribute="leading" secondItem="rtw-ZW-7A2" secondAttribute="leading" constant="12" id="Bf2-zI-w5P"/>
-                                    <constraint firstItem="mKt-4q-ldC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="cJa-rp-mO2" secondAttribute="bottom" constant="20" id="JRf-a8-4ZW"/>
-                                    <constraint firstItem="cJa-rp-mO2" firstAttribute="top" secondItem="QYb-9s-pBL" secondAttribute="bottom" priority="250" constant="44" id="LDX-jb-KBf"/>
+                                    <constraint firstItem="mKt-4q-ldC" firstAttribute="top" secondItem="cJa-rp-mO2" secondAttribute="bottom" constant="10" id="JRf-a8-4ZW"/>
                                     <constraint firstAttribute="bottom" secondItem="mKt-4q-ldC" secondAttribute="bottom" constant="20" id="Rck-mZ-GNb"/>
                                     <constraint firstAttribute="trailing" secondItem="mKt-4q-ldC" secondAttribute="trailing" constant="20" id="e4B-vN-6cV"/>
                                     <constraint firstItem="QYb-9s-pBL" firstAttribute="top" secondItem="rtw-ZW-7A2" secondAttribute="top" constant="24" id="fe2-bu-Vvy"/>

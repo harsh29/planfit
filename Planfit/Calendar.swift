@@ -51,18 +51,17 @@ class Calendar: NSObject{
     }
     
     public class func getTodaysRoutine() -> Routine? {
-        
         let date = formatter.string(from: Date())
         /// add a dummy routine for testing while Calendar screen is under construction
         self.plannedDays.append(self.getTempPlannedDay())
-        
+     
         if let routine = self.dateRoutines[date] {
             return routine
         }
-        
+ 
         return nil
     }
-    
+ 
     /// dummy PlannedDay for testing while Calendar screen is under construction
     private class func getTempPlannedDay() -> PlannedDay {
         
