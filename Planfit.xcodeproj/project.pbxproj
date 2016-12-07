@@ -27,6 +27,7 @@
 		0FF61F6E1DD7DA21002E6C58 /* StepSlideShow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF61F6D1DD7DA21002E6C58 /* StepSlideShow.storyboard */; };
 		0FF61F701DD7DA5B002E6C58 /* StepEdit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF61F6F1DD7DA5B002E6C58 /* StepEdit.storyboard */; };
 		0FF61F721DD7DA81002E6C58 /* RoutineFinish.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF61F711DD7DA81002E6C58 /* RoutineFinish.storyboard */; };
+		0FF944751DF697A400A21D46 /* AnimatedTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF944741DF697A400A21D46 /* AnimatedTabBarController.swift */; };
 		0FFAB4FC1DD6D665002C6644 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFAB4FB1DD6D665002C6644 /* WelcomeViewController.swift */; };
 		0FFAB4FE1DD6D67E002C6644 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFAB4FD1DD6D67E002C6644 /* LoginViewController.swift */; };
 		0FFAB5001DD6D68D002C6644 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFAB4FF1DD6D68D002C6644 /* SignupViewController.swift */; };
@@ -76,6 +77,7 @@
 		0FF61F6D1DD7DA21002E6C58 /* StepSlideShow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StepSlideShow.storyboard; sourceTree = "<group>"; };
 		0FF61F6F1DD7DA5B002E6C58 /* StepEdit.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StepEdit.storyboard; sourceTree = "<group>"; };
 		0FF61F711DD7DA81002E6C58 /* RoutineFinish.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RoutineFinish.storyboard; sourceTree = "<group>"; };
+		0FF944741DF697A400A21D46 /* AnimatedTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedTabBarController.swift; sourceTree = "<group>"; };
 		0FFAB4FB1DD6D665002C6644 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		0FFAB4FD1DD6D67E002C6644 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0FFAB4FF1DD6D68D002C6644 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				0F35BA761DF3B7290052DDDA /* AutoCompleteTextField.swift */,
 				0F313C3A1DE2916400587DEC /* CountDownLabel.swift */,
 				0F35BA781DF3C0E70052DDDA /* ExerciseNames.swift */,
+				0FF944741DF697A400A21D46 /* AnimatedTabBarController.swift */,
 			);
 			path = Planfit;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 				0FFAB5081DD6D7D5002C6644 /* RoutineDetailViewController.swift in Sources */,
 				0FFAB5001DD6D68D002C6644 /* SignupViewController.swift in Sources */,
 				AE0D42FD1DE2323500CE70ED /* User.swift in Sources */,
+				0FF944751DF697A400A21D46 /* AnimatedTabBarController.swift in Sources */,
 				0FFAB5061DD6D710002C6644 /* RoutineListViewController.swift in Sources */,
 				0FFAB50A1DD6D855002C6644 /* StepSlideShowViewController.swift in Sources */,
 				61D1FD111DDAE79100ECF9AB /* APIClientConfig.swift in Sources */,
