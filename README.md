@@ -19,14 +19,14 @@ Basic -
 - [x] Users can select a routine to play. The routine should play to completion automatically.
 - [x] Users can pause or exit the routine while the routine is playing.
 - [x] User can go to prev step, pause or skip to the next step of a playing routine.
-- [ ] User can swipe to delete a workout.
-- [ ] User can swipe to delete a step in a workout.
+- [x] User can swipe to delete a workout.
+- [x] User can swipe to delete a step in a workout.
 - [ ] User can reorder steps in a workout by dragging and dropping.
 - [x] A workout step shall include a name (required), description (optional), duration (optional), reps(optional), photo/video (optional).
 - [x] A workout step in play mode will include a name, description, photo/video, duration countdown and way to pause, go to prev step and go to advance to the next step.
 - [x] A workout entry in the workout library view will include a workout name and overall duration (something else?).
 - [ ] User should be able to create visual content (photos or videos) and use them in the routine creation process.
-- [ ] User can add a photo/video from camera roll.
+- [x] User can add a photo/video from camera roll.
 - [ ] User can invoke a routine by name handsfree. Routine will begin playing.
 
 Accounts -
