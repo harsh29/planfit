@@ -10,10 +10,24 @@ import UIKit
 
 class RoutineFinishViewController: UIViewController {
 
+    @IBOutlet weak var encouragementLabel: UILabel!
+    let encouragements = ["You did it!", "Good job!", "Rock on!", "Stay hydrated!"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let randomNum = Int(arc4random_uniform(UInt32(encouragements.count)))
+        encouragementLabel.text = encouragements[randomNum]
+        
+        let anim=CABasicAnimation(keyPath: "transform.rotation")
+        anim.toValue=NSNumber(value: -M_PI/16)
+        anim.fromValue=NSNumber(value: M_PI/16)
+        anim.duration=0.1
+        anim.repeatCount=5
+        anim.autoreverses=true
+        encouragementLabel.layer.add(anim, forKey: "shakingAnimation")
+        
     }
 
     override func didReceiveMemoryWarning() {
