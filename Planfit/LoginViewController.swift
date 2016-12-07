@@ -70,4 +70,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
+    
+    /**
+     Dismisses current view
+     
+     - Parameter Any: sender
+     
+     - Returns: None
+     */
+    @IBAction func exitView(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }

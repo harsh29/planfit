@@ -20,7 +20,6 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
 
         // Do any additional setup after loading the view.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
-
         self.view.addGestureRecognizer(tap)
     }
 
@@ -79,4 +78,14 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         view.endEditing(true)
     }
 
+    /**
+     Dismisses current view
+     
+     - Parameter Any: sender
+     
+     - Returns: None
+     */
+    @IBAction func exitView(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
