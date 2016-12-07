@@ -80,8 +80,7 @@ class HomeViewController: UIViewController {
         if (segue.identifier == "HomeToRoutineDetail") {
             let routineDetailViewController = (segue.destination as! UINavigationController).topViewController as! RoutineDetailViewController
             routineDetailViewController.routine = self.todaysRoutine
-            
-            routineDetailViewController.exerciseListTable.re
+        
         }
     }
 

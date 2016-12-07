@@ -20,11 +20,11 @@ class RoutineListViewController: UIViewController, UITableViewDelegate, UITableV
         
         routineTableView.dataSource = self
         routineTableView.delegate = self
-        
         routineTableView.rowHeight = UITableViewAutomaticDimension
         routineTableView.estimatedRowHeight = 100
-        
         routineTableView.reloadData()
+        
+        self.navigationController?.navigationBar.barTintColor = UIColor.orange
     }
     
     override func viewWillAppear(_ animated: Bool) {

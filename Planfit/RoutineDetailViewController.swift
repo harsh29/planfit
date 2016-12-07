@@ -16,6 +16,8 @@ class RoutineDetailViewController: UIViewController, UITableViewDataSource, UITa
     var routine: Routine?
     @IBOutlet weak var routineTitle: UITextView!
     @IBOutlet weak var routineDescription: UITextView!
+    
+    let remove = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,12 +42,16 @@ class RoutineDetailViewController: UIViewController, UITableViewDataSource, UITa
         }
         
         exerciseListTable.reloadData()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         exerciseListTable.reloadData()
+        if remove {
+            NSLog("\(self.view.viewWithTag(76) == nil)")
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -75,6 +81,7 @@ class RoutineDetailViewController: UIViewController, UITableViewDataSource, UITa
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
         return (routine?.exercises.isEmpty)! ? 1 : (routine?.exercises.count)! + 1
+        
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
