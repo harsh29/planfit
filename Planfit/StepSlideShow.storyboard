@@ -40,11 +40,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3:45" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDt-hv-Y2M" customClass="CountDownLabel" customModule="Planfit" customModuleProvider="target">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="eFc-dR-jxJ"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="32"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RRK-bc-GrQ"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RRK-bc-GrQ"/>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pushups" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASG-am-wQS">
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <color key="textColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -55,7 +58,7 @@
                                 <constraints>
                                     <constraint firstItem="FDt-hv-Y2M" firstAttribute="top" secondItem="qMG-rB-uob" secondAttribute="bottom" constant="32" id="ABv-NP-qh3"/>
                                     <constraint firstItem="RRK-bc-GrQ" firstAttribute="top" secondItem="FDt-hv-Y2M" secondAttribute="bottom" constant="32" id="E4g-RL-dpC"/>
-                                    <constraint firstAttribute="trailing" secondItem="RRK-bc-GrQ" secondAttribute="trailing" constant="8" id="GEv-DT-oSG"/>
+                                    <constraint firstAttribute="trailing" secondItem="RRK-bc-GrQ" secondAttribute="trailing" constant="20" id="GEv-DT-oSG"/>
                                     <constraint firstItem="RRK-bc-GrQ" firstAttribute="centerX" secondItem="ZGb-sv-s9W" secondAttribute="centerX" id="MVG-wQ-vXG"/>
                                     <constraint firstItem="FDt-hv-Y2M" firstAttribute="centerX" secondItem="ZGb-sv-s9W" secondAttribute="centerX" id="RaN-xJ-M5j"/>
                                     <constraint firstItem="qMG-rB-uob" firstAttribute="centerX" secondItem="ZGb-sv-s9W" secondAttribute="centerX" id="SeP-sa-zyd"/>
@@ -63,7 +66,7 @@
                                     <constraint firstItem="ASG-am-wQS" firstAttribute="centerX" secondItem="ZGb-sv-s9W" secondAttribute="centerX" id="c7x-Rn-jJL"/>
                                     <constraint firstAttribute="bottom" secondItem="RRK-bc-GrQ" secondAttribute="bottom" constant="8" id="i0w-dY-ZPE"/>
                                     <constraint firstItem="qMG-rB-uob" firstAttribute="top" secondItem="ASG-am-wQS" secondAttribute="bottom" constant="8" id="mKY-ve-Vxh"/>
-                                    <constraint firstItem="RRK-bc-GrQ" firstAttribute="leading" secondItem="ZGb-sv-s9W" secondAttribute="leading" constant="8" id="n1o-vC-euZ"/>
+                                    <constraint firstItem="RRK-bc-GrQ" firstAttribute="leading" secondItem="ZGb-sv-s9W" secondAttribute="leading" constant="20" id="n1o-vC-euZ"/>
                                 </constraints>
                             </view>
                         </subviews>

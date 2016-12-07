@@ -10,6 +10,6 @@ inhibit_all_warnings!
 pod 'AFNetworking', '~> 3.0.0'
 pod 'MBProgressHUD', '~>0.8'
 pod 'Parse'
-
+pod 'SwiftGifOrigin', '~> 1.6.1'
 
 end
