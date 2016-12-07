@@ -16,8 +16,7 @@ class RoutineDetailViewController: UIViewController, UITableViewDataSource, UITa
     var routine: Routine?
     @IBOutlet weak var routineTitle: UITextView!
     @IBOutlet weak var routineDescription: UITextView!
-    
-    let remove = true
+    var includeAddExerciseCell = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,9 +48,6 @@ class RoutineDetailViewController: UIViewController, UITableViewDataSource, UITa
         super.viewWillAppear(animated)
         
         exerciseListTable.reloadData()
-        if remove {
-            NSLog("\(self.view.viewWithTag(76) == nil)")
-        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -80,7 +76,11 @@ class RoutineDetailViewController: UIViewController, UITableViewDataSource, UITa
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        return (routine?.exercises.isEmpty)! ? 1 : (routine?.exercises.count)! + 1
+        if (!includeAddExerciseCell) {
+            return (routine?.exercises.count)!
+        } else {
+            return (routine?.exercises)!.isEmpty ? 1 : (routine?.exercises)!.count + 1
+        }
         
     }
     
@@ -91,8 +91,8 @@ class RoutineDetailViewController: UIViewController, UITableViewDataSource, UITa
             cell.updateLabel()
             return cell
         } else {
-            let cell = exerciseListTable.dequeueReusableCell(withIdentifier: "addExerciseCell", for: indexPath)
-            return cell
+                let cell = exerciseListTable.dequeueReusableCell(withIdentifier: "addExerciseCell", for: indexPath)
+                return cell
         }
     }
     
