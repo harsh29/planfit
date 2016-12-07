@@ -71,7 +71,7 @@ class CalendarViewController: UIViewController {
         dropDownMenuView.maskBackgroundOpacity = 0.3
         dropDownMenuView.didSelectItemAtIndexHandler = {(indexPath: Int) -> () in
             print("Did select item at index: \(indexPath)")
-            //self.dealWithNavBarSelection(indexPath)
+            self.dealWithNavBarSelection(indexPath)
         }
         
         //Initialize dropdown menu
@@ -89,6 +89,18 @@ class CalendarViewController: UIViewController {
         
         calendarView.commitCalendarViewUpdate()
         menuView.commitMenuViewUpdate()
+    }
+    
+    func dealWithNavBarSelection(_ indexSelected: Int){
+        //monthly
+        if(indexSelected == 0){
+            self.calendarView.changeMode(.monthView)
+        }
+        //weekly
+        if(indexSelected == 1){
+            self.calendarView.changeMode(.weekView)
+            print("week view")
+        }
     }
     
 
@@ -118,14 +130,6 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
     
     // MARK: Optional methods
     
-    func calendar() -> Foundation.Calendar? {
-        return currentCalendar
-    }
-    
-    func dayOfWeekTextColor(by weekday: Weekday) -> UIColor {
-        return weekday == .sunday ? UIColor(red: 1.0, green: 0, blue: 0, alpha: 1.0) : UIColor.white
-    }
-    
     func shouldShowWeekdaysOut() -> Bool {
         return shouldShowDaysOut
     }
@@ -134,24 +138,15 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
         return true // Default value is true
     }
     
-    private func shouldSelectDayView(dayView: DayView) -> Bool {
-        return arc4random_uniform(3) == 0 ? true : false
-    }
-    
-    func shouldAutoSelectDayOnMonthChange() -> Bool {
-        return false
-    }
-    
-    func didSelectDayView(_ dayView: CVCalendarDayView, animationDidFinish: Bool) {
-        selectedDay = dayView
-    }
-    
-    func shouldSelectRange() -> Bool {
-        return true
-    }
-    
-    func didSelectRange(from startDayView: DayView, to endDayView: DayView) {
-        print("RANGE SELECTED: \(startDayView.date.commonDescription) to \(endDayView.date.commonDescription)")
+    func didSelectDayView(_ dayView: CVCalendarDayView) {
+        print("\(calendarView.presentedDate.commonDescription) is selected!")
+        
+        // Fetch all events happening in the next 24 hours and put them into eventsList
+        let currentDate = calendarView.presentedDate.convertedDate(calendar: currentCalendar!)
+        //self.eventsList = self.fetchEvents(currentDate! as Date)
+        
+        // Update the UI with the above events
+        //reloadTable()
     }
     
     func presentedDateUpdated(_ date: CVDate) {
@@ -196,148 +191,46 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
         return true
     }
     
+    func dotMarker(shouldShowOnDayView dayView: CVCalendarDayView) -> Bool {
+//        var tempEventsList: [EKEvent] = []
+//        tempEventsList = fetchEvents(dayView.date.convertedDate(calendar: currentCalendar)! as Date)
+//        if(!tempEventsList.isEmpty){
+//            return true
+//        }
+//        return false
+        return true
+    }
+    
+    func dotMarker(colorOnDayView dayView: CVCalendarDayView) -> [UIColor] {
+        return [UIColor.red]
+    }
+    
+    func dotMarker(shouldMoveOnHighlightingOnDayView dayView: CVCalendarDayView) -> Bool {
+        return true
+    }
+    
+    func dotMarker(sizeOnDayView dayView: DayView) -> CGFloat {
+        return 13
+    }
+    
     
     func weekdaySymbolType() -> WeekdaySymbolType {
         return .short
     }
     
-    func selectionViewPath() -> ((CGRect) -> (UIBezierPath)) {
-        return { UIBezierPath(rect: CGRect(x: 0, y: 0, width: $0.width, height: $0.height)) }
-    }
-    
-    func shouldShowCustomSingleSelection() -> Bool {
-        return false
-    }
-    
-    func preliminaryView(viewOnDayView dayView: DayView) -> UIView {
-        let circleView = CVAuxiliaryView(dayView: dayView, rect: dayView.frame, shape: CVShape.circle)
-        circleView.fillColor = .colorFromCode(0xCCCCCC)
-        return circleView
-    }
-    
-    func preliminaryView(shouldDisplayOnDayView dayView: DayView) -> Bool {
-        if (dayView.isCurrentDay) {
-            return true
-        }
-        return false
-    }
-    
-    func supplementaryView(viewOnDayView dayView: DayView) -> UIView {
-        
-        dayView.setNeedsLayout()
-        dayView.layoutIfNeeded()
-        
-        let π = M_PI
-        
-        let ringSpacing: CGFloat = 3.0
-        let ringInsetWidth: CGFloat = 1.0
-        let ringVerticalOffset: CGFloat = 1.0
-        var ringLayer: CAShapeLayer!
-        let ringLineWidth: CGFloat = 4.0
-        let ringLineColour: UIColor = .blue
-        
-        let newView = UIView(frame: dayView.frame)
-        
-        let diameter: CGFloat = (min(newView.bounds.width, newView.bounds.height)) - ringSpacing
-        let radius: CGFloat = diameter / 2.0
-        
-        let rect = CGRect(x: newView.frame.midX-radius, y: newView.frame.midY-radius-ringVerticalOffset, width: diameter, height: diameter)
-        
-        ringLayer = CAShapeLayer()
-        newView.layer.addSublayer(ringLayer)
-        
-        ringLayer.fillColor = nil
-        ringLayer.lineWidth = ringLineWidth
-        ringLayer.strokeColor = ringLineColour.cgColor
-        
-        let ringLineWidthInset: CGFloat = CGFloat(ringLineWidth/2.0) + ringInsetWidth
-        let ringRect: CGRect = rect.insetBy(dx: ringLineWidthInset, dy: ringLineWidthInset)
-        let centrePoint: CGPoint = CGPoint(x: ringRect.midX, y: ringRect.midY)
-        let startAngle: CGFloat = CGFloat(-π/2.0)
-        let endAngle: CGFloat = CGFloat(π * 2.0) + startAngle
-        let ringPath: UIBezierPath = UIBezierPath(arcCenter: centrePoint, radius: ringRect.width/2.0, startAngle: startAngle, endAngle: endAngle, clockwise: true)
-        
-        ringLayer.path = ringPath.cgPath
-        ringLayer.frame = newView.layer.bounds
-        
-        return newView
-    }
-    
-    func supplementaryView(shouldDisplayOnDayView dayView: DayView) -> Bool {
-        if (Int(arc4random_uniform(3)) == 1) {
-            return true
-        }
-        
-        return false
-    }
-    
-    func dayOfWeekTextColor() -> UIColor {
-        return UIColor.white
-    }
-    
-    func dayOfWeekBackGroundColor() -> UIColor {
-        return UIColor.orange
-    }
-    
-    
-    func disableScrollingBeforeDate() -> Date {
-        return Date()
-    }
-    
-    func maxSelectableRange() -> Int {
-        return 14
-    }
-    
-    func earliestSelectableDate() -> Date {
-        return Date()
-    }
-    
-    func latestSelectableDate() -> Date {
-        var dayComponents = DateComponents()
-        dayComponents.day = 70
-        let calendar = Foundation.Calendar(identifier: .gregorian)
-        if let lastDate = calendar.date(byAdding: dayComponents, to: Date()) {
-            return lastDate
-        } else {
-            return Date()
-        }
-    }
 }
 
 extension CalendarViewController: CVCalendarViewAppearanceDelegate {
-    
-    func dayLabelWeekdayDisabledColor() -> UIColor {
-        return UIColor.lightGray
-    }
-    
     func dayLabelPresentWeekdayInitallyBold() -> Bool {
         return false
     }
     
     func spaceBetweenDayViews() -> CGFloat {
-        return 0
-    }
-    
-    func dayLabelFont(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIFont { return UIFont.systemFont(ofSize: 14) }
-    
-    func dayLabelColor(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIColor? {
-        switch (weekDay, status, present) {
-        case (_, .selected, _), (_, .highlighted, _): return Color.selectedText
-        case (.sunday, .in, _): return Color.sundayText
-        case (.sunday, _, _): return Color.sundayTextDisabled
-        case (_, .in, _): return Color.text
-        default: return Color.textDisabled
-        }
-    }
-    
-    func dayLabelBackgroundColor(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIColor? {
-        switch (weekDay, status, present) {
-        case (.sunday, .selected, _), (.sunday, .highlighted, _): return Color.sundaySelectionBackground
-        case (_, .selected, _), (_, .highlighted, _): return Color.selectionBackground
-        default: return nil
-        }
+        return 2
     }
 }
+
+
 
 extension CalendarViewController {
     @IBAction func switchChanged(sender: UISwitch) {
