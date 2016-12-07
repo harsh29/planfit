@@ -20,7 +20,7 @@ class CountDownLabel: UILabel {
     
     var completionText: String = ""
     var delegate: CountDownDelegate?
-    var cancelled = false
+    private var cancelled = false
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

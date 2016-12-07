@@ -116,8 +116,12 @@ class RoutineDetailViewController: UIViewController, UITableViewDataSource, UITa
                 routineDescriptionPlaceholderLabel.isHidden = true
             }
         }
-        
-        
     }
+    
+    @IBAction func onCancelButtonTap(_ sender: AnyObject) {
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 
 }

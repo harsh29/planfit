@@ -110,10 +110,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ewt-mt-NZd" firstAttribute="top" secondItem="I6W-b3-4KH" secondAttribute="bottom" id="6Dg-0Q-owP"/>
+                            <constraint firstItem="Lp5-TI-coh" firstAttribute="leading" secondItem="mZK-9x-CUX" secondAttribute="leadingMargin" constant="20" id="9OG-xx-Tlc"/>
                             <constraint firstItem="ewt-mt-NZd" firstAttribute="width" secondItem="mZK-9x-CUX" secondAttribute="width" id="UQ6-1b-JeS"/>
-                            <constraint firstItem="I7g-ys-7bw" firstAttribute="top" secondItem="Lp5-TI-coh" secondAttribute="bottom" constant="12" id="YzD-CA-CZW"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Lp5-TI-coh" secondAttribute="trailing" constant="40" id="mBh-dE-z1k"/>
-                            <constraint firstItem="Lp5-TI-coh" firstAttribute="leading" secondItem="mZK-9x-CUX" secondAttribute="leadingMargin" constant="40" id="tlQ-2P-xzO"/>
+                            <constraint firstItem="I7g-ys-7bw" firstAttribute="top" secondItem="Lp5-TI-coh" secondAttribute="bottom" constant="20" id="YzD-CA-CZW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Lp5-TI-coh" secondAttribute="trailing" constant="20" id="bSC-oe-xzT"/>
                             <constraint firstItem="ewt-mt-NZd" firstAttribute="centerX" secondItem="mZK-9x-CUX" secondAttribute="centerX" id="ub6-nn-GOU"/>
                         </constraints>
                     </view>

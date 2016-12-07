@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bUk-Z5-Wbd">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bUk-Z5-Wbd">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -26,7 +23,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKt-4q-ldC">
                                         <color key="backgroundColor" red="1" green="0.32941176470588235" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="120" id="ixl-3d-yis"/>
+                                            <constraint firstAttribute="height" constant="94" id="ixl-3d-yis"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="44"/>
                                         <state key="normal" title="Start!">
@@ -54,14 +51,14 @@
                                     <constraint firstItem="cJa-rp-mO2" firstAttribute="top" relation="greaterThanOrEqual" secondItem="QYb-9s-pBL" secondAttribute="bottom" constant="24" id="4Ea-Kg-zmt"/>
                                     <constraint firstItem="QYb-9s-pBL" firstAttribute="leading" secondItem="rtw-ZW-7A2" secondAttribute="leading" constant="8" id="AWU-XK-4E8"/>
                                     <constraint firstItem="cJa-rp-mO2" firstAttribute="leading" secondItem="rtw-ZW-7A2" secondAttribute="leading" constant="12" id="Bf2-zI-w5P"/>
-                                    <constraint firstItem="mKt-4q-ldC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="cJa-rp-mO2" secondAttribute="bottom" constant="8" id="JRf-a8-4ZW"/>
+                                    <constraint firstItem="mKt-4q-ldC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="cJa-rp-mO2" secondAttribute="bottom" constant="20" id="JRf-a8-4ZW"/>
                                     <constraint firstItem="cJa-rp-mO2" firstAttribute="top" secondItem="QYb-9s-pBL" secondAttribute="bottom" priority="250" constant="44" id="LDX-jb-KBf"/>
-                                    <constraint firstAttribute="bottom" secondItem="mKt-4q-ldC" secondAttribute="bottom" constant="8" id="Rck-mZ-GNb"/>
-                                    <constraint firstAttribute="trailing" secondItem="mKt-4q-ldC" secondAttribute="trailing" constant="8" id="e4B-vN-6cV"/>
+                                    <constraint firstAttribute="bottom" secondItem="mKt-4q-ldC" secondAttribute="bottom" constant="20" id="Rck-mZ-GNb"/>
+                                    <constraint firstAttribute="trailing" secondItem="mKt-4q-ldC" secondAttribute="trailing" constant="20" id="e4B-vN-6cV"/>
                                     <constraint firstItem="QYb-9s-pBL" firstAttribute="top" secondItem="rtw-ZW-7A2" secondAttribute="top" constant="24" id="fe2-bu-Vvy"/>
                                     <constraint firstAttribute="trailing" secondItem="QYb-9s-pBL" secondAttribute="trailing" constant="8" id="iAr-cu-8hm"/>
                                     <constraint firstAttribute="trailing" secondItem="cJa-rp-mO2" secondAttribute="trailing" constant="12" id="uTH-3G-18A"/>
-                                    <constraint firstItem="mKt-4q-ldC" firstAttribute="leading" secondItem="rtw-ZW-7A2" secondAttribute="leading" constant="8" id="zlg-Oq-nuq"/>
+                                    <constraint firstItem="mKt-4q-ldC" firstAttribute="leading" secondItem="rtw-ZW-7A2" secondAttribute="leading" constant="20" id="zlg-Oq-nuq"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -79,6 +76,7 @@
                         <outlet property="routineNameLabel" destination="cJa-rp-mO2" id="hYH-Zf-d9w"/>
                         <outlet property="routineStartView" destination="rtw-ZW-7A2" id="wxY-pd-8tk"/>
                         <outlet property="startButton" destination="mKt-4q-ldC" id="fDf-QC-9DY"/>
+                        <outlet property="tabButton" destination="exb-jZ-FBa" id="XM7-tW-laB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nKp-VF-XOc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -133,10 +131,10 @@
             </objects>
             <point key="canvasLocation" x="2238" y="175"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Animated Tab Bar Controller-->
         <scene sceneID="ixq-ri-NFm">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="bUk-Z5-Wbd" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="bUk-Z5-Wbd" customClass="AnimatedTabBarController" customModule="Planfit" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="3vY-tK-sZb">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
