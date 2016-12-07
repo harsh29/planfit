@@ -24,6 +24,7 @@ class Routine: NSObject, NSCoding {
     var updatedAt:Date?
     var userUUID: UUID!
     var exercises: [Exercise] = []
+    var isCancelled: Bool! = false
     
     static var _allRoutines: [Routine] = []
     static var allRoutines: [Routine] = {
@@ -131,7 +132,7 @@ class Routine: NSObject, NSCoding {
         
         // temp exercise set
         for i in 0..<count {
-            let exercise  = Exercise(name: "Exercise \(i)", description: "Exercise \(i) description.", duration: 5, reps: 10, imageURL: nil, videoURL: nil)
+            let exercise  = Exercise(name: "Exercise \(i)", description: "Exercise \(i) description.", duration: 5, reps: 10, imageURL: nil, image: nil, videoURL: nil)
             exercises.append(exercise)
         }
         return exercises

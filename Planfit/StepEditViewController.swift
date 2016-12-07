@@ -8,13 +8,15 @@
 
 import UIKit
 
-class StepEditViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class StepEditViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     var exercise: Exercise?
     @IBOutlet weak var autocompleteTextfield: AutoCompleteTextField!
     @IBOutlet weak var timePickerView: UIPickerView!
     @IBOutlet weak var repsTextField: UITextField!
     @IBOutlet weak var notesTextField: UITextView!
+    @IBOutlet weak var mediaView: UIImageView!
+    @IBOutlet weak var photoButton: UIButton!
     
     let minutes = Array(0...9)
     let seconds = Array(0...59)
@@ -89,6 +91,7 @@ class StepEditViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         exercise?.reps = Int(repsTextField.text!)
         exercise?.exerciseDescription = notesTextField.text
         exercise?.isNew = false
+        exercise?.exerciseImage = mediaView.image
         
         self.navigationController?.popViewController(animated: true)
     }
@@ -107,6 +110,36 @@ class StepEditViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         }
 
         notesTextField.text = exercise?.exerciseDescription
+        if let image = exercise?.exerciseImage {
+            mediaView.image = image
+            photoButton.isHidden = true
+        } else {
+            photoButton.isHidden = false
+        }
     }
 
+    @IBAction func onPhotoButtonTap(_ sender: AnyObject) {
+        
+        if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary)) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary;
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+        photoButton.isHidden = true
+        mediaView.image = image
+        self.dismiss(animated: true, completion: nil);
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        let editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
+        mediaView.image = editedImage
+        photoButton.isHidden = true
+        self.dismiss(animated: true, completion: nil);
+    }
 }

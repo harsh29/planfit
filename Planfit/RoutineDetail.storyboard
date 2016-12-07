@@ -38,7 +38,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="K7K-Uw-wJ4" id="b13-bn-Wzv">
-                                            <frame key="frameInset" width="342" height="55"/>
+                                            <frame key="frameInset" width="342" height="54"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r3W-xO-lCw">
@@ -61,7 +61,7 @@
                                         <rect key="frame" x="0.0" y="83" width="375" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rrv-AO-MFk" id="RT0-wY-uRh">
-                                            <frame key="frameInset" width="342" height="55"/>
+                                            <frame key="frameInset" width="342" height="54"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="add an exercise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7v-39-wMN">
@@ -157,7 +157,7 @@
                     <navigationItem key="navigationItem" id="gIc-sf-5YG">
                         <barButtonItem key="rightBarButtonItem" title="Cancel" id="crZ-sZ-G0t">
                             <connections>
-                                <action selector="onCancelButtonTap:" destination="SgK-FR-owA" id="CSt-66-Gfh"/>
+                                <action selector="onCancelButtonTap:" destination="SgK-FR-owA" id="Lgw-Rw-shQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

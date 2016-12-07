@@ -31,6 +31,7 @@ class StepSlideShowViewController: UIViewController, CountDownDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.layoutIfNeeded()
         loadStep(at: self.stepIndex)
         countdownLabel.delegate = self
         countdownLabel.start()
@@ -62,9 +63,8 @@ class StepSlideShowViewController: UIViewController, CountDownDelegate {
             if let duration = step.exerciseDuration {
                 countdownLabel.setTime(seconds: Double(duration))
             }
-            if let image = step.exerciseImageURL {
-                mediaView.setImageWith(image)
-            }
+            mediaView.image = step.exerciseImage
+            
             if let video = step.exerciseVideoURL {
                 mediaView.setImageWith(video)
             }

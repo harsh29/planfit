@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+
 class Exercise: NSObject {
     var exerciseUUID: NSUUID?
     var exerciseName: String?
@@ -17,6 +19,7 @@ class Exercise: NSObject {
     var currentSet: Int?
     var currentSetWeight: Int?
     var exerciseImageURL: URL?
+    var exerciseImage: UIImage?
     var exerciseVideoURL: URL?
     var createdAt:Date?
     var updatedAt:Date?
@@ -24,7 +27,7 @@ class Exercise: NSObject {
     
     override init () {}
     
-    init(name: String?, description: String?, duration: Int?, reps: Int?, imageURL: String?, videoURL: String?) {
+    init(name: String?, description: String?, duration: Int?, reps: Int?, imageURL: String?, image: UIImage?, videoURL: String?) {
         if let eName = name {
             self.exerciseName = eName
         }
@@ -43,6 +46,7 @@ class Exercise: NSObject {
         if let eVideoURL = videoURL {
             self.exerciseVideoURL = URL(string: eVideoURL)
         }
+        self.exerciseImage = image
         self.createdAt = Date()
         
         //TO DO
