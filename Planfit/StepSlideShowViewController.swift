@@ -69,7 +69,6 @@ class StepSlideShowViewController: UIViewController, CountDownDelegate {
                 mediaView.setImageWith(video)
             }
         }
-        
     }
 
     override func didReceiveMemoryWarning() {

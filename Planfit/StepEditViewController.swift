@@ -29,7 +29,9 @@ class StepEditViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             loadExercise()
         }
         handleExerciseAutocompleteField()
-
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        self.view.addGestureRecognizer(tap)
     }
 
     override func didReceiveMemoryWarning() {
@@ -90,7 +92,7 @@ class StepEditViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         exercise?.exerciseDescription = notesTextField.text
         exercise?.isNew = false
         
-        self.navigationController?.popViewController(animated: true)
+        _ = self.navigationController?.popViewController(animated: true)
     }
     
     func loadExercise() {
@@ -109,4 +111,15 @@ class StepEditViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         notesTextField.text = exercise?.exerciseDescription
     }
 
+    /**
+     Dismisses keyboard on tap gesture recognizer
+     
+     - Parameter None
+     
+     - Returns: None
+     */
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
 }

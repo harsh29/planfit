@@ -16,7 +16,7 @@ class RoutineListViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        userRoutines = Routine.allRoutines
+        userRoutines = Routine.allRoutines.sorted {$0.routineName! < $1.routineName! }
         
         routineTableView.dataSource = self
         routineTableView.delegate = self

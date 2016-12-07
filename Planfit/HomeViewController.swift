@@ -78,9 +78,10 @@ class HomeViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "HomeToRoutineDetail") {
-            
             let routineDetailViewController = (segue.destination as! UINavigationController).topViewController as! RoutineDetailViewController
             routineDetailViewController.routine = self.todaysRoutine
+            
+            routineDetailViewController.exerciseListTable.re
         }
     }
 

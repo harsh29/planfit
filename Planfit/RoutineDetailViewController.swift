@@ -119,7 +119,6 @@ class RoutineDetailViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     @IBAction func onCancelButtonTap(_ sender: AnyObject) {
-        
         self.dismiss(animated: true, completion: nil)
     }
     
