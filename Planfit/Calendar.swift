@@ -8,7 +8,7 @@
 import UIKit
 import Foundation
 import Parse
-
+import SwiftGifOrigin
 
 class Calendar: NSObject{
     
@@ -67,8 +67,8 @@ class Calendar: NSObject{
     private class func getTempPlannedDay() -> PlannedDay {
         
         let routine = Routine()
-        routine.routineName = "MARATHON DAY"
-        routine.routineDescription = "I run 24 miles today in San Diego"
+        routine.routineName = "My Favorite Routine"
+        routine.routineDescription = "I run 24 miles today in San Diego then do some pushups then watch Maru on YouTube."
         routine.exercises = getTempSteps()
         
         let plannedDay = PlannedDay()
@@ -81,9 +81,10 @@ class Calendar: NSObject{
     // return some dummy steps for testing while routine detail screen is under construction
     private class func getTempSteps() -> [Exercise] {
         
-        let step0 = Exercise(name: "Run", description: "My regular treadmill run", duration: 5, reps: nil, imageURL: "https://goo.gl/0Qhlhp", videoURL: nil)
-        let step1 = Exercise(name: "Pushup", description: "Chest, shoulders, arms", duration: 5, reps: nil, imageURL: "https://goo.gl/73nGJB", videoURL: nil)
-        let step2 = Exercise(name: "Maru Swings", description: "Just swinging", duration: 5, reps: nil, imageURL: nil, videoURL: "https://youtu.be/rnj6cnlIjM4?t=170")
+        let step0 = Exercise(name: "Run", description: "My regular treadmill run", duration: 5, reps: nil, imageURL: "https://goo.gl/0Qhlhp", image: #imageLiteral(resourceName: "run"), videoURL: nil)
+        let step1 = Exercise(name: "Pushup", description: "Chest, shoulders, arms", duration: 5, reps: nil, imageURL: "https://goo.gl/73nGJB", image: #imageLiteral(resourceName: "pushup"), videoURL: nil)
+        let gif = UIImage.gif(name: "maru")
+        let step2 = Exercise(name: "Maru Swings", description: "Just swinging", duration: 5, reps: nil, imageURL: nil, image: gif, videoURL: "https://youtu.be/rnj6cnlIjM4?t=170")
         let steps = [step0, step1, step2]
         
         return steps

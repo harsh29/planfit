@@ -15,7 +15,7 @@ class RoutineListViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         userRoutines = Routine.allRoutines
         
         routineTableView.dataSource = self
@@ -30,6 +30,9 @@ class RoutineListViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        userRoutines = userRoutines?.filter({ (i) -> Bool in
+            return !i.isCancelled
+        })
         routineTableView.reloadData()
     }
 
@@ -58,6 +61,20 @@ class RoutineListViewController: UIViewController, UITableViewDelegate, UITableV
             let destination = segue.destination as! RoutineDetailViewController
             let senderIndexPath = routineTableView.indexPath(for: sender as! RoutineTableViewCell)!
             destination.routine = userRoutines?[senderIndexPath.row]
+        }
+        if segue.identifier == "RoutineListToNewRoutine" {
+            let destination = segue.destination as! RoutineDetailViewController
+            let newRoutine = Routine()
+            destination.routine = newRoutine
+            userRoutines?.append(newRoutine)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath){
+        
+        if editingStyle == .delete {
+            userRoutines!.remove(at: indexPath.row)
+            routineTableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
 }

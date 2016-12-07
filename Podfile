@@ -13,5 +13,6 @@ pod 'Parse'
 pod 'Eureka', '~> 2.0.0-beta.1'
 pod 'CVCalendar', '~> 1.4.1'
 pod 'BTNavigationDropdownMenu', :git => 'https://github.com/PhamBaTho/BTNavigationDropdownMenu.git', :branch => 'swift-3.0'
+pod 'SwiftGifOrigin', '~> 1.6.1'
 
 end
