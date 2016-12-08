@@ -335,10 +335,10 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showRoutineExerciseSegue" {
-            let navigationController = segue.destination as! UINavigationController
-            let destination = navigationController.viewControllers[0] as! RoutineDetailViewController
+            let destination = segue.destination as! RoutineDetailViewController
             let senderIndexPath = tableView.indexPath(for: sender as! RoutineTableViewCell)!
             destination.routine = plannedRoutines?[senderIndexPath.row]
+            destination.navigationItem.rightBarButtonItem = nil
         }
     }
 }
