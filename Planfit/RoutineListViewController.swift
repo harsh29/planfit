@@ -23,8 +23,6 @@ class RoutineListViewController: UIViewController, UITableViewDelegate, UITableV
         
         routineTableView.reloadData()
         
-        self.navigationController?.navigationBar.barTintColor = UIColor.orange
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         routineTableView.rowHeight = UITableViewAutomaticDimension
         routineTableView.estimatedRowHeight = 100
     }
@@ -64,6 +62,7 @@ class RoutineListViewController: UIViewController, UITableViewDelegate, UITableV
             let destination = segue.destination as! RoutineDetailViewController
             let senderIndexPath = routineTableView.indexPath(for: sender as! RoutineTableViewCell)!
             destination.routine = userRoutines?[senderIndexPath.row]
+            destination.navigationItem.rightBarButtonItem = nil
         }
         if segue.identifier == "RoutineListToNewRoutine" {
             let destination = segue.destination as! RoutineDetailViewController
