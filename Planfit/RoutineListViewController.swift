@@ -62,6 +62,7 @@ class RoutineListViewController: UIViewController, UITableViewDelegate, UITableV
             let destination = segue.destination as! RoutineDetailViewController
             let senderIndexPath = routineTableView.indexPath(for: sender as! RoutineTableViewCell)!
             destination.routine = userRoutines?[senderIndexPath.row]
+            destination.navigationItem.rightBarButtonItem = nil
         }
         if segue.identifier == "RoutineListToNewRoutine" {
             let destination = segue.destination as! RoutineDetailViewController
