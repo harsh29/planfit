@@ -43,6 +43,7 @@
 		0FFAB5121DD6DB8C002C6644 /* MediaGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFAB5111DD6DB8C002C6644 /* MediaGalleryViewController.swift */; };
 		61B7A3651DEE756C008607E5 /* ExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B7A3641DEE756C008607E5 /* ExerciseTableViewCell.swift */; };
 		61D1FD111DDAE79100ECF9AB /* APIClientConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D1FD101DDAE79100ECF9AB /* APIClientConfig.swift */; };
+		859153061DF90EBA00BF0FFF /* CalendarRoutineListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859153051DF90EBA00BF0FFF /* CalendarRoutineListViewController.swift */; };
 		85A1828C1DDA8DB0002B1D1F /* RoutineRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A1828B1DDA8DB0002B1D1F /* RoutineRun.swift */; };
 		85A1828E1DDA8F43002B1D1F /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A1828D1DDA8F43002B1D1F /* Routine.swift */; };
 		85A182901DDA9697002B1D1F /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A1828F1DDA9697002B1D1F /* Exercise.swift */; };
@@ -96,6 +97,7 @@
 		61B7A3641DEE756C008607E5 /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewCell.swift; sourceTree = "<group>"; };
 		61D1FD101DDAE79100ECF9AB /* APIClientConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClientConfig.swift; sourceTree = "<group>"; };
 		854FEE3B9EE693EB2659E254 /* Pods-Planfit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Planfit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Planfit/Pods-Planfit.debug.xcconfig"; sourceTree = "<group>"; };
+		859153051DF90EBA00BF0FFF /* CalendarRoutineListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarRoutineListViewController.swift; sourceTree = "<group>"; };
 		85A1828B1DDA8DB0002B1D1F /* RoutineRun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineRun.swift; sourceTree = "<group>"; };
 		85A1828D1DDA8F43002B1D1F /* Routine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
 		85A1828F1DDA9697002B1D1F /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				0FFAB50B1DD6D9D5002C6644 /* StepEditViewController.swift */,
 				0FFAB50F1DD6DB0A002C6644 /* AccountViewController.swift */,
 				0FFAB5111DD6DB8C002C6644 /* MediaGalleryViewController.swift */,
+				859153051DF90EBA00BF0FFF /* CalendarRoutineListViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 				AE0D43001DE4144000CE70ED /* RoutineTableViewCell.swift in Sources */,
 				0FFAB4FE1DD6D67E002C6644 /* LoginViewController.swift in Sources */,
 				0FFAB4FC1DD6D665002C6644 /* WelcomeViewController.swift in Sources */,
+				859153061DF90EBA00BF0FFF /* CalendarRoutineListViewController.swift in Sources */,
 				0FFAB5101DD6DB0A002C6644 /* AccountViewController.swift in Sources */,
 				0FFAB50E1DD6DAB4002C6644 /* RoutineFinishViewController.swift in Sources */,
 				AE6896A31DD807DC000B4AF2 /* UserDataModel.swift in Sources */,
