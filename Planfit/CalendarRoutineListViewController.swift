@@ -60,6 +60,11 @@ class CalendarRoutineListViewController: UIViewController, UITableViewDataSource
         return cell
     }
     
+    @IBAction func onCancelButtonTap(_ sender: AnyObject) {
+        
+        self.navigationController?.popViewController(animated: true)
+    }
+
     
     
 
