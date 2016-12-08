@@ -23,6 +23,9 @@ class CalendarViewController: UIViewController {
         static let sundaySelectionBackground = sundayText
     }
     
+    
+    
+    
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var calendarView: CVCalendarView!
     @IBOutlet weak var tableView: UITableView!
@@ -31,15 +34,17 @@ class CalendarViewController: UIViewController {
     var shouldShowDaysOut = true
     var animationFinished = true
     
+    var selectedDate: Date?
+    
     var selectedDay:DayView!
     
     var currentCalendar: Foundation.Calendar?
     
-    var plannedRoutines : [Routine]?
+    var plannedRoutines : [PlannedDay]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        plannedRoutines = Routine.allRoutines
+        plannedRoutines = Calendar.getAllPlannedWorkouts()
         let timeZoneBias = 480 // (UTC+08:00)
         currentCalendar = Foundation.Calendar.init(identifier: .gregorian)
         if let timeZone = TimeZone.init(secondsFromGMT: -timeZoneBias * 60) {
@@ -71,8 +76,6 @@ class CalendarViewController: UIViewController {
         
         //Initialize dropdown menu
         self.navigationItem.titleView = dropDownMenuView
-        
-        plannedRoutines = Routine.allRoutines
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -146,7 +149,13 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
     func didSelectDayView(_ dayView: CVCalendarDayView, animationDidFinish: Bool) {
         print("\(calendarView.presentedDate.commonDescription) is selected!")
         selectedDay = dayView
-        print(Calendar.getTodaysRoutine());
+        let currentDate = calendarView.presentedDate.convertedDate(calendar: currentCalendar!)
+        if let currentDate = currentDate{
+            selectedDate = currentDate
+        }else{
+            selectedDate = Date()
+        }
+        print(currentDate)
     }
     
     /*
@@ -328,17 +337,25 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "routineCell", for: indexPath) as! RoutineTableViewCell
-        cell.routine = plannedRoutines?[indexPath.row]
+        cell.routine = plannedRoutines?[indexPath.row].routine
         cell.updateLabel()
         return cell
+    }
+    
+    public func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "RoutineSelectSegue", sender: self)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showRoutineExerciseSegue" {
             let destination = segue.destination as! RoutineDetailViewController
             let senderIndexPath = tableView.indexPath(for: sender as! RoutineTableViewCell)!
-            destination.routine = plannedRoutines?[senderIndexPath.row]
+            destination.routine = plannedRoutines?[senderIndexPath.row].routine
             destination.navigationItem.rightBarButtonItem = nil
+        }else if segue.identifier == "RoutineSelectSegue" {
+            let destination = segue.destination as! CalendarRoutineListViewController
+            destination.selectedDate = selectedDate!
         }
     }
 }

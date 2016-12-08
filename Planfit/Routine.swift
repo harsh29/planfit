@@ -175,7 +175,7 @@ class Routine: NSObject, NSCoding {
         routines.append(routine0!)
         routines.append(routine1!)
         routines.append(routine2!)
-        routines.append(Calendar.getTodaysRoutine()!)
+        routines.append(Calendar.getTempPlannedDay().routine)
         
         return routines
     }
