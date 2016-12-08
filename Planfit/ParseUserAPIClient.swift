@@ -117,4 +117,28 @@ class ParseUserAPIClient {
           NSLog("A user is already logged in.")
         }
     }
+    
+    /**
+     Logout for a user to Parse Server.
+     
+     - Parameter user:  The user in the current session.
+     - Parameter success: Success callback function.
+     - Parameter failure: Failure callback function.
+     
+     
+     - Returns: None
+     */
+    func logout(success: @escaping() -> (), failure: @escaping (Error) -> ()) {
+        if getCurrentUser() != nil {
+            PFUser.logOutInBackground(block: { (error) in
+                if let error = error {
+                    failure(error)
+                } else {
+                    success()
+                }
+            })
+        } else {
+            NSLog("A user is already logged in.")
+        }
+    }
 }

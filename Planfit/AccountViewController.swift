@@ -115,6 +115,8 @@ class AccountViewController: UIViewController, UITextFieldDelegate {
                 UIView.animate(withDuration: 3, animations: {
                     self.successfulMessageView.alpha = 1.0}, completion: { (bool) in
                         self.successfulMessageView.alpha = 0.0
+                        // updates user
+                        self.user = UserDataModel(parseObject: ParseUserAPIClient.sharedInstance.getCurrentUser()!)
                 })
                 self.successfulMessageView.isHidden = false
             }, failure: { (error) in
@@ -122,10 +124,12 @@ class AccountViewController: UIViewController, UITextFieldDelegate {
                 UIView.animate(withDuration: 3, animations: {
                     self.failureMessageView.alpha = 1.0}, completion: { (bool) in
                         self.failureMessageView.alpha = 0.0
+                        self.emailTextField.text = self.user?.email
+                        self.userNameTextField.text = self.user?.username
                 })
             })
         } else {
-            errorLabel.text = "You have made no change."
+            errorLabel.text = "You have made no changes."
             UIView.animate(withDuration: 3, animations: {
                 self.failureMessageView.alpha = 1.0}, completion: { (bool) in
                     self.failureMessageView.alpha = 0.0
@@ -156,5 +160,24 @@ class AccountViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    /**
+     Logs out user
+     
+     - Parameter sender: AnyObject
+     
+     - Returns: None
+     */
+    @IBAction func logoutClicked(_ sender: Any) {
+        ParseUserAPIClient.sharedInstance.logout(success: {
+            NSLog("User \(self.user?.username) is logged out.")
+        }, failure: { (error) in
+            self.errorLabel.text = "Logout unsuccessful!"
+            UIView.animate(withDuration: 3, animations: {
+                self.failureMessageView.alpha = 1.0}, completion: { (bool) in
+                    self.failureMessageView.alpha = 0.0
+            })
+        })
     }
 }
