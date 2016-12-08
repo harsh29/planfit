@@ -21,10 +21,12 @@ class RoutineListViewController: UIViewController, UITableViewDelegate, UITableV
         routineTableView.dataSource = self
         routineTableView.delegate = self
         
+        routineTableView.reloadData()
+        
+        self.navigationController?.navigationBar.barTintColor = UIColor.orange
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         routineTableView.rowHeight = UITableViewAutomaticDimension
         routineTableView.estimatedRowHeight = 100
-        
-        routineTableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,6 +35,7 @@ class RoutineListViewController: UIViewController, UITableViewDelegate, UITableV
         userRoutines = userRoutines?.filter({ (i) -> Bool in
             return !i.isCancelled
         })
+
         routineTableView.reloadData()
     }
 
@@ -77,4 +80,5 @@ class RoutineListViewController: UIViewController, UITableViewDelegate, UITableV
             routineTableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
+
 }
