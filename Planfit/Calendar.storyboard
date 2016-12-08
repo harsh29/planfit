@@ -31,7 +31,37 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BsV-JB-aoM">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="routineCell" rowHeight="53" id="L0U-Ge-LyW" customClass="RoutineTableViewCell" customModule="Planfit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="53"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L0U-Ge-LyW" id="JMz-pz-Zjk">
+                                            <frame key="frameInset" width="343" height="52"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cardio Blaster" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yms-tN-p75">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Yms-tN-p75" firstAttribute="top" secondItem="JMz-pz-Zjk" secondAttribute="top" constant="10" id="S2P-Ge-FTV"/>
+                                                <constraint firstItem="Yms-tN-p75" firstAttribute="leading" secondItem="JMz-pz-Zjk" secondAttribute="leading" constant="10" id="XIr-GX-0NE"/>
+                                                <constraint firstAttribute="bottom" secondItem="Yms-tN-p75" secondAttribute="bottom" constant="10" id="kKH-Gi-iWx"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="routineNameLabel" destination="Yms-tN-p75" id="G04-Y7-Exj"/>
+                                            <segue destination="sO3-Zm-9RW" kind="presentation" identifier="showRoutineExerciseSegue" id="8Hy-Rf-Gvt"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ptg-cP-7W0" id="iQd-Gc-Exo"/>
+                                    <outlet property="delegate" destination="ptg-cP-7W0" id="oFZ-aX-ho5"/>
+                                </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3MU-oN-fbA" customClass="CVCalendarMenuView" customModule="CVCalendar">
                                 <constraints>
@@ -77,6 +107,16 @@
             </objects>
             <point key="canvasLocation" x="1004" y="-102.09895052473765"/>
         </scene>
+        <!--RoutineDetailViewController-->
+        <scene sceneID="3x5-DZ-SLc">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="RoutineDetailViewController" storyboardName="RoutineDetail" referencedIdentifier="RoutineDetailViewController" id="bCr-4q-adL" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="pCJ-CD-RuA"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T4Y-m3-YUH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2648" y="106.14692653673164"/>
+        </scene>
         <!--Calendar-->
         <scene sceneID="Fen-d7-3GW">
             <objects>
@@ -95,6 +135,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9gf-0Y-R48" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="64.799999999999997" y="-102.09895052473765"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PNd-k1-eQe">
+            <objects>
+                <navigationController storyboardIdentifier="CalendarToRoutineDetailNavigator" automaticallyAdjustsScrollViewInsets="NO" id="sO3-Zm-9RW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eL4-Ym-zUP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bCr-4q-adL" kind="relationship" relationship="rootViewController" id="eLk-mv-kfK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RiR-6F-Gdr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1709.5999999999999" y="106.59670164917542"/>
         </scene>
     </scenes>
     <resources>

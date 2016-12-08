@@ -35,9 +35,11 @@ class CalendarViewController: UIViewController {
     
     var currentCalendar: Foundation.Calendar?
     
+    var plannedRoutines : [Routine]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        plannedRoutines = Routine.allRoutines
         let timeZoneBias = 480 // (UTC+08:00)
         currentCalendar = Foundation.Calendar.init(identifier: .gregorian)
         if let timeZone = TimeZone.init(secondsFromGMT: -timeZoneBias * 60) {
@@ -72,6 +74,16 @@ class CalendarViewController: UIViewController {
         
         //Initialize dropdown menu
         self.navigationItem.titleView = dropDownMenuView
+        
+        plannedRoutines = Routine.allRoutines
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 100
+        
+        tableView.reloadData()
         
     }
 
@@ -134,7 +146,14 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
         return true // Default value is true
     }
     
-    func didSelectDayView(_ dayView: CVCalendarDayView) {
+    func didSelectDayView(_ dayView: CVCalendarDayView, animationDidFinish: Bool) {
+        print("\(calendarView.presentedDate.commonDescription) is selected!")
+        selectedDay = dayView
+        print(Calendar.getTodaysRoutine());
+    }
+    
+    /*
+    @nonobjc func didSelectDayView(_ dayView: CVCalendarDayView) {
         print("\(calendarView.presentedDate.commonDescription) is selected!")
         
         // Fetch all events happening in the next 24 hours and put them into eventsList
@@ -144,7 +163,7 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
         // Update the UI with the above events
         //reloadTable()
     }
-    
+    */
     func presentedDateUpdated(_ date: CVDate) {
         if monthLabel.text != date.globalDescription && self.animationFinished {
             let updatedMonthLabel = UILabel()
@@ -299,5 +318,31 @@ extension CalendarViewController {
         print("Showing Month: \(components.month)")
     }
     
+}
+
+extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let plannedRoutines = self.plannedRoutines {
+            return plannedRoutines.count
+        } else {
+            return 0
+        }
+    }
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "routineCell", for: indexPath) as! RoutineTableViewCell
+        cell.routine = plannedRoutines?[indexPath.row]
+        cell.updateLabel()
+        return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showRoutineExerciseSegue" {
+            let navigationController = segue.destination as! UINavigationController
+            let destination = navigationController.viewControllers[0] as! RoutineDetailViewController
+            let senderIndexPath = tableView.indexPath(for: sender as! RoutineTableViewCell)!
+            destination.routine = plannedRoutines?[senderIndexPath.row]
+        }
+    }
 }
 
