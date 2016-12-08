@@ -162,14 +162,22 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
             print(currentDate)
             plannedRoutines = Calendar.plannedDays
             for day in plannedRoutines! {
-                if(day.date == selectedDate){
+                print(selectedDate)
+                print(day.date)
+                let dayMonth = Foundation.Calendar.current.component(.month, from: day.date)
+                let dayDay = Foundation.Calendar.current.component(.day, from: day.date)
+                let selectedMonth = Foundation.Calendar.current.component(.month, from: selectedDate!)
+                let selectedDateDay = Foundation.Calendar.current.component(.day, from: selectedDate!)
+                
+                if((dayDay == selectedDateDay) && (dayMonth == selectedMonth)){
                     plannedRoutines = [day]
                     tableView.reloadData()
+                    break
                 }else{
                     plannedRoutines = []
                     tableView.reloadData()
+                }
             }
-        }
         }
     }
     
