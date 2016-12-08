@@ -85,6 +85,7 @@ class Calendar: NSObject{
         let routines = Routine.getRoutineSet();
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd"
+        /*
         if(firstRun){
         var someDateTime = formatter.date(from: "2016/12/08")
         let plannedDay = PlannedDay()
@@ -123,6 +124,7 @@ class Calendar: NSObject{
         plannedDays.append(plannedDay5)
         firstRun = false
         }
+ */
         return plannedDays
     }
     

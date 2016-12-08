@@ -82,8 +82,7 @@ class CalendarViewController: UIViewController {
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 100
-        
-        tableView.reloadData()
+       tableView.reloadData()
         
     }
 
@@ -148,14 +147,30 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
     
     func didSelectDayView(_ dayView: CVCalendarDayView, animationDidFinish: Bool) {
         print("\(calendarView.presentedDate.commonDescription) is selected!")
-        selectedDay = dayView
-        let currentDate = calendarView.presentedDate.convertedDate(calendar: currentCalendar!)
-        if let currentDate = currentDate{
-            selectedDate = currentDate
+        if((selectedDay != nil) && selectedDay == dayView){
+            dayView.setDeselectedWithClearing(true);
+            plannedRoutines = Calendar.plannedDays
+            tableView.reloadData();
         }else{
-            selectedDate = Date()
+            self.selectedDay = dayView
+            let currentDate = calendarView.presentedDate.convertedDate(calendar: currentCalendar!)
+            if let currentDate = currentDate{
+                selectedDate = currentDate
+            }else{
+                selectedDate = Date()
+            }
+            print(currentDate)
+            plannedRoutines = Calendar.plannedDays
+            for day in plannedRoutines! {
+                if(day.date == selectedDate){
+                    plannedRoutines = [day]
+                    tableView.reloadData()
+                }else{
+                    plannedRoutines = []
+                    tableView.reloadData()
+            }
         }
-        print(currentDate)
+        }
     }
     
     /*
@@ -219,7 +234,7 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
 //            return true
 //        }
 //        return false
-        return true
+        return false
     }
     
     func dotMarker(colorOnDayView dayView: CVCalendarDayView) -> [UIColor] {
