@@ -96,11 +96,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="4sk-hU-j6p">
                         <barButtonItem key="leftBarButtonItem" title="Today" id="usb-NZ-yEB">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="todayMonthView" destination="ptg-cP-7W0" id="LMG-3V-CR3"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Add" id="s0D-XO-nCs">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="9Wf-e3-XdX" kind="presentation" id="Tym-bf-1VY"/>
                             </connections>
