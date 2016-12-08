@@ -23,6 +23,7 @@ class CalendarRoutineListViewController: UIViewController, UITableViewDataSource
         routineTableView.reloadData()
         
         self.navigationController?.navigationBar.barTintColor = UIColor.orange
+
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         routineTableView.rowHeight = UITableViewAutomaticDimension
         routineTableView.estimatedRowHeight = 100
@@ -44,6 +45,9 @@ class CalendarRoutineListViewController: UIViewController, UITableViewDataSource
         routineTableView.reloadData()
     }
     
+    @IBAction func onCancelClick(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let userRoutines = self.userRoutines {
