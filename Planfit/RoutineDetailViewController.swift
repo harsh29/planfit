@@ -40,10 +40,6 @@ class RoutineDetailViewController: UIViewController, UITableViewDataSource, UITa
         }
         
         exerciseListTable.reloadData()
-        
-        self.navigationController?.navigationBar.barTintColor = UIColor.orange
-        self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationController?.navigationBar.tintColor = UIColor.white
     }
     
     override func viewWillAppear(_ animated: Bool) {

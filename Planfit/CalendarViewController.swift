@@ -53,14 +53,11 @@ class CalendarViewController: UIViewController {
         //Initialize drop down menu
         //Menu
         let items = ["Monthly Calendar", "Weekly Calendar"]
-        self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationController?.navigationBar.barTintColor = UIColor.orange
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         
         let dropDownMenuView = BTNavigationDropdownMenu(title: items.first!, items: items as [AnyObject])
         dropDownMenuView.cellHeight = 40
         dropDownMenuView.cellBackgroundColor = self.navigationController?.navigationBar.barTintColor
-        dropDownMenuView.cellSelectionColor = UIColor.orange
+        dropDownMenuView.cellSelectionColor = UIColor(netHex:0xFF5400)
         dropDownMenuView.cellTextLabelColor = UIColor.white
         dropDownMenuView.cellTextLabelFont = UIFont(name: "Avenir-Heavy", size: 17)
         dropDownMenuView.arrowPadding = 15
