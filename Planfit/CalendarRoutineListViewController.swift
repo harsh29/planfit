@@ -12,6 +12,8 @@ class CalendarRoutineListViewController: UIViewController, UITableViewDataSource
 
     @IBOutlet weak var routineTableView: UITableView!
     var userRoutines : [Routine]?
+    var selectedDate : Date?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +60,15 @@ class CalendarRoutineListViewController: UIViewController, UITableViewDataSource
         cell.routine = userRoutines?[indexPath.row]
         cell.updateLabel()
         return cell
+    }
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let plannedDay = PlannedDay()
+        plannedDay.date = selectedDate
+        plannedDay.routine = userRoutines?[indexPath.row]
+        Calendar.plannedDays.append(plannedDay)
+        tableView.deselectRow(at: indexPath, animated: true)
+        
     }
     
     @IBAction func onCancelButtonTap(_ sender: AnyObject) {

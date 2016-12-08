@@ -34,6 +34,8 @@ class CalendarViewController: UIViewController {
     var shouldShowDaysOut = true
     var animationFinished = true
     
+    var selectedDate: Date?
+    
     var selectedDay:DayView!
     
     var currentCalendar: Foundation.Calendar?
@@ -148,14 +150,12 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
         print("\(calendarView.presentedDate.commonDescription) is selected!")
         selectedDay = dayView
         let currentDate = calendarView.presentedDate.convertedDate(calendar: currentCalendar!)
+        if let currentDate = currentDate{
+            selectedDate = currentDate
+        }else{
+            selectedDate = Date()
+        }
         print(currentDate)
-        print(Calendar.getTodaysRoutine());
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd"
-        let someDateTime = formatter.date(from: "2016/10/08")
-        print(someDateTime)
-        
-        
     }
     
     /*
@@ -342,12 +342,20 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    public func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "RoutineSelectSegue", sender: self)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showRoutineExerciseSegue" {
             let destination = segue.destination as! RoutineDetailViewController
             let senderIndexPath = tableView.indexPath(for: sender as! RoutineTableViewCell)!
             destination.routine = plannedRoutines?[senderIndexPath.row].routine
             destination.navigationItem.rightBarButtonItem = nil
+        }else if segue.identifier == "RoutineSelectSegue" {
+            let destination = segue.destination as! CalendarRoutineListViewController
+            destination.selectedDate = selectedDate!
         }
     }
 }

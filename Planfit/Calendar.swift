@@ -17,7 +17,8 @@ class Calendar: NSObject{
     /// and added to this array of plannedDays
     /// This property is initially populated from the API
     /// for logged in user.
-    static var plannedDays: [PlannedDay] = []
+    public static var plannedDays: [PlannedDay] = []
+    private static var firstRun = true
 
     /// computed dictionary of planned date strings to routines
     static var dateRoutines: [String: Routine] = {
