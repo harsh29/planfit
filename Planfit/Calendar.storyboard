@@ -94,7 +94,14 @@
                             <constraint firstItem="BsV-JB-aoM" firstAttribute="trailing" secondItem="VK9-uM-6MT" secondAttribute="trailing" id="ycb-cQ-Ybc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="4sk-hU-j6p"/>
+                    <navigationItem key="navigationItem" id="4sk-hU-j6p">
+                        <barButtonItem key="leftBarButtonItem" title="Today" id="usb-NZ-yEB">
+                            <connections>
+                                <action selector="todayMonthView" destination="ptg-cP-7W0" id="LMG-3V-CR3"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="s0D-XO-nCs"/>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="calendarView" destination="VK9-uM-6MT" id="OCo-au-6eH"/>
@@ -157,7 +164,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RiR-6F-Gdr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1709.5999999999999" y="106.59670164917542"/>
+            <point key="canvasLocation" x="1794" y="98"/>
         </scene>
     </scenes>
     <resources>
