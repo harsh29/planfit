@@ -12,6 +12,7 @@ class RoutineListViewController: UIViewController, UITableViewDelegate, UITableV
 
     @IBOutlet weak var routineTableView: UITableView!
     var userRoutines : [Routine]?
+    var rowHeight: Float?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,10 +22,12 @@ class RoutineListViewController: UIViewController, UITableViewDelegate, UITableV
         routineTableView.dataSource = self
         routineTableView.delegate = self
         
+        routineTableView.reloadData()
+        
+        self.navigationController?.navigationBar.barTintColor = UIColor.orange
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         routineTableView.rowHeight = UITableViewAutomaticDimension
         routineTableView.estimatedRowHeight = 100
-        
-        routineTableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,6 +36,7 @@ class RoutineListViewController: UIViewController, UITableViewDelegate, UITableV
         userRoutines = userRoutines?.filter({ (i) -> Bool in
             return !i.isCancelled
         })
+
         routineTableView.reloadData()
     }
 
@@ -53,6 +57,9 @@ class RoutineListViewController: UIViewController, UITableViewDelegate, UITableV
         let cell = routineTableView.dequeueReusableCell(withIdentifier: "routineCell", for: indexPath) as! RoutineTableViewCell
         cell.routine = userRoutines?[indexPath.row]
         cell.updateLabel()
+        
+        self.rowHeight = Float(cell.routineNameLabel.frame.height + 20)
+        
         return cell
     }
     
@@ -76,5 +83,12 @@ class RoutineListViewController: UIViewController, UITableViewDelegate, UITableV
             userRoutines!.remove(at: indexPath.row)
             routineTableView.deleteRows(at: [indexPath], with: .fade)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if rowHeight != nil {
+            return CGFloat(rowHeight!)
+        }
+        return UITableViewAutomaticDimension
     }
 }
