@@ -23,8 +23,6 @@ class RoutineListViewController: UIViewController, UITableViewDelegate, UITableV
         
         routineTableView.reloadData()
         
-        self.navigationController?.navigationBar.barTintColor = UIColor.orange
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         routineTableView.rowHeight = UITableViewAutomaticDimension
         routineTableView.estimatedRowHeight = 100
     }
