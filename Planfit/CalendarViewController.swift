@@ -338,6 +338,7 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
             let destination = segue.destination as! RoutineDetailViewController
             let senderIndexPath = tableView.indexPath(for: sender as! RoutineTableViewCell)!
             destination.routine = plannedRoutines?[senderIndexPath.row]
+            destination.navigationItem.rightBarButtonItem = nil
         }
     }
 }
