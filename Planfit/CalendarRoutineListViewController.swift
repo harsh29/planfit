@@ -61,6 +61,9 @@ class CalendarRoutineListViewController: UIViewController, UITableViewDataSource
     }
     
     
+    @IBAction func onCancelClick(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
 
     /*
