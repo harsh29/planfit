@@ -55,8 +55,9 @@ class Calendar: NSObject{
         
         let date = formatter.string(from: Date())
         /// add a dummy routine for testing while Calendar screen is under construction
+        if(firstRun){
         self.plannedDays.append(self.getTempPlannedDay())
-        
+        }
         if let routine = self.dateRoutines[date] {
             return routine
         }
@@ -65,7 +66,7 @@ class Calendar: NSObject{
     }
     
     /// dummy PlannedDay for testing while Calendar screen is under construction
-    private class func getTempPlannedDay() -> PlannedDay {
+    public class func getTempPlannedDay() -> PlannedDay {
         
         let routine = Routine()
         routine.routineName = "My Favorite Routine"
@@ -80,11 +81,11 @@ class Calendar: NSObject{
     }
     
     public class func getAllPlannedWorkouts() ->[PlannedDay] {
-    
+        
         let routines = Routine.getRoutineSet();
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd"
-        
+        if(firstRun){
         var someDateTime = formatter.date(from: "2016/12/08")
         let plannedDay = PlannedDay()
         plannedDay.date = someDateTime
@@ -120,7 +121,8 @@ class Calendar: NSObject{
         plannedDay5.date = someDateTime
         plannedDay5.routine = routines[2]
         plannedDays.append(plannedDay5)
-        
+        firstRun = false
+        }
         return plannedDays
     }
     
