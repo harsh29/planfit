@@ -1,12 +1,11 @@
 # Project - Planfit
+Here's Planfit walkthrough:
+
+<img src='planfit.gif' />
 
 Here's Planfit viewcontroller flow:
 
 <img src='AppFlow.png' />
-
-Here's Planfit partial walkthrough:
-
-<img src='planfit.gif' />
 
 ## User Stories
 
