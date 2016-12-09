@@ -269,6 +269,11 @@ extension CalendarViewController: CVCalendarViewAppearanceDelegate {
         return false
     }
     
+    func dayLabelPresentWeekdaySelectedBackgroundColor() -> UIColor {
+        return UIColor.orange
+    }
+    
+    
     func spaceBetweenDayViews() -> CGFloat {
         return 2
     }
@@ -322,8 +327,9 @@ extension CalendarViewController {
         components.month! += offset
         
         let resultDate = currentCalendar.date(from: components)!
-        
         self.calendarView.toggleViewWithDate(resultDate)
+        self.calendarView.appearance.dayLabelPresentWeekdayHighlightedBackgroundAlpha = nil
+        self.calendarView.appearance.dayLabelPresentWeekdayHighlightedBackgroundColor = nil
     }
     
     func didShowNextMonthView(date: NSDate) {
